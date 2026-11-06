@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GGSS Block V | Shah Faisal Colony</title>
+    <meta name="description"
+        content="Official school website of Government Girls Secondary School Block V, Shah Faisal Colony, Karachi.">
+    <link rel="stylesheet" href="idex.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div>Government of Sindh | School Education & Literacy Department</div>
+        <div>📍 Shah Faisal Colony, Karachi</div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="brand">
+            <img src="logo.jpeg" alt="School Monogram" class="logo">
+            <div>
+                <h1>Government Girls Secondary School<br>BLOCK V</h1>
+                <p>Shah Faisal Colony, District Korangi</p>
+            </div>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+
+        <nav id="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#academics">Academics</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#administration">Administration</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-slider">
+            <div class="slide active" style="background-image:url('assembly.jpeg')"></div>
+            <div class="slide" style="background-image:url('color2.jpeg')"></div>
+            <div class="slide" style="background-image:url('girls.jpeg')"></div>
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <span class="welcome">WELCOME TO OUR INSTITUTION</span>
+
+            <h2>Empowering Minds,<br>
+                <span>Building Futures</span>
+            </h2>
+
+            <p>
+                Quality Education • Character Building • Excellence
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#about" class="btn gold-btn">Explore Our School</a>
+                <a href="#academics" class="btn outline-btn">Our Academics</a>
+            </div>
+        </div>
+
+        <div class="slider-dots" id="sliderDots">
+            <button class="dot active" aria-label="Slide 1"></button>
+            <button class="dot" aria-label="Slide 2"></button>
+            <button class="dot" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="hero-label">
+            LEARNING TODAY, LEADING TOMORROW
+        </div>
+
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="intro section-padding">
+        <div class="intro-text">
+             <span class="section-tag">OUR INSTITUTION</span> 
+            <h2>A Place Where <span>Dreams Take Shape</span></h2>
+            <p>
+                Government Girls Secondary School Block V is committed
+                to providing quality education, developing confidence
+                and nurturing responsible citizens. We believe every
+                student deserves the opportunity to learn, grow and succeed.
+            </p>
+            <a href="#about" class="text-link">Discover Our Story →</a>
+        </div>
+
+        <div class="intro-image">
+            <img src="claas6.jpeg" alt="Our School">
+            <div class="image-caption">
+                <strong>Education for All</strong>
+                <span>Inspiring Excellence Every Day</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK FACTS -->
+    <section class="facts">
+        <div class="fact">
+            <h3>Quality Education</h3>
+        </div>
+        <div class="fact">
+            <h3>Student Development</h3>
+        </div>
+        <div class="fact">
+            <h3>STEAM Learning</h3>
+        </div>
+        <div class="fact">
+            <h3>Inclusive Education</h3>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about section-padding" id="about">
+        <div class="section-heading">
+            <span class="section-tag">WHO WE ARE</span>
+            <h2>About Our <span>School</span></h2>
+            <p>Building knowledge, confidence and character.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="card-icon">🎯</div>
+                <h3>Our Mission</h3>
+                <p>
+                    To provide accessible, inclusive and quality education
+                    that empowers students with knowledge, skills and values.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <div class="card-icon">🌟</div>
+                <h3>Our Vision</h3>
+                <p>
+                    To create confident, creative and responsible learners
+                    who contribute positively to society.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <div class="card-icon">🤝</div>
+                <h3>Our Values</h3>
+                <p>
+                    Discipline, respect, honesty, teamwork, creativity
+                    and lifelong learning.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- ABOUT POPUP -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-box">
+            <span class="close-btn">&times;</span>
+            <span class="section-tag">WHO WE ARE</span>
+            <h2>About Our <span>School</span></h2>
+            <p>Building knowledge, confidence and character.</p>
+
+            <div class="about-grid popup-grid">
+                <div class="about-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Our Mission</h3>
+                    <p>To provide accessible, inclusive and quality education that empowers students with knowledge,
+                        skills and values.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🌟</div>
+                    <h3>Our Vision</h3>
+                    <p>To create confident, creative and responsible learners who contribute positively to society.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Our Values</h3>
+                    <p>Discipline, respect, honesty, teamwork, creativity and lifelong learning.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ACADEMICS -->
+    <section class="academics section-padding" id="academics">
+        <div class="section-heading">
+            <span class="section-tag">ACADEMIC PROGRAMMES</span>
+            <h2>Education for <span>Every Stage</span></h2>
+            <p>Learning opportunities from early childhood to secondary education.</p>
+        </div>
+
+        <div class="academic-grid">
+            <div class="academic-card">
+                <span>01</span>
+                <h3>ECCE</h3>
+                <p>Early Childhood Care and Education</p>
+            </div>
+
+            <div class="academic-card">
+                <span>02</span>
+                <h3>Primary</h3>
+                <p>Classes I – V</p>
+            </div>
+
+            <div class="academic-card">
+                <span>03</span>
+                <h3>Elementary</h3>
+                <p>Classes VI – VIII</p>
+            </div>
+
+            <div class="academic-card">
+                <span>04</span>
+                <h3>Secondary</h3>
+                <p>Classes IX – X (Matric)</p>
+            </div>
+        </div>
+
+        <div class="academic-note">
+            <strong>Inclusive Learning:</strong>
+            Educational opportunities for both boys and girls.
+        </div>
+    </section>
+
+    <!-- FACILITIES -->
+    <section class="facilities section-padding" id="facilities">
+        <div class="section-heading">
+            <span class="section-tag">OUR LEARNING ENVIRONMENT</span>
+            <h2>Learning Beyond <span>Classrooms</span></h2>
+        </div>
+
+        <div class="facility-grid">
+            <div class="facility">
+                <div>🔬</div>
+                <h3>Science Learning</h3>
+                <p>Practical exploration and scientific thinking.</p>
+            </div>
+
+            <div class="facility">
+                <div>💻</div>
+                <h3>Digital Learning</h3>
+                <p>Technology and computer-based learning.</p>
+            </div>
+
+            <div class="facility">
+                <div>📚</div>
+                <h3>Library & Reading</h3>
+                <p>Encouraging reading and independent learning.</p>
+            </div>
+
+            <div class="facility">
+                <div>☀️</div>
+                <h3>Solar Energy</h3>
+                <p>Promoting sustainable energy awareness.</p>
+            </div>
+        </div>
+    </section>
+    <!-- FACILITIES POPUP START -->
+    <div id="facilitiesModal" class="modal">
+        <div class="modal-box">
+            <span class="close-btn">&times;</span>
+
+            <div class="section-heading">
+                <span class="section-tag">OUR LEARNING ENVIRONMENT</span>
+                <h2>Learning Beyond <span>Classrooms</span></h2>
+            </div>
+
+            <div class="facility-grid popup-grid">
+                <div class="facility">
+                    <div>🔬</div>
+                    <h3>Science Learning</h3>
+                    <p>Practical exploration and scientific thinking.</p>
+                </div>
+
+                <div class="facility">
+                    <div>💻</div>
+                    <h3>Digital Learning</h3>
+                    <p>Technology and computer-based learning.</p>
+                </div>
+
+                <div class="facility">
+                    <div>📚</div>
+                    <h3>Library & Reading</h3>
+                    <p>Encouraging reading and independent learning.</p>
+                </div>
+
+                <div class="facility">
+                    <div>☀️</div>
+                    <h3>Solar Energy</h3>
+                    <p>Promoting sustainable energy awareness.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- FACILITIES POPUP END -->
+
+    <!-- STEAM -->
+    <section class="steam-section">
+        <div class="steam-content">
+            <span class="section-tag">INNOVATION & CREATIVITY</span>
+            <h2>Discover the World Through <br><span>STEAM</span></h2>
+            <p>
+                Science, Technology, Engineering, Arts and Mathematics <br>
+                activities encourage students to think critically,
+                experiment, <br> collaborate and solve real-world problems.
+            </p>
+            <a href="#gallery" class="btn gold-btn" style="margin-top: 30px;">Explore Activities</a>
+        </div>
+        <div class="steam_image">
+            <img src="cert1.jpeg" class="slide active" alt="STEAM Activities">
+            <img src="steam.jpeg" class="slide" alt="STEAM Activities 2">
+            <img src="steam4.jpeg" class="slide" alt="STEAM Activities 3">
+            <img src="steam5.jpeg" class="slide" alt="STEAM Activities 3">
+            <img src="steam6.jpeg" class="slide" alt="STEAM Activities 3">
+            <img src="steam7.jpeg" class="slide" alt="STEAM Activities 3">
+            <img src="steam8.jpeg" class="slide" alt="STEAM Activities 3">
+            <img src="steam10.jpeg" class="slide" alt="STEAM Activities 3">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery section-padding" id="gallery">
+        <div class="section-heading">
+            <span class="section-tag">OUR MEMORIES</span>
+            <h2>School <span>Gallery</span></h2>
+            <p>Celebrating learning, creativity and achievements.</p>
+        </div>
+
+
+        <div class="gallery-grid">
+            <!-- BOX 1 -->
+            <div class="gallery-box-slider">
+                <img src="tetsers.jpeg" class="gallery-slide active">
+                <img src="kids.jpeg" class="gallery-slide">
+                <img src="playing.jpeg" class="gallery-slide">
+                <img src="activity.jpeg" class="gallery-slide">
+                <img src="activ.jpeg" class="gallery-slide">
+            </div>
+            <!-- BOX 2 -->
+            <div class="gallery-box-slider">
+                <img src="milad1.jpeg" class="gallery-slide active">
+                <img src="milad2.jpeg" class="gallery-slide">
+                <img src="milad3.jpeg" class="gallery-slide">
+                <img src="milad4.jpeg" class="gallery-slide">
+                <img src="milad4.jpeg" class="gallery-slide">
+                <img src="color1.jpeg" class="gallery-slide">
+                <img src="color2.jpeg" class="gallery-slide">
+                <img src="color3.jpeg" class="gallery-slide">
+                <img src="14aug1.jpeg" class="gallery-slide">
+                <img src="14aug2.jpeg" class="gallery-slide">
+                <img src="14aug3.jpeg" class="gallery-slide">
+                <img src="14aug4.jpeg" class="gallery-slide">
+                <img src="14aug.jpeg" class="gallery-slide">
+            </div>
+
+            <!-- BOX 3 -->
+            <div class="gallery-box-slider">
+                <img src="tester.jpeg" class="gallery-slide active">
+                <img src="steam.jpeg" class="gallery-slide">
+                <img src="steam1.jpeg" class="gallery-slide">
+                <img src="steam2.jpeg" class="gallery-slide">
+                <img src="steam3.jpeg" class="gallery-slide">
+                <img src="steam4.jpeg" class="gallery-slide">
+                <img src="steam5.jpeg" class="gallery-slide">
+                <img src="steam6.jpeg" class="gallery-slide">
+                <img src="steam7.jpeg" class="gallery-slide">
+            </div>
+        </div>
+        <!-- IMAGE LIGHTBOX -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" id="lightboxClose">×</button>
+
+            <button class="lightbox-prev" id="lightboxPrev">❮</button>
+
+            <img id="lightboxImage" src="" alt="Gallery Preview">
+
+            <button class="lightbox-next" id="lightboxNext">❯</button>
+
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+        </div>
+
+    </section>
+    <!-- ADMINISTRATION -->
+    <section class="administration section-padding" id="administration">
+        <div class="section-heading">
+            <span class="section-tag">OUR LEADERSHIP</span>
+            <h2>School <span>Administration</span></h2>
+            <p>Leadership committed to educational excellence.</p>
+        </div>
+
+        <div class="leaders">
+            <div class="leader-card">
+                <div class="leader-avatar1">
+                </div>
+                <span class="leader-role">HEADMASTER</span>
+                <div class="admin-card">
+                    <h3>Sir Taj Ahmed Alvi</h3>
+                    <p>Headmaster</p>
+                </div>
+            </div>
+
+            <div class="leader-card">
+                <div class="leader-avatar2">
+                </div>
+                <span class="leader-role">DISTRICT EDUCATION OFFICER</span>
+                <h3>Mr. Imdad Ali Lashari</h3>
+                <p>District Korangi, ES & HS</p>
+            </div>
+            <div class="leader-card">
+                <div class="leader-avatar3">
+                </div>
+                <span class="leader-role">Minister for Education & Literacy</span>
+                <h3>Syed Sardar Ali Shah</h3>
+                <p>District Korangi, ES & HS</p>
+            </div>
+            <div class="leader-card">
+                <div class="leader-avatar4">
+                </div>
+                <span class="leader-role">Secretary School Educationy</span>
+                <h3> Zahid Ali Abbasi</h3>
+                <p> Literacy Departmen</p>
+            </div>
+            <div class="leader-card">
+                <div class="leader-avatar5">
+                </div>
+                <span class="leader-role">Director School Education</span>
+                <h3> Mirza Arshad Baig</h3>
+                <p> (ES&HS), Karachi </p>
+            </div>
+            <div class="leader-card">
+                <div class="leader-avatar6">
+                </div>
+                <span class="leader-role">Deputy DEO Korangi</span>
+                <h3> Afshan Naz Baig</h3>
+                <p> Steam Focal person </p>
+            </div>
+        </div>
+    </section>
+    <!-- CONTACT -->
+    <section class="contact section-padding" id="contact">
+        <div class="section-heading">
+            <span class="section-tag">GET IN TOUCH</span>
+            <h2>Connect With <span>Our School</span></h2>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Government Girls Secondary School Block V</h3>
+                <p>📍 Shah Faisal Colony, District Korangi, Karachi, Sindh</p>
+                <p>🏫 SEMIS Code: 408090122</p>
+                <p>📖 School Education & Literacy Department, Government of Sindh</p>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send an Enquiry</h3>
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit" class="btn gold-btn">Send Message</button>
+                </form>
+                <p id="formMessage"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <h2>GGSS BLOCK V</h2>
+            <p>Empowering Minds, Building Futures.</p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Government Girls Secondary School Block V.</p>
+            <p>Designed with dedication for education.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Back to top">↑</button>
+
+    <script src="learn.js"></script>
+</body>
+
+</html>
