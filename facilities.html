@@ -1,0 +1,605 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Facilities | GGSS Block V</title>
+
+<link rel="stylesheet" href="idex.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* FONT CONSISTENCY */
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* HERO BANNER */
+
+.facilities-hero {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+    color: white;
+    background:
+        linear-gradient(90deg, rgba(54,13,31,.95), rgba(54,13,31,.60)),
+        url("steam.jpeg") center/cover no-repeat;
+}
+
+.facilities-hero-content {
+    max-width: 650px;
+}
+
+.facilities-hero span {
+    color: #e5bd70;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.facilities-hero h2 {
+    font-size: 42px;
+    line-height: 1.25;
+    margin: 15px 0;
+}
+
+.facilities-hero p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #f4e8ec;
+}
+
+/* GENERAL SECTIONS */
+
+.facilities-section {
+    padding: 65px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-tag {
+    color: #a77b32;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    color: #481728;
+    font-size: 32px;
+    margin: 12px 0;
+}
+
+.section-heading h2 span {
+    color: #a77b32;
+}
+
+.section-heading p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* FACILITY CARDS */
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.facility {
+    background: #fff;
+    padding: 30px 22px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    border-bottom: 4px solid #b18a45;
+    transition: .3s ease;
+}
+
+.facility:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(72,23,40,.15);
+}
+
+.facility-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.facility h3 {
+    color: #481728;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.facility p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* STUDENT DEVELOPMENT */
+
+.student-development {
+    background: #f8f1f3;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
+
+.about-card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,.07);
+    transition: .3s;
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+}
+
+.card-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.about-card h3 {
+    color: #481728;
+    font-size: 20px;
+}
+
+.about-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* FACILITY MESSAGE */
+
+.facility-message {
+    background: linear-gradient(110deg, #481728, #702b43);
+    color: white;
+    padding: 55px 8%;
+    text-align: center;
+}
+
+.facility-message h2 {
+    color: #e5bd70;
+    font-size: 30px;
+    margin-top: 0;
+}
+
+.facility-message p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.9;
+    color: #f5e9ed;
+    font-size: 15px;
+}
+
+/* FOOTER */
+
+.site-footer {
+    width: 100%;
+    background: #35101f;
+    color: white;
+    padding: 50px 8% 18px;
+    margin: 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
+    gap: 30px;
+}
+
+.footer-brand img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.site-footer h3 {
+    color: #e5bd70;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.site-footer p,
+.site-footer a {
+    color: #eee0e5;
+    font-size: 14px;
+    line-height: 1.9;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #e5bd70;
+}
+
+.footer-links a {
+    display: block;
+}
+
+.footer-contact-btn {
+    display: inline-block;
+    background: #c49a52;
+    color: #35101f !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.2);
+    margin-top: 35px;
+    padding-top: 18px;
+    text-align: center;
+    color: #e8dce1;
+    font-size: 13px;
+}
+
+/* BACK TO TOP */
+
+#backToTop {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    background: #a77b32;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 21px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+    .facility-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .facilities-hero {
+        min-height: 300px;
+        padding: 45px 7%;
+    }
+
+    .facilities-hero h2 {
+        font-size: 31px;
+    }
+
+    .facilities-section {
+        padding: 45px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .facility-grid,
+    .about-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+    <div>Government of Sindh | School Education & Literacy Department</div>
+    <div>📍 Shah Faisal Colony, Karachi</div>
+</div>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="brand">
+        <img src="logo.jpeg" class="logo" alt="School Monogram">
+
+        <div>
+            <h1>Government Girls Secondary School<br>BLOCK V</h1>
+            <p>Shah Faisal Colony, District Korangi</p>
+        </div>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admissions</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="facilities.html" class="active">Facilities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="administration.html">Administration</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HERO BANNER -->
+
+<section class="facilities-hero">
+
+    <div class="facilities-hero-content">
+
+        <span>OUR LEARNING ENVIRONMENT</span>
+
+        <h2>Learning Beyond<br>Classrooms</h2>
+
+        <p>
+            Creating opportunities for exploration, discovery
+            and development through a supportive and engaging
+            learning environment.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- LEARNING FACILITIES -->
+
+<section class="facilities-section">
+
+    <div class="section-heading">
+        <span class="section-tag">LEARN • EXPLORE • DISCOVER</span>
+
+        <h2>Our Learning <span>Facilities</span></h2>
+
+        <p>
+            Supporting meaningful learning through practical
+            experiences, technology and knowledge.
+        </p>
+    </div>
+
+    <div class="facility-grid">
+
+        <div class="facility">
+            <div class="facility-icon">🔬</div>
+            <h3>Science Learning</h3>
+            <p>
+                Practical exploration, experiments and
+                scientific thinking to connect classroom
+                concepts with everyday life.
+            </p>
+        </div>
+
+        <div class="facility">
+            <div class="facility-icon">💻</div>
+            <h3>Digital Learning</h3>
+            <p>
+                Technology-supported learning and computer-based
+                activities that develop digital awareness
+                and essential skills.
+            </p>
+        </div>
+
+        <div class="facility">
+            <div class="facility-icon">📚</div>
+            <h3>Library & Reading</h3>
+            <p>
+                Encouraging reading habits, independent learning,
+                vocabulary development and curiosity.
+            </p>
+        </div>
+
+        <div class="facility">
+            <div class="facility-icon">🏃‍♀️</div>
+            <h3>Sports & Physical Education</h3>
+            <p>
+                Encouraging physical fitness, teamwork, confidence and active participation through sports and games.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STUDENT DEVELOPMENT -->
+
+<section class="facilities-section student-development">
+
+    <div class="section-heading">
+
+        <span class="section-tag">STUDENT DEVELOPMENT</span>
+
+        <h2>More Than <span>Academics</span></h2>
+
+        <p>
+            We believe education develops confidence,
+            creativity, teamwork and responsibility.
+        </p>
+
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-card">
+            <div class="card-icon">⚽</div>
+            <h3>Sports & Games</h3>
+            <p>
+                Encouraging teamwork, physical activity,
+                discipline and confidence through games
+                and sports activities.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <div class="card-icon">🎨</div>
+            <h3>Creative Activities</h3>
+            <p>
+                Art, cultural activities and opportunities
+                for students to express their ideas,
+                imagination and talents.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <div class="card-icon">🌱</div>
+            <h3>Environmental Awareness</h3>
+            <p>
+                Promoting cleanliness, hygiene,
+                environmental responsibility and
+                care for our surroundings.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CLOSING MESSAGE -->
+
+<section class="facility-message">
+
+    <h2>A Space to Learn, Grow and Succeed</h2>
+
+    <p>
+        We strive to create an environment where every student
+        can explore new ideas, develop practical skills,
+        discover her potential and build confidence for the future.
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <img src="logo.jpeg" alt="School Logo">
+
+            <h3>Government Girls Secondary School</h3>
+
+            <p>
+                Block V, Shah Faisal Colony,<br>
+                District Korangi, Karachi.
+            </p>
+
+            <p>SEMIS Code: 408090122</p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="academics.html">Academics</a>
+            <a href="admission.html">Admissions</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="facilities.html">Facilities</a>
+
+        </div>
+
+        <div>
+
+            <h3>Contact Information</h3>
+
+            <p>📍 Shah Faisal Colony, Karachi</p>
+            <p>✉ Add official school Gmail here</p>
+            <p>SEMIS: 408090122</p>
+
+        </div>
+
+        <div>
+
+            <h3>Connect With Us</h3>
+
+            <p>Follow our school activities and updates.</p>
+
+            <a href="#" target="_blank">Facebook</a><br>
+            <a href="#" target="_blank">Instagram</a><br>
+
+            <a href="contact.html" class="footer-contact-btn">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © <span class="year"></span>
+        Government Girls Secondary School Block V.
+        All Rights Reserved.
+    </div>
+
+</footer>
+
+<button id="backToTop" title="Back to top">↑</button>
+
+<script src="learn.js" defer></script>
+
+<script>
+document.querySelector(".year").textContent =
+    new Date().getFullYear();
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function() {
+    backToTop.style.display =
+        window.scrollY > 300 ? "block" : "none";
+});
+
+backToTop.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+</script>
+
+</body>
+</html>

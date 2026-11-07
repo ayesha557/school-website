@@ -1,0 +1,1217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | GGSS Block V</title>
+
+<link rel="stylesheet" href="idex.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* GALLERY PAGE */
+
+.gallery-hero {
+    position: relative;
+    min-height: 620px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+
+    background:
+        linear-gradient(120deg, rgba(56, 8, 23, 0.88), rgba(101, 13, 38, 0.65)),
+        url("gallery banner.jpeg") center/cover no-repeat;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .gallery-hero {
+        min-height: 530px;
+        padding: 60px 7%;
+    }
+}
+
+.gallery-hero::before,
+.gallery-hero::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(213,177,109,.35);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.gallery-hero::before {
+    width: 330px;
+    height: 330px;
+    top: -190px;
+    left: -70px;
+}
+
+.gallery-hero::after {
+    width: 410px;
+    height: 410px;
+    right: -150px;
+    bottom: -270px;
+}
+
+.gallery-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+}
+
+.gallery-hero .hero-tag {
+    color: #e6c27f;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.gallery-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.15;
+    margin: 13px 0;
+}
+
+.gallery-hero h2 span {
+    color: #e6c27f;
+}
+
+.gallery-hero p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #f3e9ec;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* MOVING EVENT STRIP */
+
+.gallery-marquee {
+    overflow: hidden;
+    background: #faf7f2;
+    border-bottom: 1px solid #eee3d8;
+    padding: 13px 0;
+    white-space: nowrap;
+}
+
+.gallery-marquee-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 34px;
+    min-width: max-content;
+    animation: galleryScroll 28s linear infinite;
+    color: #650d26;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.gallery-marquee-track span::after {
+    content: "✦";
+    color: #c49a4a;
+    margin-left: 34px;
+}
+
+@keyframes galleryScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* EVENT LISTING */
+
+.events-section {
+    padding: 75px 8%;
+    background: #fffaf6;
+}
+
+.events-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 32px;
+}
+
+.events-heading .section-tag {
+    color: #a78345;
+    letter-spacing: 3px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.events-heading h2 {
+    color: #650d26;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 40px);
+    margin: 10px 0;
+}
+
+.events-heading p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.event-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0 auto 38px;
+}
+
+.event-filter {
+    border: 1px solid #e6d7cc;
+    background: #fff;
+    color: #650d26;
+    border-radius: 30px;
+    padding: 10px 19px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.event-filter:hover,
+.event-filter.active {
+    background: #650d26;
+    color: #fff;
+    border-color: #650d26;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 27px;
+}
+
+.event-card {
+    min-width: 0;
+    background: #fff;
+    border: 1px solid #eee5df;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(56,8,23,.07);
+    transition: transform .35s ease, box-shadow .35s ease;
+    animation: cardRise .65s both;
+}
+
+.event-card:nth-child(2) { animation-delay: .08s; }
+.event-card:nth-child(3) { animation-delay: .16s; }
+.event-card:nth-child(4) { animation-delay: .24s; }
+.event-card:nth-child(5) { animation-delay: .32s; }
+.event-card:nth-child(6) { animation-delay: .40s; }
+
+@keyframes cardRise {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(56,8,23,.14);
+}
+
+.event-cover {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 235px;
+    padding: 0;
+    border: 0;
+    background: #eadfe0;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: left;
+}
+
+.event-cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.event-card:hover .event-cover img {
+    transform: scale(1.07);
+}
+
+.event-cover::after {
+    content: "VIEW EVENT  →";
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    padding: 9px 13px;
+    border-radius: 3px;
+    background: rgba(56,8,23,.88);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(7px);
+    transition: .3s ease;
+}
+
+.event-card:hover .event-cover::after,
+.event-cover:focus-visible::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.event-card-content {
+    padding: 21px 21px 23px;
+}
+
+.event-category {
+    display: inline-block;
+    color: #a78345;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.event-card-content h3 {
+    color: #650d26;
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    line-height: 1.3;
+    margin: 0 0 9px;
+}
+
+.event-card-content p {
+    min-height: 48px;
+    color: #777;
+    font-size: 11px;
+    line-height: 1.8;
+    margin: 0 0 15px;
+}
+
+.event-more {
+    border: 0;
+    padding: 0;
+    background: none;
+    color: #650d26;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.event-more:hover { color: #a78345; }
+
+/* EVENT POPUP */
+
+.event-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    background: rgba(24,5,12,.82);
+    backdrop-filter: blur(5px);
+}
+
+.event-modal.show { display: flex; }
+
+.event-modal-panel {
+    position: relative;
+    width: min(100%, 1000px);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fffaf6;
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0 25px 70px rgba(0,0,0,.3);
+    animation: popupIn .3s ease both;
+}
+
+@keyframes popupIn {
+    from { opacity: 0; transform: translateY(15px) scale(.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.event-modal-close {
+    position: sticky;
+    top: 0;
+    float: right;
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    background: #650d26;
+    color: #fff;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.event-modal-heading {
+    padding-right: 45px;
+    margin-bottom: 23px;
+}
+
+.event-modal-heading span {
+    color: #a78345;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.event-modal-heading h2 {
+    color: #650d26;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(25px, 4vw, 35px);
+    margin: 7px 0;
+}
+
+.event-modal-heading p {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.event-modal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.modal-photo {
+    height: 190px;
+    padding: 0;
+    border: 0;
+    border-radius: 7px;
+    overflow: hidden;
+    background: #eadfe0;
+    cursor: zoom-in;
+}
+
+.modal-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.modal-photo:hover img { transform: scale(1.06); }
+
+/* FULL IMAGE LIGHTBOX */
+
+.photo-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10010;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 70px;
+    background: rgba(0,0,0,.94);
+}
+
+.photo-lightbox.show { display: flex; }
+
+.photo-lightbox img {
+    max-width: 100%;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.4);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,.35);
+    color: #fff;
+    background: rgba(101,13,38,.8);
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    transition: .2s;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: #d5b16d;
+    color: #380817;
+}
+
+.lightbox-close { top: 20px; right: 25px; font-size: 28px; }
+.lightbox-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 18px; top: 50%; transform: translateY(-50%); }
+
+.lightbox-counter {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* COMMON FOOTER */
+
+.site-footer {
+    display: block;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    background: #380817;
+    color: white;
+    padding: 55px 8% 20px;
+}
+
+.site-footer,
+.site-footer * { box-sizing: border-box; }
+
+.site-footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 35px;
+    padding-bottom: 35px;
+}
+
+.site-footer-grid > div { min-width: 0; }
+
+.site-footer h3 {
+    color: #d5b16d;
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    margin: 0 0 18px;
+}
+
+.site-footer p,
+.site-footer a {
+    color: #e7dce0;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.site-footer p { margin: 0; }
+.site-footer a { text-decoration: none; overflow-wrap: anywhere; }
+.site-footer a:hover { color: #d5b16d; }
+
+.footer-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.footer-logo-row img {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    object-fit: contain;
+    background: white;
+    padding: 5px;
+    border: 2px solid #d5b16d;
+    border-radius: 50%;
+}
+
+.footer-school-name {
+    font-family: 'Playfair Display', serif;
+    color: #d5b16d;
+    font-size: 24px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.footer-contact-btn {
+    display: inline-block;
+    background: #d5b16d;
+    color: #380817 !important;
+    padding: 11px 20px;
+    margin-top: 12px;
+    border-radius: 3px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.footer-contact-btn:hover { background: white; }
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.footer-socials a {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d5b16d;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #d5b16d;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.footer-socials a:hover {
+    background: #d5b16d;
+    color: #380817;
+}
+
+.site-footer-bottom {
+    border-top: 1px solid #ffffff30;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    color: #d6c5cb;
+    font-size: 10px;
+    line-height: 2;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+    .event-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .site-footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 650px) {
+    .gallery-hero { min-height: 275px; padding: 50px 7%; }
+    .events-section { padding: 55px 6%; }
+    .event-cover { height: 215px; }
+    .event-modal-panel { padding: 24px 18px; }
+    .event-modal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .modal-photo { height: 155px; }
+}
+
+@media (max-width: 520px) {
+    .event-grid { grid-template-columns: 1fr; }
+    .event-cover { height: 245px; }
+    .event-card-content p { min-height: 0; }
+    .event-modal { padding: 10px; }
+    .event-modal-panel { max-height: 94vh; }
+    .event-modal-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .modal-photo { height: 130px; }
+    .photo-lightbox { padding: 55px 45px; }
+    .lightbox-prev { left: 5px; }
+    .lightbox-next { right: 5px; }
+    .site-footer { padding: 45px 7% 20px; }
+    .site-footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .footer-logo-row { justify-content: flex-start; }
+    .site-footer-bottom { flex-direction: column; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+    <div>Government of Sindh | School Education &amp; Literacy Department</div>
+    <div>📍 Shah Faisal Colony, Karachi</div>
+</div>
+
+<!-- HEADER -->
+
+<header class="header">
+    <div class="brand">
+        <img src="logo.jpeg" class="logo" alt="School Monogram">
+        <div>
+            <h1>Government Girls Secondary School<br>BLOCK V</h1>
+            <p>Shah Faisal Colony, District Korangi</p>
+        </div>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+
+    <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admissions</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="administration.html">Administration</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- GALLERY HERO -->
+
+<section class="gallery-hero">
+    <div class="gallery-hero-content">
+        <span class="hero-tag">OUR MEMORIES • OUR JOURNEY</span>
+        <h2>Moments That <span>Inspire</span></h2>
+        <p>Explore the celebrations, creativity, teamwork and learning experiences that make our school community special. Select an event to discover more photographs.</p>
+    </div>
+</section>
+
+<!-- MOVING STRIP -->
+
+<div class="gallery-marquee" aria-label="School events">
+    <div class="gallery-marquee-track">
+        <span>INDEPENDENCE DAY</span>
+        <span>DEFENCE DAY</span>
+        <span>MILAD</span>
+        <span>COLOURS DAY</span>
+        <span>STEAM MUQABLO 2025</span>
+        <span>STREAM SCHOOL ROUND 2026</span>
+        <span>INDEPENDENCE DAY</span>
+        <span>DEFENCE DAY</span>
+        <span>MILAD</span>
+        <span>COLOURS DAY</span>
+        <span>STEAM MUQABLO 2025</span>
+        <span>STREAM SCHOOL ROUND 2026</span>
+    </div>
+</div>
+
+<!-- EVENT CARDS -->
+
+<main class="events-section">
+
+    <div class="events-heading">
+        <span class="section-tag">CELEBRATIONS &amp; EXPERIENCES</span>
+        <h2>Explore Our School Events</h2>
+        <p>Every event brings opportunities to express, participate, learn and create lasting memories. Choose an event below to view its photo collection.</p>
+    </div>
+
+    <div class="event-filters" aria-label="Filter events">
+        <button class="event-filter active" type="button" data-filter="all">All Events</button>
+        <button class="event-filter" type="button" data-filter="celebrations">Celebrations</button>
+        <button class="event-filter" type="button" data-filter="steam">STEAM &amp; Learning</button>
+    </div>
+
+    <div class="event-grid" id="eventGrid">
+
+        <!-- INDEPENDENCE DAY -->
+
+        <article class="event-card" data-category="celebrations">
+            <button class="event-cover" type="button" data-open-event="independence" aria-label="View Independence Day photographs">
+                <img src="14aug1.jpeg" alt="Independence Day celebration at school">
+            </button>
+
+            <div class="event-card-content">
+                <span class="event-category">National Celebration</span>
+                <h3>Independence Day</h3>
+                <p>A celebration of freedom, unity, patriotism and pride in our homeland.</p>
+                <button class="event-more" type="button" data-open-event="independence">View More Photos →</button>
+            </div>
+        </article>
+
+        <!-- DEFENCE DAY -->
+
+        <article class="event-card" data-category="celebrations">
+            <button class="event-cover" type="button" data-open-event="defence" aria-label="View Defence Day photographs">
+                <!-- Replace with your actual Defence Day cover photo filename. -->
+                <img src="defence.jpg" alt="Defence Day school event">
+            </button>
+
+            <div class="event-card-content">
+                <span class="event-category">Remembrance &amp; Tribute</span>
+                <h3>Defence Day</h3>
+                <p>Honouring courage, sacrifice and the spirit of service to our country.</p>
+                <button class="event-more" type="button" data-open-event="defence">View More Photos →</button>
+            </div>
+        </article>
+
+        <!-- MILAD -->
+
+        <article class="event-card" data-category="celebrations">
+            <button class="event-cover" type="button" data-open-event="milad" aria-label="View Milad photographs">
+                <img src="milad1.jpeg" alt="Milad celebration at school">
+            </button>
+
+            <div class="event-card-content">
+                <span class="event-category">School Celebration</span>
+                <h3>Milad</h3>
+                <p>A gathering featuring remembrance, reflection and messages of peace and kindness.</p>
+                <button class="event-more" type="button" data-open-event="milad">View More Photos →</button>
+            </div>
+        </article>
+
+        <!-- COLOURS DAY -->
+
+        <article class="event-card" data-category="celebrations">
+            <button class="event-cover" type="button" data-open-event="colours" aria-label="View Colours Day photographs">
+                <img src="color1.jpeg" alt="Colours Day school activity">
+            </button>
+
+            <div class="event-card-content">
+                <span class="event-category">Creative Celebration</span>
+                <h3>Colours Day</h3>
+                <p>A cheerful celebration of colour, imagination, creativity and student expression.</p>
+                <button class="event-more" type="button" data-open-event="colours">View More Photos →</button>
+            </div>
+        </article>
+
+        <!-- STEAM MUQABLO 2025 -->
+
+        <article class="event-card" data-category="steam">
+            <button class="event-cover" type="button" data-open-event="muqablo" aria-label="View STEAM Muqablo 2025 photographs">
+                <img src="steam.jpeg" alt="Students taking part in STEAM Muqablo 2025">
+            </button>
+
+            <div class="event-card-content">
+                <span class="event-category">Innovation &amp; Creativity • 2025</span>
+                <h3>STEAM Muqablo 2025</h3>
+                <p>Students explore ideas, present creative work and learn through hands-on STEAM activities.</p>
+                <button class="event-more" type="button" data-open-event="muqablo">View More Photos →</button>
+            </div>
+        </article>
+
+        <!-- STREAM SCHOOL ROUND 2026 -->
+
+        <article class="event-card" data-category="steam">
+            <button class="event-cover" type="button" data-open-event="schoolround" aria-label="View STREAM School Round 2026 photographs">
+                <img src="steam4.jpeg" alt="STREAM School Round 2026 student activity">
+            </button>
+
+            <div class="event-card-content">
+                <span class="event-category">Student Projects • 2026</span>
+                <h3>STREAM School Round 2026</h3>
+                <p>A showcase of curiosity, teamwork, practical learning and problem-solving.</p>
+                <button class="event-more" type="button" data-open-event="schoolround">View More Photos →</button>
+            </div>
+        </article>
+
+    </div>
+</main>
+
+<!-- EVENT PHOTO POPUP -->
+
+<div class="event-modal" id="eventModal" aria-hidden="true">
+
+    <div class="event-modal-panel" role="dialog" aria-modal="true" aria-labelledby="eventModalTitle">
+
+        <button class="event-modal-close" id="eventModalClose" type="button" aria-label="Close event gallery">×</button>
+
+        <div class="event-modal-heading">
+            <span id="eventModalCategory">Event Gallery</span>
+            <h2 id="eventModalTitle">Event Photos</h2>
+            <p id="eventModalDescription">Explore photographs from this event.</p>
+        </div>
+
+        <div class="event-modal-grid" id="eventModalGrid"></div>
+
+    </div>
+</div>
+
+<!-- FULL-SIZE PHOTO LIGHTBOX -->
+
+<div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
+
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close photo">×</button>
+
+    <button class="lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous photo">❮</button>
+
+    <img id="lightboxImage" src="" alt="Selected event photograph">
+
+    <button class="lightbox-next" id="lightboxNext" type="button" aria-label="Next photo">❯</button>
+
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+
+</div>
+
+<!-- COMMON FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="site-footer-grid">
+
+        <div class="footer-brand">
+            <div class="footer-logo-row">
+                <img src="logo.jpeg" alt="GGSS Block V Logo">
+                <h2 class="footer-school-name">GGSS BLOCK V</h2>
+            </div>
+
+            <p>
+                Empowering Minds, Building Futures.
+                Committed to quality education, creativity
+                and the development of confident learners.
+            </p>
+        </div>
+
+        <div>
+            <h3>Contact Information</h3>
+            <p>📍 Government Girls Secondary School Block V</p>
+            <p>Shah Faisal Colony, District Korangi, Karachi</p>
+            <p>SEMIS Code: 408090122</p>
+            <p>📧 Add official school Gmail here</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <p><a href="about.html">About Our School</a></p>
+            <p><a href="academics.html">Academics</a></p>
+            <p><a href="admission.html">Admissions</a></p>
+            <p><a href="achievements.html">Achievements</a></p>
+            <p><a href="facilities.html">Facilities</a></p>
+            <p><a href="gallery.html">Gallery</a></p>
+        </div>
+
+        <div>
+            <h3>Connect With Us</h3>
+            <p>Follow our school activities and updates.</p>
+
+            <div class="footer-socials">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">ig</a>
+            </div>
+
+            <a href="contact.html" class="footer-contact-btn">
+                Contact Our School →
+            </a>
+        </div>
+
+    </div>
+
+    <div class="site-footer-bottom">
+        <p>
+            © <span class="year"></span>
+            Government Girls Secondary School Block V. All Rights Reserved.
+        </p>
+
+        <p>Designed with dedication for education.</p>
+    </div>
+
+</footer>
+
+<button id="backToTop">↑</button>
+
+<script src="learn.js" defer></script>
+
+<script>
+// EVENT PHOTO COLLECTIONS
+
+const eventCollections = {
+
+    independence: {
+        title: "Independence Day",
+        category: "National Celebration",
+        description: "A celebration of freedom, unity, patriotism and pride in our homeland.",
+        photos: [
+            "14aug.jpeg",
+            "14aug1.jpeg",
+            "14aug2.jpeg",
+            "14aug3.jpeg",
+            "14aug4.jpeg"
+        ]
+    },
+
+    defence: {
+        title: "Defence Day",
+        category: "Remembrance & Tribute",
+        description: "Honouring courage, sacrifice and the spirit of service to our country.",
+        // Add your actual Defence Day photo filenames here.
+        photos: [
+            "defence1.jpg",
+            "defence2.jpg",
+        
+        ]
+    },
+
+    milad: {
+        title: "Milad",
+        category: "School Celebration",
+        description: "A gathering featuring remembrance, reflection and messages of peace and kindness.",
+        photos: [
+            "milad1.jpeg",
+            "milad2.jpeg",
+            "milad3.jpeg",
+            "milad4.jpeg"
+        ]
+    },
+
+    colours: {
+        title: "Colours Day",
+        category: "Creative Celebration",
+        description: "A cheerful celebration of colour, imagination, creativity and student expression.",
+        photos: [
+            "color1.jpeg",
+            "color2.jpeg",
+            "color3.jpeg"
+        ]
+    },
+
+    muqablo: {
+        title: "STEAM Muqablo 2025",
+        category: "Innovation & Creativity • 2025",
+        description: "Students explore ideas, present creative work and learn through hands-on STEAM activities.",
+        photos: [
+            "tester.jpeg",
+            "steam.jpeg",
+            "steam1.jpeg",
+            "steam2.jpeg",
+            "steam3.jpeg"
+        ]
+    },
+
+    schoolround: {
+        title: "STREAM School Round 2026",
+        category: "Student Projects • 2026",
+        description: "A showcase of curiosity, teamwork, practical learning and problem-solving.",
+        photos: [
+            "steam4.jpeg",
+            "steam5.jpeg",
+            "steam6.jpeg",
+            "steam7.jpeg",
+            "steam8.jpeg",
+            "steam10.jpeg"
+        ]
+    }
+
+};
+
+const eventModal = document.getElementById("eventModal");
+const eventModalTitle = document.getElementById("eventModalTitle");
+const eventModalCategory = document.getElementById("eventModalCategory");
+const eventModalDescription = document.getElementById("eventModalDescription");
+const eventModalGrid = document.getElementById("eventModalGrid");
+
+const photoLightbox = document.getElementById("photoLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCounter = document.getElementById("lightboxCounter");
+
+let activePhotos = [];
+let activePhotoIndex = 0;
+
+
+// OPEN EVENT POPUP
+
+function openEventGallery(eventKey) {
+
+    const eventData = eventCollections[eventKey];
+
+    if (!eventData) return;
+
+    eventModalTitle.textContent = eventData.title;
+    eventModalCategory.textContent = eventData.category;
+    eventModalDescription.textContent = eventData.description;
+
+    activePhotos = eventData.photos;
+
+    eventModalGrid.innerHTML = activePhotos.map((photo, index) => `
+        <button class="modal-photo" type="button"
+            data-photo-index="${index}"
+            aria-label="Open photo ${index + 1}">
+
+            <img src="${photo}"
+                alt="${eventData.title} - photograph ${index + 1}"
+                loading="lazy">
+
+        </button>
+    `).join("");
+
+    eventModal.classList.add("show");
+    eventModal.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+// CLOSE EVENT POPUP
+
+function closeEventGallery() {
+
+    eventModal.classList.remove("show");
+    eventModal.setAttribute("aria-hidden", "true");
+
+    if (!photoLightbox.classList.contains("show")) {
+        document.body.style.overflow = "";
+    }
+}
+
+
+// OPEN FULL-SIZE PHOTO
+
+function showLightboxPhoto(index) {
+
+    if (!activePhotos.length) return;
+
+    activePhotoIndex = (index + activePhotos.length) % activePhotos.length;
+
+    lightboxImage.src = activePhotos[activePhotoIndex];
+
+    lightboxCounter.textContent =
+        `${activePhotoIndex + 1} / ${activePhotos.length}`;
+
+    photoLightbox.classList.add("show");
+    photoLightbox.setAttribute("aria-hidden", "false");
+}
+
+
+// CLOSE FULL-SIZE PHOTO
+
+function closeLightbox() {
+
+    photoLightbox.classList.remove("show");
+    photoLightbox.setAttribute("aria-hidden", "true");
+
+    lightboxImage.src = "";
+
+    if (!eventModal.classList.contains("show")) {
+        document.body.style.overflow = "";
+    }
+}
+
+
+// CLICK EVENT CARD
+
+document.getElementById("eventGrid").addEventListener("click", function(event) {
+
+    const trigger = event.target.closest("[data-open-event]");
+
+    if (trigger) {
+        openEventGallery(trigger.dataset.openEvent);
+    }
+
+});
+
+
+// CLICK PHOTO INSIDE EVENT POPUP
+
+eventModalGrid.addEventListener("click", function(event) {
+
+    const photoButton = event.target.closest("[data-photo-index]");
+
+    if (photoButton) {
+        showLightboxPhoto(Number(photoButton.dataset.photoIndex));
+    }
+
+});
+
+
+// CLOSE BUTTONS
+
+document.getElementById("eventModalClose")
+    .addEventListener("click", closeEventGallery);
+
+eventModal.addEventListener("click", function(event) {
+    if (event.target === eventModal) {
+        closeEventGallery();
+    }
+});
+
+document.getElementById("lightboxClose")
+    .addEventListener("click", closeLightbox);
+
+
+// NEXT AND PREVIOUS PHOTOS
+
+document.getElementById("lightboxPrev")
+    .addEventListener("click", function() {
+        showLightboxPhoto(activePhotoIndex - 1);
+    });
+
+document.getElementById("lightboxNext")
+    .addEventListener("click", function() {
+        showLightboxPhoto(activePhotoIndex + 1);
+    });
+
+photoLightbox.addEventListener("click", function(event) {
+    if (event.target === photoLightbox) {
+        closeLightbox();
+    }
+});
+
+
+// KEYBOARD CONTROLS
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        if (photoLightbox.classList.contains("show")) {
+            closeLightbox();
+        }
+
+        else if (eventModal.classList.contains("show")) {
+            closeEventGallery();
+        }
+    }
+
+    if (photoLightbox.classList.contains("show")) {
+
+        if (event.key === "ArrowRight") {
+            showLightboxPhoto(activePhotoIndex + 1);
+        }
+
+        if (event.key === "ArrowLeft") {
+            showLightboxPhoto(activePhotoIndex - 1);
+        }
+    }
+
+});
+
+
+// EVENT CATEGORY FILTERS
+
+document.querySelectorAll(".event-filter").forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        document.querySelectorAll(".event-filter").forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const selectedFilter = button.dataset.filter;
+
+        document.querySelectorAll(".event-card").forEach(function(card) {
+
+            card.style.display =
+                selectedFilter === "all" ||
+                card.dataset.category === selectedFilter
+                ? "block" : "none";
+
+        });
+
+    });
+
+});
+
+
+// AUTOMATIC COPYRIGHT YEAR
+
+document.querySelectorAll(".year").forEach(function(element) {
+    element.textContent = new Date().getFullYear();
+});
+
+</script>
+
+</body>
+</html>

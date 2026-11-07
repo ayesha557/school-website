@@ -1,0 +1,1135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education Leadership | GGSS Block V</title>
+
+<link rel="stylesheet" href="idex.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* LEADERSHIP PAGE */
+
+.leadership-page {
+    background: #fffaf6;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HERO BANNER */
+
+.leadership-hero {
+    position: relative;
+    min-height: 330px;
+    padding: 65px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(120deg, #380817, #650d26 68%, #8c2946);
+}
+
+.leadership-hero::before,
+.leadership-hero::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(213,177,109,.32);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.leadership-hero::before {
+    width: 350px;
+    height: 350px;
+    left: -120px;
+    top: -210px;
+}
+
+.leadership-hero::after {
+    width: 440px;
+    height: 440px;
+    right: -180px;
+    bottom: -310px;
+}
+
+.leadership-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.leadership-hero .eyebrow {
+    color: #e6c27f;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.leadership-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(37px, 5vw, 58px);
+    line-height: 1.15;
+    margin: 14px 0;
+}
+
+.leadership-hero h2 span {
+    color: #e6c27f;
+}
+
+.leadership-hero p {
+    max-width: 690px;
+    margin: auto;
+    color: #f3e9ec;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* LEADERSHIP INTRO */
+
+.leadership-intro {
+    padding: 65px 8% 35px;
+    text-align: center;
+}
+
+.leadership-intro .section-tag {
+    color: #a78345;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.leadership-intro h2 {
+    color: #650d26;
+    font: 700 clamp(28px, 4vw, 39px)/1.2 'Playfair Display', serif;
+    margin: 12px 0;
+}
+
+.leadership-intro p {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #70666a;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* LEADERSHIP PILLARS */
+
+.leadership-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    padding: 0 8% 55px;
+}
+
+.pillar {
+    text-align: center;
+    padding: 18px 12px;
+    background: #f7eee7;
+    border: 1px solid #eee0d6;
+    border-radius: 8px;
+}
+
+.pillar strong {
+    display: block;
+    color: #650d26;
+    font: 600 15px 'Playfair Display', serif;
+    margin-bottom: 5px;
+}
+
+.pillar span {
+    color: #84787b;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+/* LEADERSHIP GROUPS */
+
+.leadership-group {
+    padding: 55px 8% 65px;
+}
+
+.leadership-group.provincial {
+    background: #fff;
+}
+
+.leadership-group.regional {
+    background: #faf7f2;
+}
+
+.leadership-group.school-level {
+    background: #fff;
+}
+
+.group-heading {
+    max-width: 720px;
+    text-align: center;
+    margin: 0 auto 36px;
+}
+
+.group-heading span {
+    color: #a78345;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.group-heading h2 {
+    color: #650d26;
+    font: 700 clamp(27px, 3.5vw, 36px)/1.2 'Playfair Display', serif;
+    margin: 10px 0;
+}
+
+.group-heading p {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* LEADER CARDS */
+
+.leaders-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.leaders-grid.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 850px;
+    margin: auto;
+}
+
+.leader-card {
+    position: relative;
+    min-width: 0;
+    padding: 30px 23px 25px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #eee2dc;
+    border-radius: 13px;
+    box-shadow: 0 8px 24px rgba(56,8,23,.06);
+    transition: transform .3s ease, box-shadow .3s ease;
+    animation: leaderAppear .65s both;
+}
+
+.leader-card:nth-child(2) {
+    animation-delay: .08s;
+}
+
+.leader-card:nth-child(3) {
+    animation-delay: .16s;
+}
+
+@keyframes leaderAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.leader-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 34px rgba(56,8,23,.12);
+}
+
+.leader-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 22%;
+    width: 56%;
+    height: 3px;
+    background: #d5b16d;
+    border-radius: 0 0 5px 5px;
+}
+
+/* LEADER PHOTOS */
+/* Original leader-avatar1 to leader-avatar6 classes are preserved from idex.css. */
+
+.leader-photo {
+    position: relative;
+    width: 116px;
+    height: 116px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    outline: 2px solid #d5b16d;
+    background-color: #eadde1;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 5px 18px rgba(56,8,23,.14);
+}
+
+.avatar-initials {
+    position: absolute;
+    right: -3px;
+    bottom: 0;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #650d26;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .3px;
+}
+
+.leader-role {
+    display: inline-block;
+    margin-bottom: 9px;
+    color: #a78345;
+    font-size: 9px;
+    line-height: 1.6;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.leader-card h3 {
+    color: #650d26;
+    font: 700 21px/1.3 'Playfair Display', serif;
+    margin: 0 0 5px;
+}
+
+.leader-designation {
+    color: #8b7c80;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0 0 17px;
+}
+
+.leader-focus {
+    padding: 15px 15px 14px;
+    text-align: left;
+    background: #faf7f2;
+    border-left: 3px solid #d5b16d;
+    border-radius: 0 6px 6px 0;
+}
+
+.leader-focus strong {
+    display: block;
+    color: #650d26;
+    font-size: 10px;
+    letter-spacing: .6px;
+    margin-bottom: 6px;
+}
+
+.leader-focus p {
+    color: #70666a;
+    font-size: 11px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.leader-source {
+    display: inline-block;
+    margin-top: 14px;
+    color: #8a662e;
+    font-size: 10px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.leader-source:hover {
+    color: #650d26;
+    text-decoration: underline;
+}
+
+/* TRANSPARENCY NOTE */
+
+.leadership-note {
+    max-width: 1050px;
+    margin: 0 auto 60px;
+    padding: 23px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #f5ecdf;
+    border: 1px solid #eadbc8;
+    border-radius: 10px;
+}
+
+.leadership-note p {
+    color: #655a5d;
+    font-size: 11px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.leadership-note a {
+    flex-shrink: 0;
+    color: #650d26;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.leadership-note a:hover {
+    color: #a78345;
+}
+
+/* SHARED PURPOSE BANNER */
+
+.leadership-message {
+    padding: 55px 8%;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(110deg, #650d26, #380817);
+}
+
+.leadership-message h2 {
+    color: #e6c27f;
+    font: 700 clamp(26px, 3.5vw, 35px)/1.25 'Playfair Display', serif;
+    margin: 0 0 12px;
+}
+
+.leadership-message p {
+    max-width: 760px;
+    margin: auto;
+    color: #f2e5e9;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* COMMON FOOTER */
+
+.site-footer {
+    display: block;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    background: #380817;
+    color: white;
+    padding: 55px 8% 20px;
+}
+
+.site-footer,
+.site-footer * {
+    box-sizing: border-box;
+}
+
+.site-footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 35px;
+    padding-bottom: 35px;
+}
+
+.site-footer-grid > div {
+    min-width: 0;
+}
+
+.site-footer h3 {
+    color: #d5b16d;
+    font: 600 21px 'Playfair Display', serif;
+    margin: 0 0 18px;
+}
+
+.site-footer p,
+.site-footer a {
+    color: #e7dce0;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer a {
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.site-footer a:hover {
+    color: #d5b16d;
+}
+
+.footer-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.footer-logo-row img {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    object-fit: contain;
+    background: #fff;
+    padding: 5px;
+    border: 2px solid #d5b16d;
+    border-radius: 50%;
+}
+
+.footer-school-name {
+    color: #d5b16d;
+    font: 700 24px/1.3 'Playfair Display', serif;
+    margin: 0;
+}
+
+.footer-contact-btn {
+    display: inline-block;
+    background: #d5b16d;
+    color: #380817 !important;
+    padding: 11px 20px;
+    margin-top: 12px;
+    border-radius: 3px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.footer-contact-btn:hover {
+    background: #fff;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.footer-socials a {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d5b16d;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #d5b16d;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.footer-socials a:hover {
+    background: #d5b16d;
+    color: #380817;
+}
+
+.site-footer-bottom {
+    border-top: 1px solid #ffffff30;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    color: #d6c5cb;
+    font-size: 10px;
+    line-height: 2;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 950px) {
+    .leaders-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .site-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .leadership-pillars {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 650px) {
+    .leadership-hero {
+        min-height: 285px;
+        padding: 50px 7%;
+    }
+
+    .leadership-group {
+        padding: 48px 6%;
+    }
+
+    .leaders-grid,
+    .leaders-grid.two {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    .leadership-intro {
+        padding: 50px 6% 30px;
+    }
+
+    .leadership-pillars {
+        padding: 0 6% 42px;
+    }
+
+    .leadership-note {
+        margin: 0 6% 45px;
+        display: block;
+    }
+
+    .leadership-note a {
+        display: inline-block;
+        margin-top: 10px;
+    }
+}
+
+@media(max-width: 520px) {
+    .site-footer {
+        padding: 45px 7% 20px;
+    }
+
+    .site-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .footer-logo-row {
+        justify-content: flex-start;
+    }
+
+    .site-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body class="leadership-page">
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+    <div>Government of Sindh | School Education &amp; Literacy Department</div>
+    <div>📍 Shah Faisal Colony, Karachi</div>
+</div>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="brand">
+        <img src="logo.jpeg" class="logo" alt="School Monogram">
+
+        <div>
+            <h1>Government Girls Secondary School<br>BLOCK V</h1>
+            <p>Shah Faisal Colony, District Korangi</p>
+        </div>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+
+    <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admissions</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="administration.html" class="active">Administration</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="leadership-hero">
+    <div class="leadership-hero-content">
+        <span class="eyebrow">SCHOOL EDUCATION &amp; LITERACY DEPARTMENT • SINDH</span>
+
+        <h2>Leadership That <span>Shapes Education</span></h2>
+
+        <p>
+            Recognising the education leaders who guide policy,
+            strengthen institutions and support learning across Sindh —
+            from provincial direction to district coordination and
+            school leadership.
+        </p>
+    </div>
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="leadership-intro">
+
+    <span class="section-tag">A SHARED COMMITMENT</span>
+
+    <h2>Working Together for Every Learner</h2>
+
+    <p>
+        Strong education systems are built through shared responsibility.
+        Provincial leadership sets direction, departmental and regional
+        teams support implementation, district officers coordinate school
+        operations, and school leaders bring educational priorities into
+        everyday learning.
+    </p>
+
+</section>
+
+<!-- LEADERSHIP PILLARS -->
+
+<div class="leadership-pillars">
+
+    <div class="pillar">
+        <strong>Provincial Direction</strong>
+        <span>Policy, access and educational priorities</span>
+    </div>
+
+    <div class="pillar">
+        <strong>Departmental Leadership</strong>
+        <span>Planning, systems and implementation</span>
+    </div>
+
+    <div class="pillar">
+        <strong>District Support</strong>
+        <span>Coordination, supervision and school support</span>
+    </div>
+
+    <div class="pillar">
+        <strong>School Leadership</strong>
+        <span>Teaching, learning and student development</span>
+    </div>
+
+</div>
+
+<!-- PROVINCIAL LEADERSHIP -->
+
+<section class="leadership-group provincial">
+
+    <div class="group-heading">
+
+        <span>PROVINCIAL LEVEL</span>
+
+        <h2>Leadership of School Education in Sindh</h2>
+
+        <p>
+            Provincial leadership provides the policy direction and
+            departmental stewardship for education across the province.
+        </p>
+
+    </div>
+
+    <div class="leaders-grid two">
+
+        <!-- EDUCATION MINISTER -->
+
+        <article class="leader-card">
+
+            <div class="leader-photo leader-avatar3" role="img" aria-label="Portrait of Syed Sardar Ali Shah">
+                <span class="avatar-initials">SS</span>
+            </div>
+
+            <span class="leader-role">
+                MINISTER • SCHOOL EDUCATION &amp; LITERACY
+            </span>
+
+            <h3>Syed Sardar Ali Shah</h3>
+
+            <p class="leader-designation">Government of Sindh</p>
+
+            <div class="leader-focus">
+                <strong>PUBLICLY STATED EDUCATION PRIORITIES</strong>
+
+                <p>
+                    His public messages place children and learning
+                    outcomes at the centre of education, with emphasis
+                    on quality schooling, completion of secondary
+                    education and preparing learners for the
+                    opportunities and challenges of the 21st century.
+                </p>
+            </div>
+
+            <a class="leader-source"
+               href="https://eportal.sindheducation.gov.pk/"
+               target="_blank" rel="noopener">
+                Read the Minister's official message ↗
+            </a>
+
+        </article>
+
+        <!-- SECRETARY EDUCATION -->
+
+        <article class="leader-card">
+
+            <div class="leader-photo leader-avatar4" role="img" aria-label="Portrait of Zahid Ali Abbasi">
+                <span class="avatar-initials">ZA</span>
+            </div>
+
+            <span class="leader-role">
+                SECRETARY • SCHOOL EDUCATION &amp; LITERACY
+            </span>
+
+            <h3>Zahid Ali Abbasi</h3>
+
+            <p class="leader-designation">Government of Sindh</p>
+
+            <div class="leader-focus">
+                <strong>PUBLICLY STATED DEPARTMENTAL PRIORITIES</strong>
+
+                <p>
+                    His departmental message highlights widening access
+                    to quality education beyond primary level,
+                    strengthening secondary education and improving
+                    school facilities. Departmental reforms also focus
+                    on more efficient and transparent services for educators.
+                </p>
+            </div>
+
+            <a class="leader-source"
+               href="https://www.sseip.gos.pk/"
+               target="_blank" rel="noopener">
+                Read the Secretary's project message ↗
+            </a>
+
+        </article>
+
+    </div>
+</section>
+
+<!-- KARACHI AND KORANGI LEADERSHIP -->
+
+<section class="leadership-group regional">
+
+    <div class="group-heading">
+
+        <span>REGIONAL &amp; DISTRICT LEVEL</span>
+
+        <h2>Leadership Supporting Karachi Schools</h2>
+
+        <p>
+            Regional and district education teams help connect
+            departmental priorities with the needs of schools,
+            teachers and students.
+        </p>
+
+    </div>
+
+    <div class="leaders-grid">
+
+        <!-- DIRECTOR SCHOOL EDUCATION -->
+
+        <article class="leader-card">
+
+            <div class="leader-photo leader-avatar5" role="img" aria-label="Portrait of Mirza Arshad Baig">
+                <span class="avatar-initials">MB</span>
+            </div>
+
+            <span class="leader-role">
+                DIRECTOR • SCHOOL EDUCATION (ES&amp;HS)
+            </span>
+
+            <h3>Mirza Arshad Baig</h3>
+
+            <p class="leader-designation">Karachi Region</p>
+
+            <div class="leader-focus">
+                <strong>ROLE-BASED LEADERSHIP FOCUS</strong>
+
+                <p>
+                    Regional leadership supports the coordination and
+                    oversight of elementary, secondary and higher
+                    secondary education, helping translate departmental
+                    direction into effective support for schools across Karachi.
+                </p>
+            </div>
+
+        </article>
+
+        <!-- DISTRICT EDUCATION OFFICER -->
+
+        <article class="leader-card">
+
+            <div class="leader-photo leader-avatar2" role="img" aria-label="Portrait of Imdad Ali Lashari">
+                <span class="avatar-initials">IL</span>
+            </div>
+
+            <span class="leader-role">
+                DISTRICT EDUCATION OFFICER • ES&amp;HS
+            </span>
+
+            <h3>Imdad Ali Lashari</h3>
+
+            <p class="leader-designation">District Korangi, Karachi</p>
+
+            <div class="leader-focus">
+                <strong>ROLE-BASED LEADERSHIP FOCUS</strong>
+
+                <p>
+                    District-level leadership brings schools and the
+                    education department together through coordination,
+                    monitoring and administrative support, with the aim
+                    of strengthening school functioning and students'
+                    learning opportunities.
+                </p>
+            </div>
+
+            <a class="leader-source"
+               href="https://checker.sindheducation.gov.pk/CheckBiometrics.aspx?mne=0&amp;semisid=701020650"
+               target="_blank" rel="noopener">
+                View SE&amp;LD employee record ↗
+            </a>
+
+        </article>
+
+        <!-- DEPUTY DEO / STEAM FOCAL PERSON -->
+
+        <article class="leader-card">
+
+            <div class="leader-photo leader-avatar6" role="img" aria-label="Portrait of Afshan Naz Baig">
+                <span class="avatar-initials">AN</span>
+            </div>
+
+            <span class="leader-role">
+                DEPUTY DEO • DISTRICT KORANGI
+            </span>
+
+            <h3>Afshan Naz Baig</h3>
+
+            <p class="leader-designation">District STEAM Focal Person</p>
+
+            <div class="leader-focus">
+                <strong>LEADERSHIP FOCUS • STEAM &amp; PRACTICAL LEARNING</strong>
+
+                <p>
+                    Her work in district STEAM activities highlights
+                    the value of practical, student-centred learning.
+                    Public reporting has recognised her encouragement
+                    of active teaching, creativity and opportunities
+                    for students to apply classroom concepts.
+                </p>
+            </div>
+
+            <a class="leader-source"
+               href="https://www.dawn.com/news/1883945"
+               target="_blank" rel="noopener">
+                Read the STEAM feature ↗
+            </a>
+
+        </article>
+
+    </div>
+</section>
+
+<!-- SCHOOL LEVEL LEADERSHIP -->
+
+<section class="leadership-group school-level">
+
+    <div class="group-heading">
+
+        <span>SCHOOL LEVEL</span>
+
+        <h2>Leadership Close to Our Students</h2>
+
+        <p>
+            School leadership turns the wider educational vision into
+            a supportive environment for teachers and learners every day.
+        </p>
+
+    </div>
+
+    <div class="leaders-grid two">
+
+        <!-- HEADMASTER -->
+
+        <article class="leader-card">
+
+            <div class="leader-photo leader-avatar1" role="img" aria-label="Portrait of Taj Ahmed Alvi">
+                <span class="avatar-initials">TA</span>
+            </div>
+
+            <span class="leader-role">HEADMASTER</span>
+
+            <h3>Taj Ahmed Alvi</h3>
+
+            <p class="leader-designation">
+                Government Girls Secondary School Block V
+            </p>
+
+            <div class="leader-focus">
+                <strong>SCHOOL LEADERSHIP FOCUS</strong>
+
+                <p>
+                    School-level leadership is centred on guiding teachers,
+                    supporting a respectful and purposeful learning
+                    environment, encouraging student participation and
+                    helping every learner develop knowledge, confidence
+                    and responsibility.
+                </p>
+            </div>
+
+        </article>
+
+        <!-- SHARED EDUCATIONAL PURPOSE -->
+
+        <div class="leader-card school-message-card">
+
+            <div class="leader-photo school-symbol" role="img" aria-label="School monogram">
+                <span class="avatar-initials">GGSS</span>
+            </div>
+
+            <span class="leader-role">OUR SHARED RESPONSIBILITY</span>
+
+            <h3>Every Learner Matters</h3>
+
+            <p class="leader-designation">
+                A commitment shared by the education community
+            </p>
+
+            <div class="leader-focus">
+                <strong>OUR EDUCATIONAL PURPOSE</strong>
+
+                <p>
+                    When leadership, teachers, families and communities
+                    work together, schools become places where girls
+                    can learn with confidence, discover their abilities
+                    and prepare to contribute positively to society.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TRANSPARENCY NOTE AND OFFICIAL REFERENCES -->
+
+<div class="leadership-note">
+
+    <p>
+        <strong>About these profiles:</strong>
+        The Minister's and Secretary's summaries are based on their
+        publicly available education messages and departmental
+        priorities. For regional, district and school roles, the text
+        describes the responsibilities and educational focus of each
+        office; it is not presented as a personal quotation or an
+        officially published individual mission statement.
+    </p>
+
+    <a href="https://www.sindh.gov.pk/sindh-cabinet"
+       target="_blank" rel="noopener">
+        Sindh Cabinet ↗
+    </a>
+
+</div>
+
+<!-- SHARED PURPOSE BANNER -->
+
+<section class="leadership-message">
+
+    <h2>One Shared Vision. Better Opportunities for Every Child.</h2>
+
+    <p>
+        From provincial planning to classroom practice, education
+        is a collective effort. Strong leadership creates the
+        conditions in which teachers can teach, students can thrive
+        and communities can move forward.
+    </p>
+
+</section>
+
+<!-- COMMON FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="site-footer-grid">
+
+        <div class="footer-brand">
+
+            <div class="footer-logo-row">
+                <img src="logo.jpeg" alt="GGSS Block V Logo">
+                <h2 class="footer-school-name">GGSS BLOCK V</h2>
+            </div>
+
+            <p>
+                Empowering Minds, Building Futures.
+                Committed to quality education, creativity
+                and the development of confident learners.
+            </p>
+
+        </div>
+
+        <div>
+            <h3>Contact Information</h3>
+            <p>📍 Government Girls Secondary School Block V</p>
+            <p>Shah Faisal Colony, District Korangi, Karachi</p>
+            <p>SEMIS Code: 408090122</p>
+            <p>📧 Add official school Gmail here</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <p><a href="about.html">About Our School</a></p>
+            <p><a href="academics.html">Academics</a></p>
+            <p><a href="admission.html">Admissions</a></p>
+            <p><a href="achievements.html">Achievements</a></p>
+            <p><a href="facilities.html">Facilities</a></p>
+            <p><a href="gallery.html">Gallery</a></p>
+        </div>
+
+        <div>
+            <h3>Connect With Us</h3>
+
+            <p>Follow our school activities and updates.</p>
+
+            <div class="footer-socials">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">ig</a>
+            </div>
+
+            <a href="contact.html" class="footer-contact-btn">
+                Contact Our School →
+            </a>
+        </div>
+
+    </div>
+
+    <div class="site-footer-bottom">
+
+        <p>
+            © <span class="year"></span>
+            Government Girls Secondary School Block V. All Rights Reserved.
+        </p>
+
+        <p>Designed with dedication for education.</p>
+
+    </div>
+
+</footer>
+
+<button id="backToTop">↑</button>
+
+<script src="learn.js" defer></script>
+
+<script>
+document.querySelectorAll(".year").forEach(function(element) {
+    element.textContent = new Date().getFullYear();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | GGSS Block V</title>
+
+<link rel="stylesheet" href="idex.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* CONTACT PAGE */
+
+.contact-page {
+    background: #fffaf6;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HERO BANNER */
+
+.contact-hero {
+    min-height: 320px;
+    background:
+        linear-gradient(90deg, rgba(56,8,23,.94), rgba(101,13,38,.65)),
+        url("school-building.jpeg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 55px 8%;
+    color: white;
+}
+
+.contact-hero-content {
+    max-width: 650px;
+}
+
+.contact-hero span {
+    color: #d5b16d;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.contact-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 52px);
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.contact-hero p {
+    color: #f5e9ed;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* INTRODUCTION */
+
+.contact-intro {
+    text-align: center;
+    padding: 65px 8% 35px;
+}
+
+.contact-intro span {
+    color: #a78345;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.contact-intro h2 {
+    font-family: 'Playfair Display', serif;
+    color: #650d26;
+    font-size: 34px;
+    margin: 12px 0;
+}
+
+.contact-intro p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* MAIN CONTACT SECTION */
+
+.contact-container {
+    padding: 35px 8% 75px;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 35px;
+    align-items: stretch;
+}
+
+/* CONTACT INFORMATION */
+
+.contact-info {
+    background: #380817;
+    color: white;
+    padding: 38px 30px;
+    border-radius: 8px;
+}
+
+.contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    color: #d5b16d;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.contact-info > p {
+    color: #e7dce0;
+    font-size: 12px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.contact-detail {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    background: #ffffff15;
+    border: 1px solid #d5b16d;
+    border-radius: 50%;
+    color: #d5b16d;
+    font-size: 19px;
+}
+
+.contact-detail h4 {
+    color: #d5b16d;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.contact-detail p {
+    color: #eee1e5;
+    font-size: 12px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.contact-info .school-note {
+    margin-top: 35px;
+    padding: 17px;
+    border-left: 3px solid #d5b16d;
+    background: #ffffff10;
+    color: #f2e7eb;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* CONTACT FORM */
+
+.contact-form {
+    background: white;
+    padding: 38px 35px;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px #0000000c;
+    border: 1px solid #eee5df;
+}
+
+.contact-form h3 {
+    color: #650d26;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.contact-form > p {
+    color: #888;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    color: #650d26;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #e5d9d4;
+    border-radius: 4px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #444;
+    background: #fffdfb;
+    transition: .3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #a78345;
+    box-shadow: 0 0 0 3px #d5b16d20;
+}
+
+.form-group textarea {
+    height: 125px;
+    resize: vertical;
+}
+
+.contact-submit {
+    border: none;
+    background: #650d26;
+    color: white;
+    padding: 14px 27px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.contact-submit:hover {
+    background: #d5b16d;
+    color: #380817;
+    transform: translateY(-3px);
+}
+
+/* SCHOOL LOCATION */
+
+.location-section {
+    background: #faf7f2;
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.location-section span {
+    color: #a78345;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.location-section h2 {
+    color: #650d26;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin: 12px 0;
+}
+
+.location-section p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.location-card {
+    max-width: 750px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    border-bottom: 3px solid #d5b16d;
+    box-shadow: 0 8px 25px #00000008;
+}
+
+.location-card .location-symbol {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.location-card h3 {
+    color: #650d26;
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.location-card p {
+    margin: 0;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 520px) {
+    .contact-hero {
+        min-height: 280px;
+        padding: 40px 7%;
+    }
+
+    .contact-intro {
+        padding: 50px 7% 25px;
+    }
+
+    .contact-container {
+        padding: 25px 6% 55px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 28px 22px;
+    }
+
+    .contact-intro h2,
+    .location-section h2 {
+        font-size: 28px;
+    }
+
+    .location-section {
+        padding: 50px 6%;
+    }
+
+    .location-card {
+        padding: 25px 18px;
+    }
+}
+
+</style>
+</head>
+
+<body class="contact-page">
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+    <div>Government of Sindh | School Education & Literacy Department</div>
+    <div>📍 Shah Faisal Colony, Karachi</div>
+</div>
+
+<!-- HEADER / NAVIGATION -->
+
+<header class="header">
+
+    <div class="brand">
+        <img src="logo.jpeg" class="logo" alt="School Monogram">
+        <div>
+            <h1>Government Girls Secondary School<br>BLOCK V</h1>
+            <p>Shah Faisal Colony, District Korangi</p>
+        </div>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admissions</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="administration.html">Administration</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="contact-hero">
+    <div class="contact-hero-content">
+        <span>WE WOULD LOVE TO HEAR FROM YOU</span>
+        <h2>Get in Touch<br>With Our School</h2>
+        <p>
+            Have a question or need information?
+            We welcome your queries and look forward
+            to connecting with parents, students and visitors.
+        </p>
+    </div>
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="contact-intro">
+    <span>CONTACT OUR INSTITUTION</span>
+    <h2>We're Here to Help</h2>
+    <p>
+        Whether you want to learn about admissions, academic activities
+        or school information, please feel free to contact us.
+    </p>
+</section>
+
+<!-- CONTACT DETAILS AND FORM -->
+
+<section class="contact-container">
+
+    <!-- CONTACT INFORMATION -->
+
+    <div class="contact-info">
+
+        <h3>Contact Information</h3>
+
+        <p>
+            Connect with Government Girls Secondary School Block V.
+            We welcome communication from parents, students and the community.
+        </p>
+
+        <div class="contact-detail">
+            <div class="contact-icon">📍</div>
+            <div>
+                <h4>Our Address</h4>
+                <p>
+                    Government Girls Secondary School Block V,<br>
+                    Shah Faisal Colony, District Korangi,<br>
+                    Karachi, Pakistan.
+                </p>
+            </div>
+        </div>
+
+        <div class="contact-detail">
+            <div class="contact-icon">🏫</div>
+            <div>
+                <h4>School Information</h4>
+                <p>SEMIS Code: 408090122</p>
+            </div>
+        </div>
+
+        <div class="contact-detail">
+            <div class="contact-icon">✉️</div>
+            <div>
+                <h4>Email Address</h4>
+                <p>Add the official school Gmail address here.</p>
+            </div>
+        </div>
+
+        <div class="school-note">
+            <strong>Our Commitment</strong><br>
+            We believe that strong communication between school,
+            parents and the community supports student success.
+        </div>
+
+    </div>
+
+    <!-- CONTACT FORM -->
+
+    <div class="contact-form">
+
+        <h3>Send Us a Message</h3>
+
+        <p>
+            Complete the form below and share your question
+            or message with our school.
+        </p>
+
+        <form name="school-contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field">
+
+            <input type="hidden" name="form-name" value="school-contact">
+
+            <p hidden>
+                <label>
+                    Don't fill this out:
+                    <input name="bot-field">
+                </label>
+            </p>
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Select a subject</option>
+                    <option value="Admission Inquiry">Admission Inquiry</option>
+                    <option value="Academic Information">Academic Information</option>
+                    <option value="General Question">General Question</option>
+                    <option value="Parent Communication">Parent Communication</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message"
+                          placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit">
+                Send Message →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- LOCATION -->
+
+<section class="location-section">
+
+    <span>FIND OUR SCHOOL</span>
+    <h2>Visit Our Institution</h2>
+
+    <p>
+        We are located in Shah Faisal Colony,
+        District Korangi, Karachi.
+    </p>
+
+    <div class="location-card">
+        <div class="location-symbol">📍</div>
+        <h3>Government Girls Secondary School Block V</h3>
+        <p>
+            Shah Faisal Colony, District Korangi, Karachi, Pakistan.
+        </p>
+    </div>
+
+</section>
+
+<!-- COMMON FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="site-footer-grid">
+
+        <div class="footer-brand">
+
+            <div class="footer-logo-row">
+                <img src="logo.jpeg" alt="GGSS Block V Logo">
+                <h2 class="footer-school-name">GGSS BLOCK V</h2>
+            </div>
+
+            <p>
+                Empowering Minds, Building Futures.
+                Committed to quality education, creativity
+                and the development of confident learners.
+            </p>
+
+        </div>
+
+        <div>
+            <h3>Contact Information</h3>
+            <p>📍 Government Girls Secondary School Block V</p>
+            <p>Shah Faisal Colony, District Korangi, Karachi</p>
+            <p>SEMIS Code: 408090122</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <p><a href="about.html">About Our School</a></p>
+            <p><a href="academics.html">Academics</a></p>
+            <p><a href="admission.html">Admissions</a></p>
+            <p><a href="achievements.html">Achievements</a></p>
+            <p><a href="facilities.html">Facilities</a></p>
+            <p><a href="gallery.html">Gallery</a></p>
+        </div>
+
+        <div>
+            <h3>Connect With Us</h3>
+            <p>Follow our school activities and updates.</p>
+
+            <div class="footer-socials">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">ig</a>
+            </div>
+
+            <a href="contact.html" class="footer-contact-btn">
+                Contact Our School →
+            </a>
+        </div>
+
+    </div>
+
+    <div class="site-footer-bottom">
+        <p>
+            © <span class="year"></span>
+            Government Girls Secondary School Block V. All Rights Reserved.
+        </p>
+
+        <p>Designed with dedication for education.</p>
+    </div>
+
+</footer>
+
+<button id="backToTop">↑</button>
+
+<script src="learn.js" defer></script>
+
+<script>
+document.querySelectorAll(".year").forEach(function(element) {
+    element.textContent = new Date().getFullYear();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academics | GGSS Block V</title>
+
+<link rel="stylesheet" href="idex.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== ACADEMICS PAGE ===== */
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.acad-page {
+    font-family: 'Poppins', sans-serif;
+    color: #4c2533;
+    background: #fffdfb;
+}
+
+.acad-page * {
+    box-sizing: border-box;
+}
+
+.acad-container {
+    width: 86%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.acad-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.acad-heading span {
+    color: #b58a45;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.acad-heading h2 {
+    font-family: 'Playfair Display', serif;
+    color: #541b2c;
+    font-size: clamp(28px, 4vw, 42px);
+    margin: 12px 0;
+}
+
+.acad-heading h2 strong {
+    color: #b58a45;
+}
+
+.acad-heading p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* HERO */
+
+.acad-hero {
+    min-height: 390px;
+    padding: 70px 9%;
+    display: flex;
+    align-items: center;
+    background:
+    linear-gradient(90deg, rgba(55,12,29,.94), rgba(70,20,40,.62)),
+    url("academic-banner.jpeg") center/cover no-repeat;
+    color: white;
+}
+
+.acad-hero-content {
+    max-width: 650px;
+    animation: acadFade 1s ease;
+}
+
+.acad-hero-content span {
+    color: #e7c27f;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.acad-hero-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 5vw, 56px);
+    line-height: 1.2;
+    margin: 18px 0;
+}
+
+.acad-hero-content p {
+    color: #f5eaf0;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.acad-main-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 25px;
+    border-radius: 5px;
+    background: #bd9653;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.acad-main-btn:hover {
+    background: white;
+    color: #541b2c;
+    transform: translateY(-3px);
+}
+
+/* PROGRAMMES */
+
+.acad-programmes {
+    padding: 75px 0;
+}
+
+.acad-programme-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.acad-programme-card {
+    background: white;
+    padding: 28px 18px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid #eee3e6;
+    box-shadow: 0 7px 22px rgba(60,20,35,.06);
+    position: relative;
+    overflow: hidden;
+    transition: .35s;
+}
+
+.acad-programme-card::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #b58a45;
+    top: 0;
+    left: 0;
+}
+
+.acad-programme-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 15px 30px rgba(60,20,35,.13);
+}
+
+.acad-number {
+    color: #b58a45;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.acad-programme-icon {
+    font-size: 38px;
+    margin: 18px 0 10px;
+}
+
+.acad-programme-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #541b2c;
+    font-size: 23px;
+    margin: 8px 0;
+}
+
+.acad-programme-card p {
+    color: #777;
+    font-size: 12px;
+    min-height: 36px;
+}
+
+.acad-programme-card button {
+    border: none;
+    border-radius: 5px;
+    background: #541b2c;
+    color: white;
+    padding: 10px 17px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.acad-programme-card button:hover {
+    background: #b58a45;
+}
+
+/* INCLUSIVE STRIP */
+
+.acad-inclusive {
+    margin-top: 45px;
+    background: linear-gradient(110deg,#541b2c,#79334b);
+    border-radius: 12px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    color: white;
+}
+
+.acad-inclusive .icon {
+    font-size: 42px;
+}
+
+.acad-inclusive h3 {
+    font-family: 'Playfair Display',serif;
+    font-size: 23px;
+    margin: 0 0 8px;
+}
+
+.acad-inclusive p {
+    color: #f2e5ea;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* LEARNING APPROACH */
+
+.acad-approach {
+    padding: 75px 0;
+    background: #f8f3ef;
+}
+
+.acad-approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.acad-approach-card {
+    background: white;
+    border-radius: 10px;
+    padding: 28px;
+    border-bottom: 4px solid #b58a45;
+    transition: .3s;
+}
+
+.acad-approach-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(60,20,35,.09);
+}
+
+.acad-approach-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #f6edf0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 18px;
+}
+
+.acad-approach-card h3 {
+    font-family: 'Playfair Display',serif;
+    color: #541b2c;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.acad-approach-card p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* INFORMATION CARDS */
+
+.acad-information {
+    padding: 75px 0;
+}
+
+.acad-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.acad-info-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 23px 18px;
+    border: 1px solid #eee3e6;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Poppins',sans-serif;
+    transition: .3s;
+}
+
+.acad-info-card:hover {
+    transform: translateY(-5px);
+    border-color: #b58a45;
+    box-shadow: 0 10px 25px rgba(60,20,35,.09);
+}
+
+.acad-info-icon {
+    min-width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: #f6edf0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.acad-info-text h3 {
+    color: #541b2c;
+    font-size: 14px;
+    margin: 0 0 5px;
+}
+
+.acad-info-text p {
+    color: #888;
+    font-size: 11px;
+    margin: 0;
+}
+
+.acad-info-arrow {
+    margin-left: auto;
+    color: #b58a45;
+    font-size: 23px;
+}
+
+/* ACHIEVEMENTS GALLERY */
+
+.acad-achievements {
+    padding: 75px 0;
+    background: #f8f3ef;
+}
+
+.acad-achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+.acad-achievement-item {
+    position: relative;
+    height: 235px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #eadfe2;
+}
+
+.acad-achievement-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.acad-achievement-item:hover img {
+    transform: scale(1.1);
+}
+
+.acad-achievement-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 12px 13px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    background: linear-gradient(transparent,rgba(50,10,25,.85));
+}
+
+/* CLOSING SECTION */
+
+.acad-closing {
+    padding: 55px 20px;
+    text-align: center;
+    background: #f7f0e9;
+    border-radius: 12px;
+    margin-top: 65px;
+}
+
+.acad-closing h2 {
+    font-family: 'Playfair Display',serif;
+    color: #541b2c;
+    font-size: clamp(25px,4vw,36px);
+}
+
+.acad-closing p {
+    color: #777;
+    font-size: 14px;
+}
+
+.acad-contact-btn {
+    display: inline-block;
+    background: #541b2c;
+    color: white;
+    text-decoration: none;
+    padding: 12px 27px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.acad-contact-btn:hover {
+    background: #b58a45;
+    transform: translateY(-3px);
+}
+
+/* POPUP */
+
+.acad-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(20,8,15,.85);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.acad-modal.active {
+    display: flex;
+    animation: acadFade .3s ease;
+}
+
+.acad-modal-box {
+    background: white;
+    width: 100%;
+    max-width: 850px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+    animation: acadUp .3s ease;
+}
+
+.acad-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    border: none;
+    background: #f6edf0;
+    color: #541b2c;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.acad-modal-box h2 {
+    font-family: 'Playfair Display',serif;
+    color: #541b2c;
+    margin: 5px 35px 15px 0;
+}
+
+.acad-modal-box p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.acad-modal-box ul {
+    color: #666;
+    font-size: 13px;
+    line-height: 2;
+    padding-left: 22px;
+}
+
+/* POPUP IMAGE GRID */
+
+.acad-popup-gallery {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.acad-popup-image {
+    height: 260px;
+    width: 100%;
+    object-fit: contain;
+    background: #f6f2ef;
+    border-radius: 8px;
+    padding: 5px;
+    cursor: zoom-in;
+    transition: .3s;
+}
+
+.acad-popup-image:hover {
+    transform: scale(1.02);
+}
+
+/* IMAGE VIEWER */
+
+.acad-viewer {
+    display: none;
+    position: fixed;
+    z-index: 100001;
+    inset: 0;
+    background: rgba(0,0,0,.94);
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.acad-viewer.active {
+    display: flex;
+}
+
+.acad-viewer img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+.acad-viewer-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 38px;
+    cursor: pointer;
+}
+
+/* FOOTER - FULL SCREEN WIDTH */
+
+.site-footer {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 55px 7% 20px;
+    background: #481728;
+    color: white;
+    box-sizing: border-box;
+}
+
+.site-footer * {
+    box-sizing: border-box;
+}
+
+.site-footer-container {
+    max-width: 1400px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.5fr 1fr;
+    gap: 35px;
+}
+
+.site-footer h3 {
+    color: #dfb96f;
+    font-family: 'Playfair Display',serif;
+    font-size: 19px;
+    margin-bottom: 22px;
+}
+
+.site-footer h3::after {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 2px;
+    background: #dfb96f;
+    margin-top: 9px;
+}
+
+.site-footer p {
+    color: #e6d9de;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.site-footer a {
+    color: #e6d9de;
+    text-decoration: none;
+    font-size: 12px;
+    transition: .3s;
+    overflow-wrap: anywhere;
+}
+
+.site-footer a:hover {
+    color: #dfb96f;
+}
+
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.site-footer li {
+    margin-bottom: 12px;
+}
+
+.site-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.site-footer-brand img {
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: white;
+    padding: 3px;
+}
+
+.site-footer-brand h2 {
+    font-family: 'Playfair Display',serif;
+    color: #dfb96f;
+    font-size: 19px;
+}
+
+.site-social {
+    display: flex;
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.site-social a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,.12);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.site-social a:hover {
+    background: #dfb96f;
+    color: #481728;
+}
+
+.site-footer-contact {
+    display: inline-block;
+    padding: 11px 22px;
+    background: #c49a53;
+    color: white !important;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.site-footer-contact:hover {
+    background: white;
+    color: #481728 !important;
+}
+
+.site-footer-bottom {
+    max-width: 1400px;
+    margin: 40px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,.2);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.site-footer-bottom p {
+    font-size: 11px;
+    margin: 0;
+}
+
+/* ANIMATIONS */
+
+@keyframes acadFade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes acadUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 950px) {
+    .acad-programme-grid,
+    .acad-achievement-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .acad-approach-grid,
+    .acad-info-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .site-footer-container {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .acad-container {
+        width: 90%;
+    }
+
+    .acad-hero {
+        min-height: 320px;
+        padding: 45px 7%;
+    }
+
+    .acad-programme-grid,
+    .acad-approach-grid,
+    .acad-info-grid,
+    .acad-achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .acad-inclusive {
+        flex-direction: column;
+    }
+
+    .acad-popup-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .acad-popup-image {
+        height: 230px;
+    }
+
+    .acad-modal-box {
+        padding: 28px 18px;
+    }
+
+    .site-footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .site-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER: SAME AS YOUR ORIGINAL -->
+
+<div class="topbar">
+<div>Government of Sindh | School Education & Literacy Department</div>
+<div>📍 Shah Faisal Colony, Karachi</div>
+</div>
+
+<header class="header">
+<div class="brand">
+<img src="logo.jpeg" class="logo" alt="School Monogram">
+<div>
+<h1>Government Girls Secondary School<br>BLOCK V</h1>
+<p>Shah Faisal Colony, District Korangi</p>
+</div>
+</div>
+
+<button class="menu-toggle" id="menuToggle">☰</button>
+
+<nav id="navbar">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="academics.html">Academics</a>
+<a href="admission.html">Admissions</a>
+<a href="achievements.html">Achievements</a>
+<a href="facilities.html">Facilities</a>
+<a href="gallery.html">Gallery</a>
+<a href="administration.html">Administration</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+
+<main class="acad-page">
+
+<!-- HERO -->
+
+<section class="acad-hero">
+    <div class="acad-hero-content">
+        <span>LEARN • GROW • ACHIEVE</span>
+        <h2>Building Knowledge,<br>Shaping Futures</h2>
+        <p>
+            From early childhood to secondary education,
+            we inspire learners to explore their abilities,
+            build confidence and create brighter futures.
+        </p>
+        <a href="#acad-programmes" class="acad-main-btn">
+            Explore Our Programmes ↓
+        </a>
+    </div>
+</section>
+
+
+<!-- PROGRAMMES -->
+
+<section class="acad-programmes" id="acad-programmes">
+<div class="acad-container">
+
+    <div class="acad-heading">
+        <span>OUR EDUCATIONAL JOURNEY</span>
+        <h2>Learning at <strong>Every Stage</strong></h2>
+        <p>Supporting learners from their first steps to matriculation.</p>
+    </div>
+
+    <div class="acad-programme-grid">
+
+        <div class="acad-programme-card">
+            <div class="acad-programme-icon">🌱</div>
+            <h3>ECCE</h3>
+            <p>Early Childhood Care and Education</p>
+            <button onclick="openInfo('ecce')">Explore Programme ↗</button>
+        </div>
+
+        <div class="acad-programme-card">
+            <div class="acad-programme-icon">📖</div>
+            <h3>Primary</h3>
+            <p>Classes I – V</p>
+            <button onclick="openInfo('primary')">Explore Programme ↗</button>
+        </div>
+
+        <div class="acad-programme-card">
+            <div class="acad-programme-icon">🎓</div>
+            <h3>Elementary</h3>
+            <p>Classes VI – VIII</p>
+            <button onclick="openInfo('elementary')">Explore Programme ↗</button>
+        </div>
+
+        <div class="acad-programme-card">
+            <div class="acad-programme-icon">🏆</div>
+            <h3>Secondary</h3>
+            <p>Classes IX – X (Matric)</p>
+            <button onclick="openInfo('secondary')">Explore Programme ↗</button>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- LEARNING APPROACH -->
+
+<section class="acad-approach">
+<div class="acad-container">
+
+    <div class="acad-heading">
+        <span>BEYOND THE CLASSROOM</span>
+        <h2>How We <strong>Learn</strong></h2>
+        <p>Learning is about exploring, creating, discovering and growing.</p>
+    </div>
+
+    <div class="acad-approach-grid">
+
+        <div class="acad-approach-card">
+            <div class="acad-approach-icon">📚</div>
+            <h3>Quality Education</h3>
+            <p>Structured learning based on the prescribed curriculum and educational standards.</p>
+        </div>
+
+        <div class="acad-approach-card">
+            <div class="acad-approach-icon">🧠</div>
+            <h3>Critical Thinking</h3>
+            <p>Encouraging students to ask questions, solve problems and think independently.</p>
+        </div>
+
+        <div class="acad-approach-card">
+            <div class="acad-approach-icon">🔬</div>
+            <h3>Practical Learning</h3>
+            <p>Hands-on activities, experiments and STEAM experiences connected with real life.</p>
+        </div>
+
+        <div class="acad-approach-card">
+            <div class="acad-approach-icon">🤝</div>
+            <h3>Collaborative Learning</h3>
+            <p>Group activities and peer learning that develop teamwork and communication.</p>
+        </div>
+
+        <div class="acad-approach-card">
+            <div class="acad-approach-icon">🎨</div>
+            <h3>Creativity & Innovation</h3>
+            <p>Opportunities for students to express ideas, explore talents and create new things.</p>
+        </div>
+
+        <div class="acad-approach-card">
+            <div class="acad-approach-icon">🌟</div>
+            <h3>Personal Development</h3>
+            <p>Building confidence, discipline, responsibility and positive values.</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- ACADEMIC INFORMATION -->
+
+<section class="acad-information">
+<div class="acad-container">
+
+    <div class="acad-heading">
+        <span>STUDENT & PARENT INFORMATION</span>
+        <h2>Academic <strong>Information Hub</strong></h2>
+        <p>Click any card to explore important school information.</p>
+    </div>
+
+    <div class="acad-info-grid">
+
+        <button class="acad-info-card" onclick="openGallery('exam')">
+            <div class="acad-info-icon">📅</div>
+            <div class="acad-info-text">
+                <h3>Examination Schedule</h3>
+                <p>View examination timetables</p>
+            </div>
+            <span class="acad-info-arrow">›</span>
+        </button>
+
+        <button class="acad-info-card" onclick="openInfo('assessment')">
+            <div class="acad-info-icon">📝</div>
+            <div class="acad-info-text">
+                <h3>Assessment System</h3>
+                <p>Tests, assignments and evaluation</p>
+            </div>
+            <span class="acad-info-arrow">›</span>
+        </button>
+
+        <button class="acad-info-card" onclick="openInfo('curriculum')">
+            <div class="acad-info-icon">📘</div>
+            <div class="acad-info-text">
+                <h3>Curriculum</h3>
+                <p>Our academic learning framework</p>
+            </div>
+            <span class="acad-info-arrow">›</span>
+        </button>
+
+        <button class="acad-info-card" onclick="openInfo('activities')">
+            <div class="acad-info-icon">🎭</div>
+            <div class="acad-info-text">
+                <h3>Academic Activities</h3>
+                <p>Projects, competitions and events</p>
+            </div>
+            <span class="acad-info-arrow">›</span>
+        </button>
+
+        <button class="acad-info-card" onclick="openInfo('calendar')">
+            <div class="acad-info-icon">🗓️</div>
+            <div class="acad-info-text">
+                <h3>Academic Calendar</h3>
+                <p>Important academic dates and events</p>
+            </div>
+            <span class="acad-info-arrow">›</span>
+        </button>
+
+        <button class="acad-info-card" onclick="openInfo('results')">
+            <div class="acad-info-icon">🏅</div>
+            <div class="acad-info-text">
+                <h3>Student Achievements</h3>
+                <p>Celebrating student success</p>
+            </div>
+            <span class="acad-info-arrow">›</span>
+        </button>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- ACHIEVEMENTS GALLERY -->
+
+<section class="acad-achievements">
+<div class="acad-container">
+
+    <div class="acad-heading">
+        <span>OUR PRIDE & SUCCESS</span>
+        <h2>Celebrating <strong>Achievements</strong></h2>
+        <p>Recognising the talent, dedication and accomplishments of our students.</p>
+    </div>
+
+    <div class="acad-achievement-grid">
+
+        <div class="acad-achievement-item"
+             onclick="viewImage('achievement1.jpeg','Student Achievement')">
+            <img src="achievement1.jpeg" alt="Student Achievement">
+            <div class="acad-achievement-caption">Student Achievement</div>
+        </div>
+
+        <div class="acad-achievement-item"
+             onclick="viewImage('achievement2.jpeg','Academic Excellence')">
+            <img src="achievement2.jpeg" alt="Academic Excellence">
+            <div class="acad-achievement-caption">Academic Excellence</div>
+        </div>
+
+        <div class="acad-achievement-item"
+             onclick="viewImage('achievement3.jpeg','Awards and Recognition')">
+            <img src="achievement3.jpeg" alt="Awards and Recognition">
+            <div class="acad-achievement-caption">Awards & Recognition</div>
+        </div>
+
+        <div class="acad-achievement-item"
+             onclick="viewImage('achievement4.jpeg','School Activities')">
+            <img src="achievement4.jpeg" alt="School Activities">
+            <div class="acad-achievement-caption">School Activities</div>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- CLOSING / CONTACT -->
+
+<section class="acad-information">
+<div class="acad-container">
+
+    <div class="acad-closing">
+        <h2>Every Learner Has the Potential to Shine.</h2>
+        <p>We inspire curiosity, encourage excellence and celebrate progress.</p>
+        <a href="facilities.html" class="acad-contact-btn">Facilities We provide →</a>
+    </div>
+
+</div>
+</section>
+
+</main>
+
+
+<!-- INFORMATION POPUP -->
+
+<div class="acad-modal" id="acadModal" onclick="closeInfoOutside(event)">
+    <div class="acad-modal-box">
+        <button class="acad-modal-close" onclick="closeInfo()" aria-label="Close">×</button>
+        <div id="acadModalContent"></div>
+    </div>
+</div>
+
+
+<!-- IMAGE VIEWER -->
+
+<div class="acad-viewer" id="acadViewer" onclick="closeViewerOutside(event)">
+    <button class="acad-viewer-close" onclick="closeViewer()">×</button>
+    <img id="acadViewerImage" src="" alt="Enlarged school image">
+</div>
+
+
+<!-- FULL-WIDTH FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="site-footer-container">
+
+        <div>
+            <div class="site-footer-brand">
+                <img src="logo.jpeg" alt="School Logo">
+                <h2>GGSS BLOCK V</h2>
+            </div>
+
+            <p>
+                Empowering young minds through quality education,
+                creativity and lifelong learning. Building confident
+                learners and brighter futures.
+            </p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="administration.html">Administration</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Contact Information</h3>
+
+            <p>📍 Shah Faisal Colony, Block V,<br>
+            District Korangi, Karachi, Pakistan</p>
+
+            <p>✉️ Add your school's Gmail address</p>
+
+            <p>Government of Sindh<br>
+            School Education & Literacy Department</p>
+        </div>
+
+        <div>
+            <h3>Connect With Us</h3>
+
+            <p>Follow our school activities, achievements and educational updates.</p>
+
+            <div class="site-social">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">◎</a>
+            </div>
+
+            <a href="contact.html" class="site-footer-contact">Contact Us →</a>
+        </div>
+
+    </div>
+
+    <div class="site-footer-bottom">
+        <p>© <span class="year"></span> Government Girls Secondary School Block V. All Rights Reserved.</p>
+        <p>Designed with dedication for education.</p>
+    </div>
+
+</footer>
+
+
+<button id="backToTop">↑</button>
+
+<script src="learn.js" defer></script>
+
+<script>
+/* ===== POPUP INFORMATION ===== */
+
+const acadInformation = {
+
+    ecce: `
+        <h2>Early Childhood Care and Education</h2>
+        <p>Our ECCE programme provides young children with a welcoming environment to begin their educational journey through play, exploration and meaningful activities.</p>
+        <ul>
+            <li>Learning through play and discovery</li>
+            <li>Early communication and language development</li>
+            <li>Social interaction and creativity</li>
+            <li>Building confidence and basic learning skills</li>
+        </ul>
+    `,
+
+    primary: `
+        <h2>Primary Education | Classes I – V</h2>
+        <p>Primary education builds a strong foundation for lifelong learning. Students develop essential knowledge, skills and positive learning habits.</p>
+        <ul>
+            <li>Literacy and numeracy development</li>
+            <li>Creative classroom activities</li>
+            <li>Communication and teamwork</li>
+            <li>Learning through participation and practice</li>
+        </ul>
+    `,
+
+    elementary: `
+        <h2>Elementary Education | Classes VI – VIII</h2>
+        <p>Students strengthen their understanding, develop curiosity and become more independent learners.</p>
+        <ul>
+            <li>Conceptual understanding and critical thinking</li>
+            <li>Group projects and collaborative activities</li>
+            <li>Practical and activity-based learning</li>
+            <li>Preparation for secondary education</li>
+        </ul>
+    `,
+
+    secondary: `
+        <h2>Secondary Education | Classes IX – X</h2>
+        <p>Secondary education prepares students for matriculation, further studies and future opportunities.</p>
+        <ul>
+            <li>Focused academic learning</li>
+            <li>Preparation for board examinations</li>
+            <li>Problem-solving and independent study</li>
+            <li>Career awareness and personal development</li>
+        </ul>
+    `,
+
+    assessment: `
+        <h2>Our Assessment System</h2>
+        <p>Assessment helps teachers understand student progress, identify learning needs and improve classroom instruction.</p>
+        <ul>
+            <li>Class tests and written examinations</li>
+            <li>Assignments and classroom participation</li>
+            <li>Projects and practical activities</li>
+            <li>Feedback and progress monitoring</li>
+        </ul>
+    `,
+
+    curriculum: `
+        <h2>Our Curriculum</h2>
+        <p>Our educational programmes follow the prescribed curriculum and relevant guidelines of the School Education & Literacy Department, Government of Sindh.</p>
+        <p>We aim to develop knowledge, essential skills, positive values and confidence for lifelong learning.</p>
+    `,
+
+    activities: `
+        <h2>Academic Activities</h2>
+        <p>We make learning engaging through educational experiences inside and outside the classroom.</p>
+        <ul>
+            <li>STEAM projects and science demonstrations</li>
+            <li>Educational competitions and quizzes</li>
+            <li>Group work and student presentations</li>
+            <li>Creative projects and practical activities</li>
+            <li>Educational visits and learning events</li>
+        </ul>
+    `,
+
+    calendar: `
+        <h2>Academic Calendar</h2>
+        <p>The academic calendar provides information about the school year, important activities, examinations and educational events.</p>
+        <p>Important dates and schedules will be shared here as announced by the school.</p>
+    `,
+
+    results: `
+        <h2>Student Achievements</h2>
+        <p>We believe every achievement deserves recognition. Our students are encouraged to participate, explore their talents and take pride in their progress.</p>
+        <ul>
+            <li>Academic achievements</li>
+            <li>STEAM projects and competitions</li>
+            <li>Creative and extracurricular activities</li>
+            <li>Certificates, awards and recognition</li>
+        </ul>
+    `
+};
+
+function openInfo(type) {
+    document.getElementById("acadModalContent").innerHTML =
+        acadInformation[type] || "<h2>Information</h2><p>Information coming soon.</p>";
+
+    document.getElementById("acadModal").classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeInfo() {
+    document.getElementById("acadModal").classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+function closeInfoOutside(event) {
+    if (event.target.id === "acadModal") {
+        closeInfo();
+    }
+}
+
+
+/* ===== EXAM SCHEDULE POPUP ===== */
+
+function openGallery(type) {
+
+    if (type === "exam") {
+        document.getElementById("acadModalContent").innerHTML = `
+            <h2>Examination Schedule</h2>
+            <p>Click any timetable image to view it in full size.</p>
+
+            <div class="acad-popup-gallery">
+                <img class="acad-popup-image" src="exam1.jpeg"
+                alt="Examination Schedule 1" onclick="viewImage('exam1.jpeg','Examination Schedule')">
+
+                <img class="acad-popup-image" src="exam2.jpeg"
+                alt="Examination Schedule 2" onclick="viewImage('exam2.jpeg','Examination Schedule')">
+
+                <img class="acad-popup-image" src="exam3.jpeg"
+                alt="Examination Schedule 3" onclick="viewImage('exam3.jpeg','Examination Schedule')">
+
+                <img class="acad-popup-image" src="exam4.jpeg"
+                alt="Examination Schedule 4" onclick="viewImage('exam4.jpeg','Examination Schedule')">
+            </div>
+        `;
+
+        document.getElementById("acadModal").classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+}
+
+
+/* ===== IMAGE VIEWER ===== */
+
+function viewImage(src, title) {
+    const viewer = document.getElementById("acadViewer");
+    const image = document.getElementById("acadViewerImage");
+
+    image.src = src;
+    image.alt = title;
+
+    viewer.classList.add("active");
+}
+
+function closeViewer() {
+    document.getElementById("acadViewer").classList.remove("active");
+    document.getElementById("acadViewerImage").src = "";
+}
+
+function closeViewerOutside(event) {
+    if (event.target.id === "acadViewer") {
+        closeViewer();
+    }
+}
+
+
+/* ===== ESCAPE KEY ===== */
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeViewer();
+        closeInfo();
+    }
+});
+</script>
+
+</body>
+</html>

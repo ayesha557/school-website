@@ -1,51 +1,505 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GGSS Block V | Shah Faisal Colony</title>
-    <meta name="description"
-        content="Official school website of Government Girls Secondary School Block V, Shah Faisal Colony, Karachi.">
+    <title>GGSS Block V | Home</title>
+
     <link rel="stylesheet" href="idex.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* HOME PAGE SECTIONS */
+
+        .home-preview {
+            padding: 80px 8%;
+        }
+
+        .home-section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .home-section-heading span {
+            color: #a78345;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .home-section-heading h2 {
+            color: #650d26;
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin: 12px 0;
+        }
+
+        .home-section-heading p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* FACILITIES PREVIEW */
+
+        .home-facilities {
+            background: #faf7f2;
+        }
+
+        .home-facility-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .home-facility-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 3px solid #d5b16d;
+            box-shadow: 0 8px 25px #00000008;
+            transition: .3s;
+        }
+
+        .home-facility-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 28px #00000012;
+        }
+
+        .home-facility-card .icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .home-facility-card h3 {
+            color: #650d26;
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .home-facility-card p {
+            color: #777;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* ACHIEVEMENTS PREVIEW */
+
+        .home-achievements {
+            background: white;
+        }
+
+        .achievement-preview-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .achievement-preview-image {
+            height: 370px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .achievement-preview-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .achievement-preview-image img:hover {
+            transform: scale(1.04);
+        }
+
+        .achievement-preview-text h2 {
+            font-family: 'Playfair Display', serif;
+            color: #650d26;
+            font-size: 34px;
+            margin: 12px 0 18px;
+        }
+
+        .achievement-preview-text p {
+            color: #777;
+            font-size: 13px;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+
+        .achievement-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .achievement-point {
+            padding: 15px;
+            background: #faf7f2;
+            border-left: 3px solid #d5b16d;
+            color: #650d26;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .preview-link {
+            display: inline-block;
+            background: #650d26;
+            color: white;
+            padding: 13px 22px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 3px;
+            transition: .3s;
+            text-decoration: none;
+        }
+
+        .preview-link:hover {
+            background: #d5b16d;
+            color: #380817;
+            transform: translateY(-3px);
+        }
+
+        /* GALLERY PREVIEW */
+
+        .home-gallery {
+            background: #faf7f2;
+        }
+
+        .home-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .home-gallery-item {
+            height: 230px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .home-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .home-gallery-item:hover img {
+            transform: scale(1.07);
+        }
+
+        .gallery-preview-button {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        /* ADMISSION CTA */
+
+        .home-admission {
+            background:
+                linear-gradient(90deg, rgba(56, 8, 23, .96), rgba(101, 13, 38, .88)),
+                url("girls.jpeg") center/cover no-repeat;
+            padding: 65px 8%;
+            text-align: center;
+            color: white;
+        }
+
+        .home-admission span {
+            color: #d5b16d;
+            letter-spacing: 3px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .home-admission h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin: 15px 0;
+        }
+
+        .home-admission p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            font-size: 13px;
+            line-height: 1.9;
+            color: #ffffffd9;
+        }
+
+        .admission-btn {
+            display: inline-block;
+            background: #d5b16d;
+            color: #380817;
+            padding: 14px 27px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 3px;
+            transition: .3s;
+            text-decoration: none;
+        }
+
+        .admission-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* COMMON FOOTER */
+
+        .site-footer {
+            display: block;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            background: #380817;
+            color: white;
+            padding: 55px 8% 20px;
+        }
+
+        .site-footer,
+        .site-footer * {
+            box-sizing: border-box;
+        }
+
+        .site-footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1fr;
+            gap: 35px;
+            padding-bottom: 35px;
+        }
+
+        .site-footer-grid > div {
+            min-width: 0;
+        }
+
+        .site-footer h3 {
+            color: #d5b16d;
+            font-family: 'Playfair Display', serif;
+            font-size: 21px;
+            margin: 0 0 18px;
+        }
+
+        .site-footer p,
+        .site-footer a {
+            color: #e7dce0;
+            font-size: 12px;
+            line-height: 2;
+        }
+
+        .site-footer p {
+            margin: 0;
+        }
+
+        .site-footer a {
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .site-footer a:hover {
+            color: #d5b16d;
+        }
+
+        /* SCHOOL LOGO AND NAME */
+
+        .footer-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .footer-logo-row img {
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+            object-fit: contain;
+            background: white;
+            padding: 5px;
+            border: 2px solid #d5b16d;
+            border-radius: 50%;
+        }
+
+        .footer-school-name {
+            font-family: 'Playfair Display', serif;
+            color: #d5b16d;
+            font-size: 24px;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        /* FOOTER CONTACT BUTTON */
+
+        .footer-contact-btn {
+            display: inline-block;
+            background: #d5b16d;
+            color: #380817 !important;
+            padding: 11px 20px;
+            margin-top: 12px;
+            border-radius: 3px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .footer-contact-btn:hover {
+            background: white;
+        }
+
+        /* SOCIAL MEDIA LINKS */
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-socials a {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #d5b16d;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: #d5b16d;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .footer-socials a:hover {
+            background: #d5b16d;
+            color: #380817;
+        }
+
+        /* FOOTER BOTTOM */
+
+        .site-footer-bottom {
+            border-top: 1px solid #ffffff30;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            color: #d6c5cb;
+            font-size: 10px;
+            line-height: 2;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 950px) {
+            .home-facility-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .site-footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .home-preview {
+                padding: 60px 6%;
+            }
+
+            .achievement-preview-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .achievement-preview-image {
+                height: 300px;
+            }
+
+            .home-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .home-section-heading h2,
+            .achievement-preview-text h2,
+            .home-admission h2 {
+                font-size: 30px;
+            }
+
+            .home-admission {
+                padding: 55px 6%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .home-facility-grid,
+            .home-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-gallery-item {
+                height: 240px;
+            }
+
+            .achievement-points {
+                grid-template-columns: 1fr;
+            }
+
+            .site-footer {
+                padding: 45px 7% 20px;
+            }
+
+            .site-footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .footer-logo-row {
+                justify-content: flex-start;
+            }
+
+            .site-footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- TOP BAR -->
     <div class="topbar">
-        <div>Government of Sindh | School Education & Literacy Department</div>
+        <div>Government of Sindh | School Education &amp; Literacy Department</div>
         <div>📍 Shah Faisal Colony, Karachi</div>
     </div>
 
-    <!-- HEADER -->
     <header class="header">
         <div class="brand">
-            <img src="logo.jpeg" alt="School Monogram" class="logo">
+            <img src="logo.jpeg" class="logo" alt="School Monogram">
             <div>
                 <h1>Government Girls Secondary School<br>BLOCK V</h1>
                 <p>Shah Faisal Colony, District Korangi</p>
             </div>
         </div>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle">☰</button>
 
         <nav id="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#academics">Academics</a>
-            <a href="#facilities">Facilities</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#administration">Administration</a>
-            <a href="#contact">Contact</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="academics.html">Academics</a>
+            <a href="admission.html">Admissions</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="administration.html">Administration</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION - EXISTING -->
+
     <section class="hero" id="home">
 
         <div class="hero-slider">
@@ -59,437 +513,305 @@
         <div class="hero-content">
             <span class="welcome">WELCOME TO OUR INSTITUTION</span>
 
-            <h2>Empowering Minds,<br>
-                <span>Building Futures</span>
-            </h2>
+            <h2>Empowering Minds,<br><span>Building Futures</span></h2>
 
-            <p>
-                Quality Education • Character Building • Excellence
-            </p>
+            <p>Quality Education • Character Building • Excellence</p>
 
             <div class="hero-buttons">
-                <a href="#about" class="btn gold-btn">Explore Our School</a>
-                <a href="#academics" class="btn outline-btn">Our Academics</a>
+                <a href="about.html" class="btn gold-btn">Explore Our School</a>
+                <a href="academics.html" class="btn outline-btn">Our Academics</a>
             </div>
         </div>
 
         <div class="slider-dots" id="sliderDots">
-            <button class="dot active" aria-label="Slide 1"></button>
-            <button class="dot" aria-label="Slide 2"></button>
-            <button class="dot" aria-label="Slide 3"></button>
+            <button class="dot active"></button>
+            <button class="dot"></button>
+            <button class="dot"></button>
         </div>
 
-        <div class="hero-label">
-            LEARNING TODAY, LEADING TOMORROW
-        </div>
+        <div class="hero-label">LEARNING TODAY, LEADING TOMORROW</div>
 
     </section>
 
-    <!-- INTRODUCTION -->
+    <!-- INTRO SECTION - EXISTING -->
+
     <section class="intro section-padding">
+
         <div class="intro-text">
-             <span class="section-tag">OUR INSTITUTION</span> 
+            <span class="section-tag">OUR INSTITUTION</span>
+
             <h2>A Place Where <span>Dreams Take Shape</span></h2>
+
             <p>
                 Government Girls Secondary School Block V is committed
                 to providing quality education, developing confidence
                 and nurturing responsible citizens. We believe every
                 student deserves the opportunity to learn, grow and succeed.
             </p>
-            <a href="#about" class="text-link">Discover Our Story →</a>
+
+            <a href="about.html" class="text-link">Discover Our Story →</a>
         </div>
 
         <div class="intro-image">
-            <img src="claas6.jpeg" alt="Our School">
+            <img src="ECCE.jpeg" alt="Our School">
+
             <div class="image-caption">
                 <strong>Education for All</strong>
                 <span>Inspiring Excellence Every Day</span>
             </div>
         </div>
+
     </section>
 
-    <!-- QUICK FACTS -->
+    <!-- FACTS SECTION - EXISTING -->
+
     <section class="facts">
-        <div class="fact">
-            <h3>Quality Education</h3>
-        </div>
-        <div class="fact">
-            <h3>Student Development</h3>
-        </div>
-        <div class="fact">
-            <h3>STEAM Learning</h3>
-        </div>
-        <div class="fact">
-            <h3>Inclusive Education</h3>
-        </div>
+        <div class="fact"><h3>Quality Education</h3></div>
+        <div class="fact"><h3>Student Development</h3></div>
+        <div class="fact"><h3>STEAM Learning</h3></div>
+        <div class="fact"><h3>Inclusive Education</h3></div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="about section-padding" id="about">
-        <div class="section-heading">
-            <span class="section-tag">WHO WE ARE</span>
-            <h2>About Our <span>School</span></h2>
-            <p>Building knowledge, confidence and character.</p>
-        </div>
+    <!-- FACILITIES PREVIEW -->
 
-        <div class="about-grid">
-            <div class="about-card">
-                <div class="card-icon">🎯</div>
-                <h3>Our Mission</h3>
-                <p>
-                    To provide accessible, inclusive and quality education
-                    that empowers students with knowledge, skills and values.
-                </p>
-            </div>
+    <section class="home-preview home-facilities">
 
-            <div class="about-card">
-                <div class="card-icon">🌟</div>
-                <h3>Our Vision</h3>
-                <p>
-                    To create confident, creative and responsible learners
-                    who contribute positively to society.
-                </p>
-            </div>
-
-            <div class="about-card">
-                <div class="card-icon">🤝</div>
-                <h3>Our Values</h3>
-                <p>
-                    Discipline, respect, honesty, teamwork, creativity
-                    and lifelong learning.
-                </p>
-            </div>
-        </div>
-    </section>
-    <!-- ABOUT POPUP -->
-    <div id="aboutModal" class="modal">
-        <div class="modal-box">
-            <span class="close-btn">&times;</span>
-            <span class="section-tag">WHO WE ARE</span>
-            <h2>About Our <span>School</span></h2>
-            <p>Building knowledge, confidence and character.</p>
-
-            <div class="about-grid popup-grid">
-                <div class="about-card">
-                    <div class="card-icon">🎯</div>
-                    <h3>Our Mission</h3>
-                    <p>To provide accessible, inclusive and quality education that empowers students with knowledge,
-                        skills and values.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">🌟</div>
-                    <h3>Our Vision</h3>
-                    <p>To create confident, creative and responsible learners who contribute positively to society.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">🤝</div>
-                    <h3>Our Values</h3>
-                    <p>Discipline, respect, honesty, teamwork, creativity and lifelong learning.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ACADEMICS -->
-    <section class="academics section-padding" id="academics">
-        <div class="section-heading">
-            <span class="section-tag">ACADEMIC PROGRAMMES</span>
-            <h2>Education for <span>Every Stage</span></h2>
-            <p>Learning opportunities from early childhood to secondary education.</p>
-        </div>
-
-        <div class="academic-grid">
-            <div class="academic-card">
-                <span>01</span>
-                <h3>ECCE</h3>
-                <p>Early Childhood Care and Education</p>
-            </div>
-
-            <div class="academic-card">
-                <span>02</span>
-                <h3>Primary</h3>
-                <p>Classes I – V</p>
-            </div>
-
-            <div class="academic-card">
-                <span>03</span>
-                <h3>Elementary</h3>
-                <p>Classes VI – VIII</p>
-            </div>
-
-            <div class="academic-card">
-                <span>04</span>
-                <h3>Secondary</h3>
-                <p>Classes IX – X (Matric)</p>
-            </div>
-        </div>
-
-        <div class="academic-note">
-            <strong>Inclusive Learning:</strong>
-            Educational opportunities for both boys and girls.
-        </div>
-    </section>
-
-    <!-- FACILITIES -->
-    <section class="facilities section-padding" id="facilities">
-        <div class="section-heading">
-            <span class="section-tag">OUR LEARNING ENVIRONMENT</span>
-            <h2>Learning Beyond <span>Classrooms</span></h2>
-        </div>
-
-        <div class="facility-grid">
-            <div class="facility">
-                <div>🔬</div>
-                <h3>Science Learning</h3>
-                <p>Practical exploration and scientific thinking.</p>
-            </div>
-
-            <div class="facility">
-                <div>💻</div>
-                <h3>Digital Learning</h3>
-                <p>Technology and computer-based learning.</p>
-            </div>
-
-            <div class="facility">
-                <div>📚</div>
-                <h3>Library & Reading</h3>
-                <p>Encouraging reading and independent learning.</p>
-            </div>
-
-            <div class="facility">
-                <div>☀️</div>
-                <h3>Solar Energy</h3>
-                <p>Promoting sustainable energy awareness.</p>
-            </div>
-        </div>
-    </section>
-    <!-- FACILITIES POPUP START -->
-    <div id="facilitiesModal" class="modal">
-        <div class="modal-box">
-            <span class="close-btn">&times;</span>
-
-            <div class="section-heading">
-                <span class="section-tag">OUR LEARNING ENVIRONMENT</span>
-                <h2>Learning Beyond <span>Classrooms</span></h2>
-            </div>
-
-            <div class="facility-grid popup-grid">
-                <div class="facility">
-                    <div>🔬</div>
-                    <h3>Science Learning</h3>
-                    <p>Practical exploration and scientific thinking.</p>
-                </div>
-
-                <div class="facility">
-                    <div>💻</div>
-                    <h3>Digital Learning</h3>
-                    <p>Technology and computer-based learning.</p>
-                </div>
-
-                <div class="facility">
-                    <div>📚</div>
-                    <h3>Library & Reading</h3>
-                    <p>Encouraging reading and independent learning.</p>
-                </div>
-
-                <div class="facility">
-                    <div>☀️</div>
-                    <h3>Solar Energy</h3>
-                    <p>Promoting sustainable energy awareness.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- FACILITIES POPUP END -->
-
-    <!-- STEAM -->
-    <section class="steam-section">
-        <div class="steam-content">
-            <span class="section-tag">INNOVATION & CREATIVITY</span>
-            <h2>Discover the World Through <br><span>STEAM</span></h2>
+        <div class="home-section-heading">
+            <span>LEARNING ENVIRONMENT</span>
+            <h2>Facilities That Support Learning</h2>
             <p>
-                Science, Technology, Engineering, Arts and Mathematics <br>
-                activities encourage students to think critically,
-                experiment, <br> collaborate and solve real-world problems.
+                We aim to create a supportive environment where students
+                can explore ideas, develop skills and learn with confidence.
             </p>
-            <a href="#gallery" class="btn gold-btn" style="margin-top: 30px;">Explore Activities</a>
-        </div>
-        <div class="steam_image">
-            <img src="cert1.jpeg" class="slide active" alt="STEAM Activities">
-            <img src="steam.jpeg" class="slide" alt="STEAM Activities 2">
-            <img src="steam4.jpeg" class="slide" alt="STEAM Activities 3">
-            <img src="steam5.jpeg" class="slide" alt="STEAM Activities 3">
-            <img src="steam6.jpeg" class="slide" alt="STEAM Activities 3">
-            <img src="steam7.jpeg" class="slide" alt="STEAM Activities 3">
-            <img src="steam8.jpeg" class="slide" alt="STEAM Activities 3">
-            <img src="steam10.jpeg" class="slide" alt="STEAM Activities 3">
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="gallery section-padding" id="gallery">
-        <div class="section-heading">
-            <span class="section-tag">OUR MEMORIES</span>
-            <h2>School <span>Gallery</span></h2>
-            <p>Celebrating learning, creativity and achievements.</p>
         </div>
 
+        <div class="home-facility-grid">
 
-        <div class="gallery-grid">
-            <!-- BOX 1 -->
-            <div class="gallery-box-slider">
-                <img src="tetsers.jpeg" class="gallery-slide active">
-                <img src="kids.jpeg" class="gallery-slide">
-                <img src="playing.jpeg" class="gallery-slide">
-                <img src="activity.jpeg" class="gallery-slide">
-                <img src="activ.jpeg" class="gallery-slide">
-            </div>
-            <!-- BOX 2 -->
-            <div class="gallery-box-slider">
-                <img src="milad1.jpeg" class="gallery-slide active">
-                <img src="milad2.jpeg" class="gallery-slide">
-                <img src="milad3.jpeg" class="gallery-slide">
-                <img src="milad4.jpeg" class="gallery-slide">
-                <img src="milad4.jpeg" class="gallery-slide">
-                <img src="color1.jpeg" class="gallery-slide">
-                <img src="color2.jpeg" class="gallery-slide">
-                <img src="color3.jpeg" class="gallery-slide">
-                <img src="14aug1.jpeg" class="gallery-slide">
-                <img src="14aug2.jpeg" class="gallery-slide">
-                <img src="14aug3.jpeg" class="gallery-slide">
-                <img src="14aug4.jpeg" class="gallery-slide">
-                <img src="14aug.jpeg" class="gallery-slide">
+            <div class="home-facility-card">
+                <div class="icon">🔬</div>
+                <h3>Science Learning</h3>
+                <p>Hands-on experiments and practical activities that make science interesting.</p>
             </div>
 
-            <!-- BOX 3 -->
-            <div class="gallery-box-slider">
-                <img src="tester.jpeg" class="gallery-slide active">
-                <img src="steam.jpeg" class="gallery-slide">
-                <img src="steam1.jpeg" class="gallery-slide">
-                <img src="steam2.jpeg" class="gallery-slide">
-                <img src="steam3.jpeg" class="gallery-slide">
-                <img src="steam4.jpeg" class="gallery-slide">
-                <img src="steam5.jpeg" class="gallery-slide">
-                <img src="steam6.jpeg" class="gallery-slide">
-                <img src="steam7.jpeg" class="gallery-slide">
+            <div class="home-facility-card">
+                <div class="icon">💻</div>
+                <h3>Digital Learning</h3>
+                <p>Technology-supported learning experiences that encourage exploration.</p>
             </div>
+
+            <div class="home-facility-card">
+                <div class="icon">📚</div>
+                <h3>Reading &amp; Learning</h3>
+                <p>Encouraging students to read, discover information and develop knowledge.</p>
+            </div>
+
+           <div class="home-facility-card">
+    <div class="icon">🏃‍♀️</div>
+    <h3>Sports & Physical Education</h3>
+    <p>Encouraging physical fitness, teamwork, confidence and active participation through sports and games.</p>
+</div>
+
         </div>
-        <!-- IMAGE LIGHTBOX -->
-        <div class="lightbox" id="lightbox">
-            <button class="lightbox-close" id="lightboxClose">×</button>
 
-            <button class="lightbox-prev" id="lightboxPrev">❮</button>
-
-            <img id="lightboxImage" src="" alt="Gallery Preview">
-
-            <button class="lightbox-next" id="lightboxNext">❯</button>
-
-            <div class="lightbox-counter" id="lightboxCounter"></div>
+        <div class="gallery-preview-button">
+            <a href="facilities.html" class="preview-link">Explore All Facilities →</a>
         </div>
 
     </section>
-    <!-- ADMINISTRATION -->
-    <section class="administration section-padding" id="administration">
-        <div class="section-heading">
-            <span class="section-tag">OUR LEADERSHIP</span>
-            <h2> OUR <span>LEADERSHIP</span></h2>
-            <p>Leadership committed to educational excellence.</p>
-        </div>
 
-        <div class="leaders">
-            <div class="leader-card">
-                <div class="leader-avatar1">
-                </div>
-                <span class="leader-role">HEADMASTER</span>
-                <div class="admin-card">
-                    <h3>Taj Ahmed Alvi</h3>
-                    <p>Headmaster</p>
-                </div>
+    <!-- ACHIEVEMENTS & STEAM PREVIEW -->
+
+    <section class="home-preview home-achievements">
+
+        <div class="achievement-preview-grid">
+
+            <div class="achievement-preview-image">
+                <img src="steam.jpeg" alt="Students participating in STEAM learning">
             </div>
 
-            <div class="leader-card">
-                <div class="leader-avatar2">
-                </div>
-                <span class="leader-role">DISTRICT EDUCATION OFFICER</span>
-                <h3>Mr.Imdad Ali Lashari</h3>
-                <p>District Korangi (ES&HS)</p>
-            </div>
-            <div class="leader-card">
-                <div class="leader-avatar3">
-                </div>
-                <span class="leader-role">THE EDUCATION MINISTER OF SINDH</span>
-                <h3>Syed Sardar Ali Shah</h3>
-                <p>SELD</p>
-            </div>
-            <div class="leader-card">
-                <div class="leader-avatar4">
-                </div>
-                <span class="leader-role">SECRATARY SCHOOL EDUCATION AND LITERACY DEPARTMENT</span>
-                <h3> Zahid Ali Abbasi</h3>
-                <p>SELD</p>
-            </div>
-            <div class="leader-card">
-                <div class="leader-avatar5">
-                </div>
-                <span class="leader-role">DIRECTOR SCHOOL EDUCATION</span>
-                <h3> Mirza Arshad Baig</h3>
-                <p> Karachi </p>
-            </div>
-            <div class="leader-card">
-                <div class="leader-avatar6">
-                </div>
-                <span class="leader-role">DEPUTY DEO KORANGI(ES&HS)</span>
-                <h3> Afshan Naz Baig</h3>
-                <p> Steam/Stream Focal Person </p>
-            </div>
-        </div>
-    </section>
-    <!-- CONTACT -->
-    <section class="contact section-padding" id="contact">
-        <div class="section-heading">
-            <span class="section-tag">GET IN TOUCH</span>
-            <h2>Connect With <span>Our School</span></h2>
-        </div>
+            <div class="achievement-preview-text">
 
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Government Girls Secondary School Block V</h3>
-                <p>📍 Shah Faisal Colony, District Korangi, Karachi, Sindh</p>
-                <p>🏫 SEMIS Code: 408090122</p>
-                <p>📖 School Education & Literacy Department, Government of Sindh</p>
+                <span class="section-tag">INNOVATION &amp; CREATIVITY</span>
+
+                <h2>Learning Beyond the Classroom</h2>
+
+                <p>
+                    Our students participate in creative activities, science
+                    experiments, mathematical games and collaborative projects.
+                    Through STEAM learning, they explore ideas, ask questions
+                    and develop problem-solving skills.
+                </p>
+
+                <div class="achievement-points">
+                    <div class="achievement-point">🔬 Science Experiments</div>
+                    <div class="achievement-point">📐 Mathematics Activities</div>
+                    <div class="achievement-point">💡 Creative Projects</div>
+                    <div class="achievement-point">🤝 Teamwork &amp; Collaboration</div>
+                </div>
+
+                <a href="achievements.html" class="preview-link">
+                    Explore Achievements →
+                </a>
+
             </div>
 
-            <div class="contact-form">
-                <h3>Send an Enquiry</h3>
-                <form id="contactForm">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" rows="4" required></textarea>
-                    <button type="submit" class="btn gold-btn">Send Message</button>
-                </form>
-                <p id="formMessage"></p>
-            </div>
         </div>
+
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-brand">
-            <h2>GGSS BLOCK V</h2>
-            <p>Empowering Minds, Building Futures.</p>
+    <!-- GALLERY PREVIEW -->
+
+    <section class="home-preview home-gallery">
+
+        <div class="home-section-heading">
+            <span>OUR SCHOOL LIFE</span>
+            <h2>A Glimpse of Our School Life</h2>
+            <p>
+                Every picture tells a story of learning, creativity,
+                participation and memorable school experiences.
+            </p>
         </div>
 
-        <div class="footer-bottom">
-            <p>© <span id="year"></span> Government Girls Secondary School Block V.</p>
+        <div class="home-gallery-grid">
+
+            <div class="home-gallery-item">
+                <img src="assembly.jpeg" alt="School assembly">
+            </div>
+
+            <div class="home-gallery-item">
+                <img src="steam4.jpeg" alt="STEAM learning activity">
+            </div>
+
+            <div class="home-gallery-item">
+                <img src="girls.jpeg" alt="Students at school">
+            </div>
+
+            <div class="home-gallery-item">
+                <img src="steam5.jpeg" alt="Student project activity">
+            </div>
+
+            <div class="home-gallery-item">
+                <img src="activity.jpeg" alt="School activity">
+            </div>
+
+            <div class="home-gallery-item">
+                <img src="steam6.jpeg" alt="Classroom learning activity">
+            </div>
+
+        </div>
+
+        <div class="gallery-preview-button">
+            <a href="gallery.html" class="preview-link">Explore Full Gallery →</a>
+        </div>
+
+    </section>
+
+    <!-- ADMISSION CALL TO ACTION -->
+
+    <section class="home-admission">
+
+        <span>TAKE THE NEXT STEP</span>
+
+        <h2>Give Your Child a Brighter Future</h2>
+
+        <p>
+            Education opens doors to knowledge, confidence and opportunities.
+            Explore our admission information and learn more about joining
+            Government Girls Secondary School Block V.
+        </p>
+
+        <a href="admission.html" class="admission-btn">
+            Explore Admissions →
+        </a>
+
+    </section>
+
+    <!-- COMMON FOOTER - USE THIS ON ALL PAGES -->
+
+    <footer class="site-footer">
+
+        <div class="site-footer-grid">
+
+            <!-- SCHOOL BRAND AND LOGO -->
+
+            <div class="footer-brand">
+
+                <div class="footer-logo-row">
+                    <img src="logo.jpeg" alt="GGSS Block V Logo">
+                    <h2 class="footer-school-name">GGSS BLOCK V</h2>
+                </div>
+
+                <p>
+                    Empowering Minds, Building Futures.
+                    Committed to quality education, creativity
+                    and the development of confident learners.
+                </p>
+
+            </div>
+
+            <!-- CONTACT INFORMATION -->
+
+            <div>
+                <h3>Contact Information</h3>
+                <p>📍 Government Girls Secondary School Block V</p>
+                <p>Shah Faisal Colony, District Korangi, Karachi</p>
+                <p>📧 Add official school Gmail here</p>
+            </div>
+
+            <!-- QUICK LINKS -->
+
+            <div>
+                <h3>Quick Links</h3>
+                <p><a href="about.html">About Our School</a></p>
+                <p><a href="academics.html">Academics</a></p>
+                <p><a href="admission.html">Admissions</a></p>
+                <p><a href="achievements.html">Achievements</a></p>
+                <p><a href="facilities.html">Facilities</a></p>
+                <p><a href="gallery.html">Gallery</a></p>
+            </div>
+
+            <!-- SOCIAL MEDIA -->
+
+            <div>
+                <h3>Connect With Us</h3>
+
+                <p>Follow our school activities and updates.</p>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                </div>
+
+                <a href="contact.html" class="footer-contact-btn">
+                    Contact Our School →
+                </a>
+            </div>
+
+        </div>
+
+        <!-- FOOTER COPYRIGHT -->
+
+        <div class="site-footer-bottom">
+            <p>
+                © <span class="year"></span>
+                Government Girls Secondary School Block V. All Rights Reserved.
+            </p>
+
             <p>Designed with dedication for education.</p>
         </div>
+
     </footer>
 
-    <button id="backToTop" title="Back to top">↑</button>
+    <button id="backToTop">↑</button>
 
-    <script src="learn.js"></script>
+    <script src="learn.js" defer></script>
+
+    <script>
+        // Automatically update copyright year
+        document.querySelectorAll(".year").forEach(function(element) {
+            element.textContent = new Date().getFullYear();
+        });
+    </script>
+
 </body>
-
 </html>

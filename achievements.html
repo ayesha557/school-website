@@ -1,0 +1,1822 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Achievements | GGSS Block V</title>
+
+<link rel="stylesheet" href="idex.css">
+
+<!-- Same fonts used throughout the website -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================
+   ACHIEVEMENTS PAGE THEME
+===================================== */
+
+:root {
+    --maroon: #650d26;
+    --dark: #380817;
+    --light-maroon: #8c2946;
+    --gold: #d5b16d;
+    --cream: #faf7f2;
+    --white: #ffffff;
+    --text: #393037;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.achievement-page {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    background: white;
+}
+
+.achievement-page h2,
+.achievement-page h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.achievement-page p,
+.achievement-page a,
+.achievement-page button {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* SECTION SPACING */
+
+.achievement-page .section-padding {
+    padding: 85px 8%;
+}
+
+.achievement-page .section-tag {
+    color: #ad803c;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.achievement-page .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.achievement-page .header nav a {
+    text-decoration: none;
+}
+
+.achievement-page .header nav a.active {
+    color: var(--gold);
+}
+
+/* =====================================
+   ACHIEVEMENTS HERO BANNER
+===================================== */
+
+.achievement-hero {
+    width: 100%;
+    height: clamp(400px, 31.25vw, 600px);
+    min-height: 400px;
+
+    padding: 45px 9%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    position: relative;
+    overflow: hidden;
+
+    color: white;
+    text-align: left;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(56, 8, 23, .96) 0%,
+            rgba(56, 8, 23, .88) 35%,
+            rgba(56, 8, 23, .52) 65%,
+            rgba(56, 8, 23, .16) 100%
+        ),
+        url("ach-banner.jpeg") center/cover no-repeat;
+}
+
+/* Unique class prevents conflict with .hero-content in idex.css */
+
+.achievement-content {
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    transform: none;
+
+    width: 100%;
+    max-width: 610px;
+
+    margin: 0;
+    padding: 0;
+
+    color: white;
+    text-align: left;
+    z-index: 5;
+}
+
+.achievement-content .section-tag {
+    display: block;
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+
+.achievement-content h2 {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 4vw, 55px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px;
+}
+
+.achievement-content h2 span {
+    color: var(--gold);
+}
+
+.achievement-content p {
+    max-width: 550px;
+    color: #f0e5e9;
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+.achievement-hero .hero-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 24px;
+
+    background: var(--gold);
+    color: var(--dark);
+
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.achievement-hero .hero-button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* =====================================
+   INTRO STRIP
+===================================== */
+
+.intro-strip {
+    background: var(--cream);
+    padding: 28px 8%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    text-align: center;
+}
+
+.intro-point {
+    color: var(--maroon);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.intro-point span {
+    color: #ad803c;
+    margin-right: 7px;
+    font-size: 18px;
+}
+
+/* =====================================
+   FEATURED ACHIEVEMENT
+===================================== */
+
+.feature-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.feature-image {
+    position: relative;
+    height: 390px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.feature-image:hover img {
+    transform: scale(1.05);
+}
+
+.image-label {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+
+    background: var(--gold);
+    color: var(--dark);
+
+    padding: 9px 17px;
+    border-radius: 3px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.feature-content h2 {
+    color: var(--maroon);
+    font-size: 36px;
+    line-height: 1.3;
+    margin: 15px 0;
+}
+
+.feature-content p {
+    color: #766b72;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 22px;
+}
+
+.feature-list li {
+    padding: 10px 0;
+    font-size: 12px;
+    border-bottom: 1px solid #eee6e9;
+}
+
+.feature-list li span {
+    color: #ad803c;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+/* =====================================
+   HIGHLIGHT CARDS
+===================================== */
+
+.highlights {
+    background: var(--cream);
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 45px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 37px;
+    color: var(--maroon);
+    margin: 12px 0;
+}
+
+.section-heading h2 span {
+    color: #ad803c;
+}
+
+.section-heading p {
+    color: #786d73;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.highlight-card {
+    background: white;
+    border-radius: 5px;
+    padding: 30px 25px;
+
+    box-shadow: 0 5px 20px rgba(53,16,31,.06);
+
+    border-bottom: 3px solid transparent;
+    transition: .3s;
+}
+
+.highlight-card:hover {
+    transform: translateY(-7px);
+    border-bottom-color: var(--gold);
+}
+
+.highlight-icon {
+    width: 55px;
+    height: 55px;
+
+    display: grid;
+    place-items: center;
+
+    background: #f6edf0;
+    border-radius: 5px;
+
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.highlight-card h3 {
+    color: var(--maroon);
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.highlight-card p {
+    font-size: 12px;
+    color: #776b72;
+    line-height: 1.9;
+}
+
+.details-link {
+    display: inline-block;
+
+    border: none;
+    background: transparent;
+
+    color: #956b30;
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+    padding: 12px 0 0;
+}
+
+.details-link:hover {
+    color: var(--maroon);
+}
+
+/* =====================================
+   STEAM PROJECT SHOWCASE
+===================================== */
+
+.steam-showcase {
+    background: var(--maroon);
+    color: white;
+}
+
+.steam-showcase .section-heading h2 {
+    color: white;
+}
+
+.steam-showcase .section-heading h2 span {
+    color: var(--gold);
+}
+
+.steam-showcase .section-heading p {
+    color: #e4d5dd;
+}
+
+.steam-showcase .section-tag {
+    color: var(--gold);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: white;
+    color: var(--text);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .35s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-image {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.07);
+}
+
+.project-number {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+
+    background: var(--gold);
+    color: var(--dark);
+
+    padding: 6px 12px;
+    border-radius: 3px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.project-info {
+    padding: 22px;
+}
+
+.project-info h3 {
+    color: var(--maroon);
+    font-size: 21px;
+    margin: 0 0 9px;
+}
+
+.project-info p {
+    color: #786e74;
+    font-size: 12px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+/* =====================================
+   PHOTO GALLERY
+===================================== */
+
+.gallery-section {
+    background: white;
+}
+
+.achievement-page .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.achievement-page .gallery-item {
+    height: 220px;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    background: #eee;
+}
+
+.achievement-page .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.achievement-page .gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.achievement-page .gallery-item::after {
+    content: "View Photo  ↗";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 25px 12px 12px;
+
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+
+    background: linear-gradient(
+        transparent,
+        rgba(36,11,22,.85)
+    );
+}
+
+/* =====================================
+   CERTIFICATE RECOGNITION
+===================================== */
+
+.recognition {
+    background: var(--cream);
+}
+
+.recognition-box {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    align-items: center;
+    gap: 45px;
+
+    background: white;
+    padding: 35px;
+    border-radius: 5px;
+
+    box-shadow: 0 6px 25px rgba(53,16,31,.06);
+}
+
+.recognition-image {
+    height: 330px;
+    background: #f8f4ef;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.recognition-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.recognition-content h2 {
+    color: var(--maroon);
+    font-size: 34px;
+    margin: 12px 0;
+}
+
+.recognition-content p {
+    font-size: 13px;
+    color: #786d73;
+    line-height: 2;
+    margin-bottom: 10px;
+}
+
+/* =====================================
+   FINAL BANNER
+===================================== */
+
+.final-banner {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(56,8,23,.94),
+            rgba(56,8,23,.94)
+        ),
+        url("steam5.jpeg") center/cover no-repeat;
+
+    padding: 75px 8%;
+    color: white;
+}
+
+.final-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin: 12px 0 15px;
+}
+
+.final-banner h2 span {
+    color: var(--gold);
+}
+
+.final-banner p {
+    max-width: 700px;
+    margin: auto;
+    color: #e7dbe1;
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* =====================================
+   DETAILS POPUP
+===================================== */
+
+.achievement-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+
+    background: rgba(20,5,12,.85);
+
+    z-index: 9999;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.achievement-modal.show {
+    display: flex;
+}
+
+.achievement-modal-box {
+    background: white;
+    width: 100%;
+    max-width: 550px;
+
+    border-radius: 8px;
+    padding: 35px;
+
+    position: relative;
+    animation: achievementPopup .25s ease;
+}
+
+@keyframes achievementPopup {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.achievement-modal-box h2 {
+    color: var(--maroon);
+    font-size: 27px;
+    margin: 10px 0;
+}
+
+.achievement-modal-box p {
+    color: #6e6269;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.close-modal {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+
+    border: none;
+    background: none;
+
+    color: var(--maroon);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* =====================================
+   PHOTO POPUP
+===================================== */
+
+.achievement-photo-box {
+    max-width: 950px;
+    padding: 15px;
+    background: white;
+}
+
+.achievement-photo-box img {
+    display: block;
+    max-width: 100%;
+    max-height: 78vh;
+    margin: auto;
+    object-fit: contain;
+}
+
+/* =====================================
+   COMMON WEBSITE FOOTER
+===================================== */
+
+.achievement-page .site-footer {
+    width: 100%;
+    background: var(--dark);
+    color: white;
+    padding: 55px 8% 20px;
+    overflow: hidden;
+}
+
+.achievement-page .site-footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 35px;
+    padding-bottom: 35px;
+}
+
+.achievement-page .site-footer-grid > div {
+    min-width: 0;
+}
+
+.achievement-page .site-footer h3 {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    margin: 0 0 18px;
+}
+
+.achievement-page .site-footer p,
+.achievement-page .site-footer a {
+    color: #e7dce0;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.achievement-page .site-footer p {
+    margin: 0;
+}
+
+.achievement-page .site-footer a {
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.achievement-page .site-footer a:hover {
+    color: var(--gold);
+}
+
+.achievement-page .footer-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.achievement-page .footer-logo {
+    display: block;
+    width: 55px !important;
+    height: 55px !important;
+    min-width: 55px !important;
+    object-fit: contain !important;
+    flex: 0 0 55px;
+    background: white;
+    padding: 4px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+}
+
+.achievement-page .footer-school-name {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 22px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.achievement-page .site-footer .footer-contact-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 11px 20px;
+    margin-top: 12px;
+    border-radius: 3px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.achievement-page .site-footer .footer-contact-btn:hover {
+    background: white;
+    color: var(--dark);
+}
+
+.achievement-page .footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.achievement-page .footer-socials a {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.achievement-page .footer-socials a:hover {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+.achievement-page .site-footer-bottom {
+    border-top: 1px solid #ffffff30;
+    padding-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    color: #d6c5cb;
+    font-size: 10px;
+    line-height: 2;
+}
+
+/* =====================================
+   BACK TO TOP
+===================================== */
+
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 43px;
+    height: 43px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--gold);
+    color: var(--dark);
+
+    font-size: 22px;
+    cursor: pointer;
+
+    display: none;
+    z-index: 999;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media(max-width: 950px) {
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .achievement-page .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .achievement-page .site-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .achievement-hero {
+        min-height: 380px;
+    }
+}
+
+@media(max-width: 768px) {
+
+    .achievement-hero {
+        min-height: 360px;
+        height: auto;
+        padding: 45px 7%;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(56,8,23,.95),
+                rgba(56,8,23,.78)
+            ),
+            url("ach-banner.jpeg") center/cover no-repeat;
+    }
+
+    .achievement-content {
+        max-width: 100%;
+    }
+
+    .achievement-content h2 {
+        font-size: 36px;
+    }
+
+    .feature-section,
+    .recognition-box {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-image {
+        height: 300px;
+    }
+
+    .feature-content h2 {
+        font-size: 30px;
+    }
+
+    .highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+}
+
+@media(max-width: 650px) {
+
+    .achievement-page .section-padding {
+        padding: 60px 6%;
+    }
+
+    .achievement-hero {
+        min-height: 350px;
+        padding: 38px 6%;
+        background-position: center;
+    }
+
+    .achievement-content {
+        text-align: left;
+    }
+
+    .achievement-content .section-tag {
+        font-size: 10px;
+    }
+
+    .achievement-content h2 {
+        font-size: 30px;
+        line-height: 1.25;
+    }
+
+    .achievement-content p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .achievement-hero .hero-button {
+        margin-top: 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .feature-image {
+        height: 260px;
+    }
+
+    .feature-content h2 {
+        font-size: 28px;
+    }
+
+    .highlight-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-page .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .achievement-page .gallery-item {
+        height: 160px;
+    }
+
+    .recognition-box {
+        padding: 20px;
+    }
+
+    .recognition-image {
+        height: 250px;
+    }
+
+    .final-banner {
+        padding: 60px 7%;
+    }
+
+    .final-banner h2 {
+        font-size: 28px;
+    }
+
+    .achievement-page .site-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .achievement-page .site-footer {
+        padding: 45px 7% 20px;
+    }
+
+    .achievement-page .site-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media(max-width: 400px) {
+
+    .achievement-content h2 {
+        font-size: 27px;
+    }
+
+    .achievement-page .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body class="achievement-page">
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <div>Government of Sindh | School Education & Literacy Department</div>
+    <div>📍 Shah Faisal Colony, Karachi</div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+
+    <div class="brand">
+        <img src="logo.jpeg" class="logo" alt="School Monogram">
+
+        <div>
+            <h1>Government Girls Secondary School<br>BLOCK V</h1>
+            <p>Shah Faisal Colony, District Korangi</p>
+        </div>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+
+    <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admissions</a>
+        <a href="achievements.html" class="active">Achievements</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="administration.html">Administration</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<!-- =====================================
+     HERO BANNER
+===================================== -->
+
+<section class="achievement-hero">
+
+    <div class="achievement-content">
+
+        <span class="section-tag">
+            OUR PROGRESS • OUR PRIDE
+        </span>
+
+        <h2>
+            Inspiring Excellence.<br>
+            <span>Creating Possibilities.</span>
+        </h2>
+
+        <p>
+            From creative classroom projects to exciting learning
+            experiences, every achievement reflects the curiosity,
+            dedication and potential of our students.
+        </p>
+
+        <a href="#steam-projects" class="hero-button">
+            Explore Our Projects →
+        </a>
+
+    </div>
+
+</section>
+
+<!-- QUICK HIGHLIGHTS -->
+<div class="intro-strip">
+
+    <div class="intro-point"><span>✦</span> Creativity</div>
+    <div class="intro-point"><span>✦</span> Discovery</div>
+    <div class="intro-point"><span>✦</span> Collaboration</div>
+    <div class="intro-point"><span>✦</span> Innovation</div>
+
+</div>
+
+<!-- FEATURED ACHIEVEMENT -->
+<section class="section-padding">
+
+    <div class="feature-section">
+
+        <div class="feature-image">
+            <img src="steam.jpeg"
+                 alt="Students participating in school learning activities">
+
+            <span class="image-label">
+                Learning Beyond Textbooks
+            </span>
+        </div>
+
+        <div class="feature-content">
+
+            <span class="section-tag">A CULTURE OF DISCOVERY</span>
+
+            <h2>Turning Curiosity Into Meaningful Learning</h2>
+
+            <p>
+                We encourage students to explore ideas, ask questions
+                and participate in activities that connect knowledge
+                with the world around them.
+            </p>
+
+            <ul class="feature-list">
+                <li><span>✓</span> Hands-on science and mathematics activities</li>
+                <li><span>✓</span> Student projects and creative models</li>
+                <li><span>✓</span> Educational visits and learning sessions</li>
+                <li><span>✓</span> Teamwork, confidence and communication</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights section-padding">
+
+    <div class="section-heading">
+
+        <span class="section-tag">WHAT MAKES US PROUD</span>
+
+        <h2>Moments That <span>Matter</span></h2>
+
+        <p>
+            Learning experiences that encourage students
+            to explore, participate and achieve.
+        </p>
+
+    </div>
+
+    <div class="highlight-grid">
+
+        <div class="highlight-card">
+
+            <div class="highlight-icon">🏆</div>
+
+            <h3>Competitions & Challenges</h3>
+
+            <p>
+                Students participate in educational challenges
+                that develop confidence, teamwork and problem-solving.
+            </p>
+
+            <button class="details-link"
+                data-title="Competitions & Challenges"
+                data-description="Our students get opportunities to participate in educational competitions and challenges. These experiences encourage teamwork, confidence, communication and a positive attitude towards learning.">
+
+                Discover More →
+
+            </button>
+
+        </div>
+
+        <div class="highlight-card">
+
+            <div class="highlight-icon">🧪</div>
+
+            <h3>Practical Learning</h3>
+
+            <p>
+                Classroom concepts become more meaningful through
+                experiments, demonstrations and investigations.
+            </p>
+
+            <button class="details-link"
+                data-title="Practical Learning"
+                data-description="Students explore scientific and mathematical concepts through practical demonstrations, classroom experiments and hands-on activities. Learning by doing helps them connect theory with everyday experiences.">
+
+                Discover More →
+
+            </button>
+
+        </div>
+
+        <div class="highlight-card">
+
+            <div class="highlight-icon">🌍</div>
+
+            <h3>Educational Experiences</h3>
+
+            <p>
+                Visits, workshops and interactive sessions
+                introduce students to new ideas and opportunities.
+            </p>
+
+            <button class="details-link"
+                data-title="Educational Experiences"
+                data-description="Educational visits and interactive sessions help students discover the world beyond the classroom. They provide opportunities to observe, ask questions and learn from real-life experiences.">
+
+                Discover More →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STEAM PROJECT SHOWCASE -->
+<section class="steam-showcase section-padding" id="steam-projects">
+
+    <div class="section-heading">
+
+        <span class="section-tag">STUDENT CREATIVITY IN ACTION</span>
+
+        <h2>Where Ideas Become <span>Projects</span></h2>
+
+        <p>
+            Explore selected moments from our students' STEAM journey,
+            where classroom knowledge meets creativity and discovery.
+        </p>
+
+    </div>
+
+    <div class="project-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+
+            <div class="project-image" onclick="openPhoto('steam4.jpeg')">
+
+                <img src="steam4.jpeg" alt="Student project">
+
+                <span class="project-number">PROJECT 01</span>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Creative Exploration</h3>
+
+                <p>
+                    Students explore concepts through visual learning,
+                    practical activities and creative project work.
+                </p>
+
+                <button class="details-link"
+                    data-title="Creative Exploration"
+                    data-description="Creative project activities give students the opportunity to explore ideas, express their understanding and learn through practical experiences.">
+
+                    View Project Details →
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+
+            <div class="project-image" onclick="openPhoto('steam5.jpeg')">
+
+                <img src="steam5.jpeg" alt="STEAM activity">
+
+                <span class="project-number">PROJECT 02</span>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Science in Action</h3>
+
+                <p>
+                    Practical demonstrations help students observe
+                    scientific concepts and understand how they work.
+                </p>
+
+                <button class="details-link"
+                    data-title="Science in Action"
+                    data-description="Through demonstrations and investigations, students observe scientific phenomena and develop curiosity about the world around them.">
+
+                    View Project Details →
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+
+            <div class="project-image" onclick="openPhoto('steam6.jpeg')">
+
+                <img src="steam6.jpeg" alt="School learning project">
+
+                <span class="project-number">PROJECT 03</span>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Learning Together</h3>
+
+                <p>
+                    Collaborative activities encourage students
+                    to share ideas and learn from one another.
+                </p>
+
+                <button class="details-link"
+                    data-title="Learning Together"
+                    data-description="Group-based learning allows students to exchange ideas, cooperate and develop communication and teamwork skills.">
+
+                    View Project Details →
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="project-card">
+
+            <div class="project-image" onclick="openPhoto('steam7.jpeg')">
+
+                <img src="steam7.jpeg" alt="Student innovation">
+
+                <span class="project-number">PROJECT 04</span>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Innovation & Discovery</h3>
+
+                <p>
+                    Students develop problem-solving skills
+                    by exploring ideas and trying new approaches.
+                </p>
+
+                <button class="details-link"
+                    data-title="Innovation & Discovery"
+                    data-description="Students are encouraged to think independently, explore possibilities and use their knowledge to approach practical challenges.">
+
+                    View Project Details →
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="project-card">
+
+            <div class="project-image" onclick="openPhoto('steam8.jpeg')">
+
+                <img src="steam8.jpeg" alt="Student activity">
+
+                <span class="project-number">PROJECT 05</span>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Learning Through Experience</h3>
+
+                <p>
+                    Interactive activities make learning
+                    engaging, memorable and meaningful.
+                </p>
+
+                <button class="details-link"
+                    data-title="Learning Through Experience"
+                    data-description="Experiential learning allows students to participate actively, observe outcomes and connect classroom ideas with practical situations.">
+
+                    View Project Details →
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PROJECT 6 -->
+        <div class="project-card">
+
+            <div class="project-image" onclick="openPhoto('steam10.jpeg')">
+
+                <img src="steam10.jpeg" alt="Project presentation">
+
+                <span class="project-number">PROJECT 06</span>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Sharing Our Ideas</h3>
+
+                <p>
+                    Project presentations give students
+                    opportunities to communicate their learning.
+                </p>
+
+                <button class="details-link"
+                    data-title="Sharing Our Ideas"
+                    data-description="Presenting projects helps students explain their ideas, communicate their understanding and develop confidence in sharing their work.">
+
+                    View Project Details →
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="gallery-section section-padding">
+
+    <div class="section-heading">
+
+        <span class="section-tag">CAPTURING OUR JOURNEY</span>
+
+        <h2>Our Learning <span>Moments</span></h2>
+
+        <p>
+            A collection of photographs celebrating activities,
+            participation and memorable school experiences.
+            Select any photograph to view it.
+        </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item" onclick="openPhoto('assembly.jpeg')">
+            <img src="assembly.jpeg" alt="School assembly">
+        </div>
+
+        <div class="gallery-item" onclick="openPhoto('steam.jpeg')">
+            <img src="steam.jpeg" alt="STEAM activity">
+        </div>
+
+        <div class="gallery-item" onclick="openPhoto('steam4.jpeg')">
+            <img src="steam4.jpeg" alt="Student project">
+        </div>
+
+        <div class="gallery-item" onclick="openPhoto('steam5.jpeg')">
+            <img src="steam5.jpeg" alt="Science activity">
+        </div>
+
+        <div class="gallery-item" onclick="openPhoto('steam6.jpeg')">
+            <img src="steam6.jpeg" alt="Student learning">
+        </div>
+
+        <div class="gallery-item" onclick="openPhoto('steam7.jpeg')">
+            <img src="steam7.jpeg" alt="Creative project">
+        </div>
+
+        <div class="gallery-item" onclick="openPhoto('steam8.jpeg')">
+            <img src="steam8.jpeg" alt="School activity">
+        </div>
+
+        <div class="gallery-item" onclick="openPhoto('steam10.jpeg')">
+            <img src="steam10.jpeg" alt="Project activity">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CERTIFICATE RECOGNITION -->
+<section class="recognition section-padding">
+
+    <div class="recognition-box">
+
+        <div class="recognition-image" onclick="openPhoto('cert1.jpeg')">
+
+            <img src="cert1.jpeg" alt="School certificate and recognition">
+
+        </div>
+
+        <div class="recognition-content">
+
+            <span class="section-tag">RECOGNITION & PARTICIPATION</span>
+
+            <h2>Every Effort Deserves Recognition</h2>
+
+            <p>
+                We value the dedication, participation and efforts
+                of our students and teachers. Certificates,
+                educational challenges and project presentations
+                represent meaningful milestones in our learning journey.
+            </p>
+
+            <p>
+                Our goal is to create opportunities where every
+                student can explore her potential, develop confidence
+                and take pride in her achievements.
+            </p>
+
+            <button class="details-link"
+                data-title="Recognition & Participation"
+                data-description="We celebrate the efforts of students and teachers who participate in educational activities, projects, competitions and learning opportunities. Every experience contributes to growth and confidence.">
+
+                Read More →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FINAL BANNER -->
+<section class="final-banner">
+
+    <span class="section-tag">OUR VISION</span>
+
+    <h2>Dream. Discover. <span>Achieve.</span></h2>
+
+    <p>
+        We believe every student has the potential to make a difference.
+        Through meaningful learning experiences, creativity and
+        encouragement, we continue building a future full of possibilities.
+    </p>
+
+</section>
+
+<!-- =====================================
+     COMMON WEBSITE FOOTER
+===================================== -->
+
+<footer class="site-footer">
+
+    <div class="site-footer-grid">
+
+        <!-- SCHOOL INFORMATION -->
+        <div class="footer-brand">
+
+            <div class="footer-logo-row">
+
+                <img src="logo.jpeg"
+                     class="footer-logo"
+                     alt="GGSS Block V Monogram">
+
+                <h3 class="footer-school-name">
+                    GGSS BLOCK V
+                </h3>
+
+            </div>
+
+            <p>
+                Government Girls Secondary School,
+                Block V, Shah Faisal Colony,
+                District Korangi, Karachi.
+            </p>
+
+            <p style="margin-top:12px;">
+                Empowering Minds, Building Futures.
+            </p>
+
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="academics.html">Academics</a></p>
+            <p><a href="admission.html">Admissions</a></p>
+            <p><a href="achievements.html">Achievements</a></p>
+
+        </div>
+
+        <!-- EXPLORE -->
+        <div>
+
+            <h3>Explore</h3>
+
+            <p><a href="facilities.html">Facilities</a></p>
+            <p><a href="gallery.html">Gallery</a></p>
+            <p><a href="administration.html">Administration</a></p>
+            <p><a href="contact.html">Contact</a></p>
+
+        </div>
+
+        <!-- CONTACT -->
+        <div>
+
+            <h3>Contact Us</h3>
+
+            <p>📍 Shah Faisal Colony, Karachi</p>
+            <p>✉ Add official school Gmail here</p>
+
+            <div class="footer-socials">
+
+                <a href="#" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+                <a href="#" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+
+            </div>
+
+            <a href="contact.html" class="footer-contact-btn">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="site-footer-bottom">
+
+        <span>
+            © <span id="year"></span>
+            Government Girls Secondary School Block V.
+        </span>
+
+        <span>
+            Designed with dedication for education.
+        </span>
+
+    </div>
+
+</footer>
+
+<!-- DETAILS POPUP -->
+<div class="achievement-modal" id="detailsModal"
+     role="dialog" aria-modal="true"
+     aria-labelledby="modalTitle">
+
+    <div class="achievement-modal-box">
+
+        <button class="close-modal"
+                onclick="closeModal()"
+                aria-label="Close">&times;</button>
+
+        <span class="section-tag">GGSS BLOCK V</span>
+
+        <h2 id="modalTitle">Details</h2>
+
+        <p id="modalDescription"></p>
+
+    </div>
+
+</div>
+
+<!-- IMAGE POPUP -->
+<div class="achievement-modal" id="photoModal"
+     onclick="closePhoto()">
+
+    <div class="achievement-modal-box achievement-photo-box"
+         onclick="event.stopPropagation()">
+
+        <button class="close-modal"
+                onclick="closePhoto()"
+                aria-label="Close">&times;</button>
+
+        <img id="popupImage"
+             src=""
+             alt="Enlarged school activity photograph">
+
+    </div>
+
+</div>
+
+<!-- BACK TO TOP -->
+<button id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- COMMON JAVASCRIPT -->
+<script src="learn.js" defer></script>
+
+<script>
+
+/* FOOTER YEAR */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* DETAILS POPUPS */
+
+const detailsModal = document.getElementById("detailsModal");
+
+const modalTitle = document.getElementById("modalTitle");
+
+const modalDescription =
+    document.getElementById("modalDescription");
+
+document.querySelectorAll(".details-link").forEach(button => {
+
+    button.addEventListener("click", function() {
+
+        modalTitle.textContent = this.dataset.title;
+
+        modalDescription.textContent =
+            this.dataset.description;
+
+        detailsModal.classList.add("show");
+
+    });
+
+});
+
+
+function closeModal() {
+
+    detailsModal.classList.remove("show");
+
+}
+
+
+/* IMAGE POPUP */
+
+const photoModal = document.getElementById("photoModal");
+
+const popupImage = document.getElementById("popupImage");
+
+
+function openPhoto(imageName) {
+
+    popupImage.src = imageName;
+
+    photoModal.classList.add("show");
+
+}
+
+
+function closePhoto() {
+
+    photoModal.classList.remove("show");
+
+    popupImage.src = "";
+
+}
+
+
+/* CLOSE POPUPS WITH ESCAPE */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeModal();
+
+        closePhoto();
+
+    }
+
+});
+
+
+/* BACK TO TOP */
+
+const backToTop = document.getElementById("backToTop");
+
+
+window.addEventListener("scroll", function() {
+
+    backToTop.style.display =
+        window.scrollY > 350 ? "block" : "none";
+
+});
+
+
+backToTop.addEventListener("click", function() {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
