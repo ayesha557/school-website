@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-        // Close menu after selecting a link
         nav.querySelectorAll("a").forEach(function (link) {
 
             link.addEventListener("click", function () {
@@ -117,9 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const slides = Array.from(
             slider.querySelectorAll(".gallery-slide, .slide, img")
-        ).filter(function (slide, index, array) {
-            return array.indexOf(slide) === index;
-        });
+        );
 
         let index = 0;
 
@@ -151,7 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================================== */
 
     const lightbox = document.querySelector(".lightbox");
-
     const lightboxImage = document.querySelector(".lightbox img");
 
     const closeLightbox = document.querySelector(
@@ -167,7 +163,6 @@ document.addEventListener("DOMContentLoaded", function () {
             img.addEventListener("click", function () {
 
                 lightboxImage.src = img.src;
-
                 lightboxImage.alt = img.alt || "Gallery image";
 
                 lightbox.classList.add("show");
@@ -189,9 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
         lightbox.addEventListener("click", function (event) {
 
             if (event.target === lightbox) {
-
                 lightbox.classList.remove("show");
-
             }
 
         });
@@ -199,9 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.addEventListener("keydown", function (event) {
 
             if (event.key === "Escape") {
-
                 lightbox.classList.remove("show");
-
             }
 
         });
@@ -237,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================
-       8. SHARED GEMINI AI CONNECTION
+       8. GEMINI AI CONNECTION
     ===================================== */
 
     async function getGeminiReply(question) {
@@ -287,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================
-       9. GGSS FLOATING AI ROBOT
+       9. FLOATING AI ROBOT
     ===================================== */
 
     if (!document.getElementById("ggssRobotLauncher")) {
@@ -295,7 +286,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const robot = document.createElement("button");
 
         robot.id = "ggssRobotLauncher";
-
         robot.type = "button";
 
         robot.setAttribute(
@@ -461,7 +451,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         document.body.appendChild(robot);
-
         document.body.appendChild(panel);
 
 
@@ -484,7 +473,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const sendButton = panel.querySelector("#ggssPopupSend");
 
         let busy = false;
-
         let isFullscreen = false;
 
 
@@ -509,9 +497,7 @@ document.addEventListener("DOMContentLoaded", function () {
             robot.setAttribute("aria-expanded", "false");
 
             if (isFullscreen) {
-
                 exitFullscreenMode();
-
             }
 
         }
@@ -519,13 +505,9 @@ document.addEventListener("DOMContentLoaded", function () {
         robot.addEventListener("click", function () {
 
             if (panel.classList.contains("ggss-chat-open")) {
-
                 closeChat();
-
             } else {
-
                 openChat();
-
             }
 
         });
@@ -542,27 +524,15 @@ document.addEventListener("DOMContentLoaded", function () {
             isFullscreen = true;
 
             panel.style.position = "fixed";
-
             panel.style.top = "0";
-
             panel.style.left = "0";
-
             panel.style.right = "0";
-
             panel.style.bottom = "0";
-
             panel.style.width = "100vw";
-
-            panel.style.height = "100vh";
-
             panel.style.height = "100dvh";
-
             panel.style.maxWidth = "none";
-
             panel.style.maxHeight = "none";
-
             panel.style.borderRadius = "0";
-
             panel.style.zIndex = "100000";
 
             fullscreenButton.textContent = "⊡";
@@ -581,25 +551,15 @@ document.addEventListener("DOMContentLoaded", function () {
             isFullscreen = false;
 
             panel.style.position = "";
-
             panel.style.top = "";
-
             panel.style.left = "";
-
             panel.style.right = "";
-
             panel.style.bottom = "";
-
             panel.style.width = "";
-
             panel.style.height = "";
-
             panel.style.maxWidth = "";
-
             panel.style.maxHeight = "";
-
             panel.style.borderRadius = "";
-
             panel.style.zIndex = "";
 
             fullscreenButton.textContent = "⛶";
@@ -616,13 +576,9 @@ document.addEventListener("DOMContentLoaded", function () {
         fullscreenButton.addEventListener("click", function () {
 
             if (isFullscreen) {
-
                 exitFullscreenMode();
-
             } else {
-
                 enterFullscreenMode();
-
             }
 
         });
@@ -637,13 +593,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (event.key === "Escape") {
 
                 if (isFullscreen) {
-
                     exitFullscreenMode();
-
                 } else {
-
                     closeChat();
-
                 }
 
             }
@@ -653,6 +605,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         /* =====================================
            15. ADD CHAT MESSAGE
+           PLAIN TEXT ONLY
         ===================================== */
 
         function addPopupMessage(message, type) {
@@ -661,7 +614,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             div.className = "ggss-popup-message " + type;
 
-            div.textContent = message;
+            const cleanMessage = String(message)
+                .replace(/\*\*/g, "")
+                .replace(/\*/g, "")
+                .replace(/__/g, "")
+                .replace(/#/g, "");
+
+            div.textContent = cleanMessage;
 
             messages.appendChild(div);
 

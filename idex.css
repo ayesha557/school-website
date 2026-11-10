@@ -1742,3 +1742,52 @@ nav a:hover {
     background: #d5b16d;
     color: #380817;
 }
+
+
+/* AI CHAT MESSAGE FORMATTING */
+
+.ggss-popup-message {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.ggss-popup-message p {
+    margin: 0 0 9px;
+    line-height: 1.6;
+}
+
+.ggss-popup-message p:last-child {
+    margin-bottom: 0;
+}
+
+.ggss-popup-message h2,
+.ggss-popup-message h3,
+.ggss-popup-message h4,
+.ggss-popup-message h5,
+.ggss-popup-message h6 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 10px 0 6px;
+    line-height: 1.4;
+}
+
+.ggss-popup-message ul,
+.ggss-popup-message ol {
+    padding-left: 22px;
+    margin: 6px 0 10px;
+}
+
+.ggss-popup-message li {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.ggss-popup-bot strong {
+    font-weight: 900 !important;
+    color: inherit !important;
+}
+
+.ggss-popup-bot em {
+    font-style: italic !important;
+}
+
