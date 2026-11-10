@@ -1,4 +1,3 @@
-
 export default async (request) => {
   if (request.method !== "POST") {
     return new Response(
