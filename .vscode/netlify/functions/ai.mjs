@@ -1,17 +1,29 @@
-export default async (request) => {
-  if (request.method !== "POST") {
-    return new Response(
-      JSON.stringify({ error: "Method not allowed" }),
-      { status: 405 }
-    );
+
+export const handler = async (event) => {
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: "Method not allowed" })
+    };
   }
 
   try {
-    const { message } = await request.json();
+    const { message } = JSON.parse(event.body || "{}");
     const apiKey = process.env.GEMINI_API_KEY;
 
     if (!apiKey) {
-      throw new Error("Gemini API key is not configured.");
+      console.error("Gemini API key is missing.");
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: "API key is not configured." })
+      };
+    }
+
+    if (!message || typeof message !== "string") {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Please enter a question." })
+      };
     }
 
     const response = await fetch(
@@ -38,22 +50,36 @@ export default async (request) => {
     const data = await response.json();
 
     if (!response.ok) {
-      return new Response(
-        JSON.stringify({ error: "Gemini API request failed." }),
-        { status: response.status }
-      );
+      console.error("Gemini API error:", response.status, data);
+
+      return {
+        statusCode: 502,
+        body: JSON.stringify({
+          error: "Gemini API request failed."
+        })
+      };
     }
 
     const answer =
       data.candidates?.[0]?.content?.parts?.[0]?.text ||
       "Sorry, I could not generate a response.";
 
-    return Response.json({ reply: answer });
+    return {
+      statusCode: 200,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ reply: answer })
+    };
 
   } catch (error) {
-    return Response.json(
-      { error: "Something went wrong. Please try again." },
-      { status: 500 }
-    );
+    console.error("AI function error:", error);
+
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        error: "Something went wrong. Please try again."
+      })
+    };
   }
 };
