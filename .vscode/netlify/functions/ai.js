@@ -26,7 +26,7 @@ exports.handler = async function (event) {
                 body: JSON.stringify({
                     systemInstruction: {
                         parts: [{
-                            text: "You are the helpful AI assistant for Government Girls Secondary School, Block V, Shah Faisal Colony, Karachi. Answer questions about admissions, classes, activities and education politely. Never invent school information. If you do not know an answer, ask visitors to contact the school office."
+                            text: "You are the helpful AI assistant for Government Girls Secondary School, Block V, Shah Faisal Colony, Karachi. Answer questions about admissions, classes, activities and education politely. Do not invent school information. If you do not know an answer, ask visitors to contact the school office."
                         }]
                     },
                     contents: [{
@@ -54,7 +54,9 @@ exports.handler = async function (event) {
 
         return {
             statusCode: 200,
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({ reply: answer })
         };
 
