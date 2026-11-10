@@ -1,15 +1,21 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Academics | GGSS Block V</title>
 
 <link rel="stylesheet" href="idex.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 /* ===== ACADEMICS PAGE ===== */
 
 body {
@@ -544,148 +550,178 @@ body {
     cursor: pointer;
 }
 
-/* FOOTER - FULL SCREEN WIDTH */
+/* ===== COMMON FOOTER - SAME AS HOME AND ABOUT ===== */
 
 .site-footer {
     display: block;
     width: 100%;
-    max-width: none;
     margin: 0;
-    padding: 55px 7% 20px;
-    background: #481728;
-    color: white;
     box-sizing: border-box;
+    background: #380817;
+    color: white;
+    padding: 55px 8% 20px;
 }
 
+.site-footer,
 .site-footer * {
     box-sizing: border-box;
 }
 
-.site-footer-container {
-    max-width: 1400px;
-    margin: auto;
+.site-footer-grid {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1.5fr 1fr;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
     gap: 35px;
+    padding-bottom: 35px;
+}
+
+.site-footer-grid > div {
+    min-width: 0;
 }
 
 .site-footer h3 {
-    color: #dfb96f;
-    font-family: 'Playfair Display',serif;
-    font-size: 19px;
-    margin-bottom: 22px;
+    color: #d5b16d;
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    margin: 0 0 18px;
 }
 
-.site-footer h3::after {
-    content: "";
-    display: block;
-    width: 35px;
-    height: 2px;
-    background: #dfb96f;
-    margin-top: 9px;
+.site-footer p,
+.site-footer a {
+    color: #e7dce0;
+    font-size: 12px;
+    line-height: 2;
 }
 
 .site-footer p {
-    color: #e6d9de;
-    font-size: 12px;
-    line-height: 1.9;
+    margin: 0;
 }
 
 .site-footer a {
-    color: #e6d9de;
     text-decoration: none;
-    font-size: 12px;
-    transition: .3s;
     overflow-wrap: anywhere;
 }
 
 .site-footer a:hover {
-    color: #dfb96f;
+    color: #d5b16d;
 }
 
-.site-footer ul {
-    list-style: none;
-    padding: 0;
-}
+/* SCHOOL LOGO AND NAME */
 
-.site-footer li {
-    margin-bottom: 12px;
-}
-
-.site-footer-brand {
+.footer-logo-row {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
+    gap: 15px;
+    margin-bottom: 18px;
 }
 
-.site-footer-brand img {
-    width: 53px;
-    height: 53px;
-    border-radius: 50%;
+.footer-logo-row img {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
     object-fit: contain;
     background: white;
-    padding: 3px;
+    padding: 5px;
+    border: 2px solid #d5b16d;
+    border-radius: 50%;
 }
 
-.site-footer-brand h2 {
-    font-family: 'Playfair Display',serif;
-    color: #dfb96f;
-    font-size: 19px;
+.footer-school-name {
+    font-family: 'Playfair Display', serif;
+    color: #d5b16d;
+    font-size: 24px;
+    line-height: 1.3;
+    margin: 0;
 }
 
-.site-social {
+/* FOOTER CONTACT BUTTON */
+
+.footer-contact-btn {
+    display: inline-block;
+    background: #d5b16d;
+    color: #380817 !important;
+    padding: 11px 20px;
+    margin-top: 12px;
+    border-radius: 3px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.footer-contact-btn:hover {
+    background: white;
+}
+
+/* SOCIAL MEDIA ICONS */
+
+.footer-socials {
     display: flex;
     gap: 12px;
-    margin: 18px 0;
+    margin-top: 15px;
 }
 
-.site-social a {
-    width: 38px;
-    height: 38px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.footer-socials a {
+    width: 36px;
+    height: 36px;
+    border: none !important;
     border-radius: 50%;
-    background: rgba(255,255,255,.12);
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: .3s;
 }
 
-.site-social a:hover {
-    background: #dfb96f;
-    color: #481728;
-}
-
-.site-footer-contact {
-    display: inline-block;
-    padding: 11px 22px;
-    background: #c49a53;
+.footer-socials .facebook-icon {
+    background: #1877F2;
     color: white !important;
-    border-radius: 5px;
+}
+
+.footer-socials .instagram-icon {
+    background: linear-gradient(
+        45deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+    color: white !important;
+}
+
+.footer-socials .gmail-icon {
+    background: white;
+    color: #EA4335 !important;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-4px);
+}
+
+.footer-map-link {
+    color: #d5b16d !important;
     font-weight: 600;
 }
 
-.site-footer-contact:hover {
-    background: white;
-    color: #481728 !important;
+.site-footer i {
+    margin-right: 7px;
 }
+
+/* FOOTER BOTTOM */
 
 .site-footer-bottom {
-    max-width: 1400px;
-    margin: 40px auto 0;
-    padding-top: 18px;
-    border-top: 1px solid rgba(255,255,255,.2);
+    border-top: 1px solid #ffffff30;
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 15px;
     flex-wrap: wrap;
-    gap: 12px;
+    color: #d6c5cb;
+    font-size: 10px;
+    line-height: 2;
 }
 
 .site-footer-bottom p {
-    font-size: 11px;
-    margin: 0;
+    font-size: 10px;
 }
 
 /* ANIMATIONS */
@@ -700,7 +736,7 @@ body {
     to {opacity: 1; transform: translateY(0);}
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE DESIGN */
 
 @media(max-width: 950px) {
     .acad-programme-grid,
@@ -713,19 +749,27 @@ body {
         grid-template-columns: repeat(2,1fr);
     }
 
-    .site-footer-container {
+    .site-footer-grid {
         grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width: 800px) {
+    .about-intro-new {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 768px) {
+    .acad-hero {
+        min-height: 320px;
+        padding: 45px 7%;
     }
 }
 
 @media(max-width: 600px) {
     .acad-container {
         width: 90%;
-    }
-
-    .acad-hero {
-        min-height: 320px;
-        padding: 45px 7%;
     }
 
     .acad-programme-grid,
@@ -750,10 +794,20 @@ body {
     .acad-modal-box {
         padding: 28px 18px;
     }
+}
 
-    .site-footer-container {
+@media(max-width: 500px) {
+    .site-footer {
+        padding: 45px 7% 20px;
+    }
+
+    .site-footer-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 28px;
+    }
+
+    .footer-logo-row {
+        justify-content: flex-start;
     }
 
     .site-footer-bottom {
@@ -761,42 +815,44 @@ body {
         text-align: center;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER: SAME AS YOUR ORIGINAL -->
+<!-- HEADER -->
 
 <div class="topbar">
-<div>Government of Sindh | School Education & Literacy Department</div>
-<div>📍 Shah Faisal Colony, Karachi</div>
+    <div>Government of Sindh | School Education & Literacy Department</div>
+    <div>📍 Shah Faisal Colony, Karachi</div>
 </div>
 
 <header class="header">
-<div class="brand">
-<img src="logo.jpeg" class="logo" alt="School Monogram">
-<div>
-<h1>Government Girls Secondary School<br>BLOCK V</h1>
-<p>Shah Faisal Colony, District Korangi</p>
-</div>
-</div>
 
-<button class="menu-toggle" id="menuToggle">☰</button>
+    <div class="brand">
+        <img src="logo.jpeg" class="logo" alt="School Monogram">
+        <div>
+            <h1>Government Girls Secondary School<br>BLOCK V</h1>
+            <p>Shah Faisal Colony, District Korangi</p>
+        </div>
+    </div>
 
-<nav id="navbar">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="academics.html">Academics</a>
-<a href="admission.html">Admissions</a>
-<a href="achievements.html">Achievements</a>
-<a href="facilities.html">Facilities</a>
-<a href="gallery.html">Gallery</a>
-<a href="administration.html">Administration</a>
-<a href="contact.html">Contact</a>
-</nav>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html" class="active">Academics</a>
+        <a href="admission.html">Admissions</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="administration.html">Administration</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
 </header>
-
 
 <main class="acad-page">
 
@@ -816,7 +872,6 @@ body {
         </a>
     </div>
 </section>
-
 
 <!-- PROGRAMMES -->
 
@@ -863,7 +918,6 @@ body {
 
 </div>
 </section>
-
 
 <!-- LEARNING APPROACH -->
 
@@ -918,7 +972,6 @@ body {
 
 </div>
 </section>
-
 
 <!-- ACADEMIC INFORMATION -->
 
@@ -992,7 +1045,6 @@ body {
 </div>
 </section>
 
-
 <!-- ACHIEVEMENTS GALLERY -->
 
 <section class="acad-achievements">
@@ -1035,7 +1087,6 @@ body {
 </div>
 </section>
 
-
 <!-- CLOSING / CONTACT -->
 
 <section class="acad-information">
@@ -1044,14 +1095,13 @@ body {
     <div class="acad-closing">
         <h2>Every Learner Has the Potential to Shine.</h2>
         <p>We inspire curiosity, encourage excellence and celebrate progress.</p>
-        <a href="facilities.html" class="acad-contact-btn">Facilities We provide →</a>
+        <a href="facilities.html" class="acad-contact-btn">Facilities We Provide →</a>
     </div>
 
 </div>
 </section>
 
 </main>
-
 
 <!-- INFORMATION POPUP -->
 
@@ -1062,7 +1112,6 @@ body {
     </div>
 </div>
 
-
 <!-- IMAGE VIEWER -->
 
 <div class="acad-viewer" id="acadViewer" onclick="closeViewerOutside(event)">
@@ -1070,78 +1119,145 @@ body {
     <img id="acadViewerImage" src="" alt="Enlarged school image">
 </div>
 
-
-<!-- FULL-WIDTH FOOTER -->
+<!-- COMMON FOOTER - SAME AS HOME AND ABOUT -->
 
 <footer class="site-footer">
 
-    <div class="site-footer-container">
+    <div class="site-footer-grid">
 
-        <div>
-            <div class="site-footer-brand">
-                <img src="logo.jpeg" alt="School Logo">
-                <h2>GGSS BLOCK V</h2>
+        <!-- SCHOOL BRAND AND LOGO -->
+
+        <div class="footer-brand">
+
+            <div class="footer-logo-row">
+                <img src="logo.jpeg" alt="GGSS Block V Logo">
+                <h2 class="footer-school-name">GGSS BLOCK V</h2>
             </div>
 
             <p>
-                Empowering young minds through quality education,
-                creativity and lifelong learning. Building confident
-                learners and brighter futures.
+                Empowering Minds, Building Futures.
+                Committed to quality education, creativity
+                and the development of confident learners.
             </p>
+
         </div>
 
-        <div>
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="academics.html">Academics</a></li>
-                <li><a href="facilities.html">Facilities</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="administration.html">Administration</a></li>
-            </ul>
-        </div>
+        <!-- CONTACT INFORMATION -->
 
         <div>
             <h3>Contact Information</h3>
 
-            <p>📍 Shah Faisal Colony, Block V,<br>
-            District Korangi, Karachi, Pakistan</p>
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Government Girls Secondary School Block V
+            </p>
 
-            <p>✉️ Add your school's Gmail address</p>
+            <p>Shah Faisal Colony, District Korangi, Karachi</p>
 
-            <p>Government of Sindh<br>
-            School Education & Literacy Department</p>
+            <p>SEMIS Code: 408090122</p>
+
+            <p>
+                <a href="contact.html#school-location" class="footer-map-link">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    View School Location on Map
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                Add official school phone number
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:YOUR_EMAIL@gmail.com">
+                    Add official school Gmail
+                </a>
+            </p>
+
         </div>
+
+        <!-- QUICK LINKS -->
+
+        <div>
+            <h3>Quick Links</h3>
+
+            <p><a href="about.html">About Our School</a></p>
+            <p><a href="academics.html">Academics</a></p>
+            <p><a href="admission.html">Admissions</a></p>
+            <p><a href="achievements.html">Achievements</a></p>
+            <p><a href="facilities.html">Facilities</a></p>
+            <p><a href="gallery.html">Gallery</a></p>
+        </div>
+
+        <!-- SOCIAL MEDIA -->
 
         <div>
             <h3>Connect With Us</h3>
 
-            <p>Follow our school activities, achievements and educational updates.</p>
+            <p>Follow our school activities and updates.</p>
 
-            <div class="site-social">
-                <a href="https://web.facebook.com/profile.php?id=100063835883192&rdid=H8bXUPS66MkSFr5E&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1FGbXVndL4%2F%3F_rdc%3D1%26_rdr#" target="_blank"rel="noopener noreferrer">F</a>
-                <a href="https://www.instagram.com/ggss_block_5?psln=MmVzMzhja2w1dHlr" target="_blank"rel="noopener noreferrer">Ig</a>
+            <div class="footer-socials">
+
+                <a href="https://web.facebook.com/profile.php?id=100063835883192&rdid=H8bXUPS66MkSFr5E&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1FGbXVndL4%2F%3F_rdc%3D1%26_rdr#"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="facebook-icon"
+                   title="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/ggss_block_5?psln=MmVzMzhja2w1dHlr"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="instagram-icon"
+                   title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="mailto:YOUR_EMAIL@gmail.com"
+                   class="gmail-icon"
+                   title="Gmail">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
             </div>
 
-            <a href="contact.html" class="site-footer-contact">Contact Us →</a>
+            <a href="contact.html" class="footer-contact-btn">
+                Contact Our School →
+            </a>
         </div>
 
     </div>
 
+    <!-- FOOTER COPYRIGHT -->
+
     <div class="site-footer-bottom">
-        <p>© <span class="year"></span> Government Girls Secondary School Block V. All Rights Reserved.</p>
+
+        <p>
+            © <span class="year"></span>
+            Government Girls Secondary School Block V.
+            All Rights Reserved.
+        </p>
+
         <p>Designed with dedication for education.</p>
+
     </div>
 
 </footer>
-
 
 <button id="backToTop">↑</button>
 
 <script src="learn.js" defer></script>
 
 <script>
+
+/* AUTOMATIC COPYRIGHT YEAR */
+
+document.querySelectorAll(".year").forEach(function(element) {
+    element.textContent = new Date().getFullYear();
+});
+
 /* ===== POPUP INFORMATION ===== */
 
 const acadInformation = {
@@ -1238,8 +1354,10 @@ const acadInformation = {
 };
 
 function openInfo(type) {
+
     document.getElementById("acadModalContent").innerHTML =
-        acadInformation[type] || "<h2>Information</h2><p>Information coming soon.</p>";
+        acadInformation[type] ||
+        "<h2>Information</h2><p>Information coming soon.</p>";
 
     document.getElementById("acadModal").classList.add("active");
     document.body.style.overflow = "hidden";
@@ -1256,28 +1374,38 @@ function closeInfoOutside(event) {
     }
 }
 
-
 /* ===== EXAM SCHEDULE POPUP ===== */
 
 function openGallery(type) {
 
     if (type === "exam") {
+
         document.getElementById("acadModalContent").innerHTML = `
             <h2>Examination Schedule</h2>
             <p>Click any timetable image to view it in full size.</p>
 
             <div class="acad-popup-gallery">
-                <img class="acad-popup-image" src="exam1.jpeg"
-                alt="Examination Schedule 1" onclick="viewImage('exam1.jpeg','Examination Schedule')">
 
-                <img class="acad-popup-image" src="exam2.jpeg"
-                alt="Examination Schedule 2" onclick="viewImage('exam2.jpeg','Examination Schedule')">
+                <img class="acad-popup-image"
+                src="exam1.jpeg"
+                alt="Examination Schedule 1"
+                onclick="viewImage('exam1.jpeg','Examination Schedule')">
 
-                <img class="acad-popup-image" src="exam3.jpeg"
-                alt="Examination Schedule 3" onclick="viewImage('exam3.jpeg','Examination Schedule')">
+                <img class="acad-popup-image"
+                src="exam2.jpeg"
+                alt="Examination Schedule 2"
+                onclick="viewImage('exam2.jpeg','Examination Schedule')">
 
-                <img class="acad-popup-image" src="exam4.jpeg"
-                alt="Examination Schedule 4" onclick="viewImage('exam4.jpeg','Examination Schedule')">
+                <img class="acad-popup-image"
+                src="exam3.jpeg"
+                alt="Examination Schedule 3"
+                onclick="viewImage('exam3.jpeg','Examination Schedule')">
+
+                <img class="acad-popup-image"
+                src="exam4.jpeg"
+                alt="Examination Schedule 4"
+                onclick="viewImage('exam4.jpeg','Examination Schedule')">
+
             </div>
         `;
 
@@ -1286,10 +1414,10 @@ function openGallery(type) {
     }
 }
 
-
 /* ===== IMAGE VIEWER ===== */
 
 function viewImage(src, title) {
+
     const viewer = document.getElementById("acadViewer");
     const image = document.getElementById("acadViewerImage");
 
@@ -1300,25 +1428,29 @@ function viewImage(src, title) {
 }
 
 function closeViewer() {
+
     document.getElementById("acadViewer").classList.remove("active");
     document.getElementById("acadViewerImage").src = "";
 }
 
 function closeViewerOutside(event) {
+
     if (event.target.id === "acadViewer") {
         closeViewer();
     }
 }
 
-
 /* ===== ESCAPE KEY ===== */
 
 document.addEventListener("keydown", function(event) {
+
     if (event.key === "Escape") {
         closeViewer();
         closeInfo();
     }
+
 });
+
 </script>
 
 </body>

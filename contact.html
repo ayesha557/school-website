@@ -152,8 +152,86 @@
     overflow-wrap: anywhere;
 }
 
+.contact-detail a {
+    color: #eee1e5;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.contact-detail a:hover {
+    color: #d5b16d;
+}
+
+/* SOCIAL MEDIA LINKS */
+
+.contact-socials {
+    margin-top: 28px;
+    padding-top: 25px;
+    border-top: 1px solid #ffffff25;
+}
+
+.contact-socials h4 {
+    color: #d5b16d;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.social-icon-links {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.social-icon-links a {
+    width: 47px;
+    height: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: white;
+    transition: .3s;
+}
+
+.social-icon-links a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 15px #00000040;
+}
+
+.social-icon-links svg {
+    width: 25px;
+    height: 25px;
+}
+
+/* FACEBOOK */
+
+.social-icon-links .facebook-icon {
+    background: #1877F2;
+}
+
+/* INSTAGRAM */
+
+.social-icon-links .instagram-icon {
+    background: linear-gradient(
+        45deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+}
+
+/* GMAIL */
+
+.social-icon-links .gmail-icon {
+    background: white;
+}
+
+/* SCHOOL NOTE */
+
 .contact-info .school-note {
-    margin-top: 35px;
+    margin-top: 30px;
     padding: 17px;
     border-left: 3px solid #d5b16d;
     background: #ffffff10;
@@ -248,11 +326,11 @@
 
 .location-section {
     background: #faf7f2;
-    padding: 65px 8%;
+    padding: 70px 8%;
     text-align: center;
 }
 
-.location-section span {
+.location-section > span {
     color: #a78345;
     font-size: 11px;
     font-weight: 700;
@@ -266,38 +344,155 @@
     margin: 12px 0;
 }
 
-.location-section p {
+.location-section > p {
     color: #777;
     font-size: 13px;
     line-height: 1.9;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .location-card {
-    max-width: 750px;
+    max-width: 1050px;
     margin: auto;
-    padding: 30px;
     background: white;
-    border-radius: 8px;
-    border-bottom: 3px solid #d5b16d;
-    box-shadow: 0 8px 25px #00000008;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px #00000010;
+    border-bottom: 4px solid #d5b16d;
 }
 
-.location-card .location-symbol {
-    font-size: 35px;
-    margin-bottom: 12px;
+.location-card-header {
+    padding: 25px 25px 20px;
+    text-align: left;
 }
 
-.location-card h3 {
+.location-card-header h3 {
     color: #650d26;
     font-family: 'Playfair Display', serif;
-    font-size: 21px;
+    font-size: 22px;
     margin-bottom: 10px;
 }
 
-.location-card p {
-    margin: 0;
+.location-card-header p {
+    color: #777;
     font-size: 12px;
+    line-height: 1.8;
+}
+
+.map-container {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.location-actions {
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.location-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #650d26;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.location-btn:hover {
+    background: #d5b16d;
+    color: #380817;
+    transform: translateY(-2px);
+}
+
+.location-btn.secondary {
+    background: white;
+    color: #650d26;
+    border: 1px solid #650d26;
+}
+
+.location-btn.secondary:hover {
+    background: #650d26;
+    color: white;
+}
+
+/* FOOTER SOCIAL ICONS */
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.footer-socials a {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: .3s;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-4px);
+}
+
+.footer-socials svg {
+    width: 22px;
+    height: 22px;
+}
+
+.footer-socials .facebook-icon {
+    background: #1877F2;
+}
+
+.footer-socials .instagram-icon {
+    background: linear-gradient(
+        45deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+}
+
+.footer-socials .gmail-icon {
+    background: white;
+}
+
+/* FOOTER CONTACT LINKS */
+
+.footer-contact-links {
+    margin: 12px 0;
+}
+
+.footer-contact-links a {
+    color: #eee1e5;
+    text-decoration: none;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.footer-contact-links a:hover {
+    color: #d5b16d;
 }
 
 /* RESPONSIVE */
@@ -309,6 +504,7 @@
 }
 
 @media(max-width: 520px) {
+
     .contact-hero {
         min-height: 280px;
         padding: 40px 7%;
@@ -336,8 +532,25 @@
         padding: 50px 6%;
     }
 
-    .location-card {
-        padding: 25px 18px;
+    .location-card-header {
+        padding: 20px;
+    }
+
+    .location-card-header h3 {
+        font-size: 19px;
+    }
+
+    .map-container {
+        height: 330px;
+    }
+
+    .location-actions {
+        padding: 18px 12px;
+    }
+
+    .location-btn {
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -384,26 +597,37 @@
 <!-- HERO -->
 
 <section class="contact-hero">
+
     <div class="contact-hero-content">
+
         <span>WE WOULD LOVE TO HEAR FROM YOU</span>
+
         <h2>Get in Touch<br>With Our School</h2>
+
         <p>
             Have a question or need information?
             We welcome your queries and look forward
             to connecting with parents, students and visitors.
         </p>
+
     </div>
+
 </section>
 
 <!-- INTRODUCTION -->
 
 <section class="contact-intro">
+
     <span>CONTACT OUR INSTITUTION</span>
+
     <h2>We're Here to Help</h2>
+
     <p>
-        Whether you want to learn about admissions, academic activities
-        or school information, please feel free to contact us.
+        Whether you want to learn about admissions,
+        academic activities or school information,
+        please feel free to contact us.
     </p>
+
 </section>
 
 <!-- CONTACT DETAILS AND FORM -->
@@ -418,41 +642,188 @@
 
         <p>
             Connect with Government Girls Secondary School Block V.
-            We welcome communication from parents, students and the community.
+            We welcome communication from parents, students
+            and the community.
         </p>
 
+        <!-- ADDRESS -->
+
         <div class="contact-detail">
+
             <div class="contact-icon">📍</div>
+
             <div>
                 <h4>Our Address</h4>
                 <p>
-                    Government Girls Secondary School Block V,<br>
-                    Shah Faisal Colony, District Korangi,<br>
-                    Karachi, Pakistan.
+                    Mulla Shor Govt. School,<br>
+                    Shah Faisal No. 5, Shah Faisal Colony,<br>
+                    District Korangi, Karachi, Pakistan.
                 </p>
             </div>
+
         </div>
 
+        <!-- SCHOOL INFORMATION -->
+
         <div class="contact-detail">
+
             <div class="contact-icon">🏫</div>
+
             <div>
                 <h4>School Information</h4>
                 <p>SEMIS Code: 408090122</p>
             </div>
+
         </div>
+
+        <!-- PHONE NUMBER -->
 
         <div class="contact-detail">
-            <div class="contact-icon">✉️</div>
+
+            <div class="contact-icon">📞</div>
+
             <div>
-                <h4>Email Address</h4>
-                <p>Add the official school Gmail address here.</p>
+                <h4>School Phone</h4>
+
+                <!-- REPLACE WITH OFFICIAL SCHOOL PHONE NUMBER -->
+
+                <p>
+                    <a href="tel:REPLACE_WITH_PHONE_NUMBER">
+                        Add official school phone number
+                    </a>
+                </p>
+
             </div>
+
         </div>
 
+        <!-- EMAIL -->
+
+        <div class="contact-detail">
+
+            <div class="contact-icon">✉️</div>
+
+            <div>
+                <h4>Official Email Address</h4>
+
+                <!-- REPLACE WITH OFFICIAL SCHOOL GMAIL -->
+
+                <p>
+                    <a href="mailto:REPLACE_WITH_SCHOOL_EMAIL">
+                        Add official school Gmail address
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- SOCIAL MEDIA -->
+
+        <div class="contact-socials">
+
+            <h4>Connect With Us</h4>
+
+            <div class="social-icon-links">
+
+                <!-- FACEBOOK -->
+
+                <a class="facebook-icon"
+                   href="https://www.facebook.com/profile.php?id=100063835883192"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Official Facebook Page"
+                   title="Facebook">
+
+                    <svg viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#fff"
+                            d="M13.4 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.3-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.4v2H7.2V13H10v8h3.4z"/>
+                    </svg>
+
+                </a>
+
+                <!-- INSTAGRAM -->
+
+                <a class="instagram-icon"
+                   href="https://www.instagram.com/ggss_block_5/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Official Instagram Page"
+                   title="Instagram">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+
+                        <rect x="3" y="3" width="18" height="18"
+                              rx="5" stroke="white" stroke-width="2"/>
+
+                        <circle cx="12" cy="12" r="4"
+                                stroke="white" stroke-width="2"/>
+
+                        <circle cx="17.5" cy="6.8" r="1.2"
+                                fill="white"/>
+
+                    </svg>
+
+                </a>
+
+                <!-- GMAIL -->
+
+                <a class="gmail-icon"
+                   href="mailto:REPLACE_WITH_SCHOOL_EMAIL"
+                   aria-label="Send Email to School"
+                   title="Gmail">
+
+                    <svg viewBox="0 0 48 36"
+                         xmlns="http://www.w3.org/2000/svg">
+
+                        <path d="M4 31V7"
+                              stroke="#4285F4"
+                              stroke-width="6"
+                              stroke-linecap="round"/>
+
+                        <path d="M4 7L24 22L44 7"
+                              stroke="#EA4335"
+                              stroke-width="6"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              fill="none"/>
+
+                        <path d="M44 7V31"
+                              stroke="#34A853"
+                              stroke-width="6"
+                              stroke-linecap="round"/>
+
+                        <path d="M4 31V13"
+                              stroke="#4285F4"
+                              stroke-width="6"
+                              stroke-linecap="round"/>
+
+                        <path d="M44 31V13"
+                              stroke="#FBBC04"
+                              stroke-width="2"
+                              stroke-linecap="round"/>
+
+                    </svg>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- SCHOOL NOTE -->
+
         <div class="school-note">
+
             <strong>Our Commitment</strong><br>
+
             We believe that strong communication between school,
             parents and the community supports student success.
+            We welcome your questions, suggestions and feedback.
+
         </div>
 
     </div>
@@ -473,7 +844,9 @@
               data-netlify="true"
               netlify-honeypot="bot-field">
 
-            <input type="hidden" name="form-name" value="school-contact">
+            <input type="hidden"
+                   name="form-name"
+                   value="school-contact">
 
             <p hidden>
                 <label>
@@ -483,33 +856,57 @@
             </p>
 
             <div class="form-group">
+
                 <label for="name">Full Name</label>
-                <input type="text" id="name" name="name"
-                       placeholder="Enter your full name" required>
+
+                <input type="text"
+                       id="name"
+                       name="name"
+                       placeholder="Enter your full name"
+                       required>
+
             </div>
 
             <div class="form-group">
+
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email"
-                       placeholder="Enter your email address" required>
+
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="Enter your email address"
+                       required>
+
             </div>
 
             <div class="form-group">
+
                 <label for="subject">Subject</label>
-                <select id="subject" name="subject" required>
+
+                <select id="subject"
+                        name="subject"
+                        required>
+
                     <option value="">Select a subject</option>
                     <option value="Admission Inquiry">Admission Inquiry</option>
                     <option value="Academic Information">Academic Information</option>
                     <option value="General Question">General Question</option>
                     <option value="Parent Communication">Parent Communication</option>
                     <option value="Other">Other</option>
+
                 </select>
+
             </div>
 
             <div class="form-group">
+
                 <label for="message">Your Message</label>
-                <textarea id="message" name="message"
-                          placeholder="Write your message here..." required></textarea>
+
+                <textarea id="message"
+                          name="message"
+                          placeholder="Write your message here..."
+                          required></textarea>
+
             </div>
 
             <button type="submit" class="contact-submit">
@@ -522,24 +919,73 @@
 
 </section>
 
-<!-- LOCATION -->
+<!-- SCHOOL LOCATION AND GOOGLE MAP -->
 
 <section class="location-section">
 
     <span>FIND OUR SCHOOL</span>
+
     <h2>Visit Our Institution</h2>
 
     <p>
-        We are located in Shah Faisal Colony,
-        District Korangi, Karachi.
+        Find Government Girls Secondary School Block V,
+        popularly known as Mulla Shor, in Shah Faisal Colony,
+        Karachi.
     </p>
 
-    <div class="location-card">
-        <div class="location-symbol">📍</div>
-        <h3>Government Girls Secondary School Block V</h3>
-        <p>
-            Shah Faisal Colony, District Korangi, Karachi, Pakistan.
-        </p>
+    <div class="location-card" id="school-location">
+
+        <div class="location-card-header">
+
+            <h3>📍 Government Girls Secondary School Block V</h3>
+
+            <p>
+                Shah Faisal No. 5, Shah Faisal Colony,
+                District Korangi, Karachi, Pakistan.
+            </p>
+
+        </div>
+
+        <!-- GOOGLE MAP EMBED -->
+
+        <div class="map-container">
+
+            <iframe
+                src="https://www.google.com/maps?q=24.8752149,67.138111&z=17&output=embed"
+                title="Location of Mulla Shor Govt. School, Shah Faisal Colony Karachi"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+        </div>
+
+        <!-- MAP ACTION BUTTONS -->
+
+        <div class="location-actions">
+
+            <a
+                href="https://www.google.com/maps/dir/?api=1&destination=24.8752149%2C67.138111"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="location-btn">
+
+                Get Directions ↗
+
+            </a>
+
+            <a
+                href="https://maps.app.goo.gl/u3qcR8UQ8c43pvVy9"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="location-btn secondary">
+
+                Open in Google Maps ↗
+
+            </a>
+
+        </div>
+
     </div>
 
 </section>
@@ -550,11 +996,16 @@
 
     <div class="site-footer-grid">
 
+        <!-- FOOTER BRAND -->
+
         <div class="footer-brand">
 
             <div class="footer-logo-row">
+
                 <img src="logo.jpeg" alt="GGSS Block V Logo">
+
                 <h2 class="footer-school-name">GGSS BLOCK V</h2>
+
             </div>
 
             <p>
@@ -565,46 +1016,152 @@
 
         </div>
 
-        <div>
-            <h3>Contact Information</h3>
-            <p>📍 Government Girls Secondary School Block V</p>
-            <p>Shah Faisal Colony, District Korangi, Karachi</p>
-            <p>SEMIS Code: 408090122</p>
-        </div>
+        <!-- FOOTER CONTACT -->
 
         <div>
+
+            <h3>Contact Information</h3>
+
+            <p>📍 Mulla Shor Govt. School</p>
+
+            <p>Shah Faisal Colony, District Korangi, Karachi</p>
+
+            <p>SEMIS Code: 408090122</p>
+
+            <div class="footer-contact-links">
+
+                <!-- REPLACE WITH SCHOOL PHONE NUMBER -->
+
+                <p>
+                    <a href="tel:REPLACE_WITH_PHONE_NUMBER">
+                        📞 School Phone Number
+                    </a>
+                </p>
+
+                <!-- REPLACE WITH SCHOOL EMAIL -->
+
+                <p>
+                    <a href="mailto:ggsskq1187@gmail.com">
+                        ✉️ School Email Address
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER QUICK LINKS -->
+
+        <div>
+
             <h3>Quick Links</h3>
+
             <p><a href="about.html">About Our School</a></p>
             <p><a href="academics.html">Academics</a></p>
             <p><a href="admission.html">Admissions</a></p>
             <p><a href="achievements.html">Achievements</a></p>
             <p><a href="facilities.html">Facilities</a></p>
             <p><a href="gallery.html">Gallery</a></p>
+
         </div>
 
+        <!-- FOOTER SOCIAL MEDIA -->
+
         <div>
+
             <h3>Connect With Us</h3>
+
             <p>Follow our school activities and updates.</p>
 
             <div class="footer-socials">
-               <a href="https://web.facebook.com/profile.php?id=100063835883192&rdid=H8bXUPS66MkSFr5E&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1FGbXVndL4%2F%3F_rdc%3D1%26_rdr#" target="_blank" rel="noopener noreferrer">f</a>
-                <a href="https://www.instagram.com/ggss_block_5?psln=MmVzMzhja2w1dHlr" target="_blank" rel="noopener noreferrer">ig</a>
+
+                <a class="facebook-icon"
+                   href="https://www.facebook.com/profile.php?id=100063835883192"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Facebook">
+
+                    <svg viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+
+                        <path fill="white"
+                            d="M13.4 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.3-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.4v2H7.2V13H10v8h3.4z"/>
+
+                    </svg>
+
+                </a>
+
+                <a class="instagram-icon"
+                   href="https://www.instagram.com/ggss_block_5/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+
+                        <rect x="3" y="3" width="18" height="18"
+                              rx="5" stroke="white" stroke-width="2"/>
+
+                        <circle cx="12" cy="12" r="4"
+                                stroke="white" stroke-width="2"/>
+
+                        <circle cx="17.5" cy="6.8" r="1.2"
+                                fill="white"/>
+
+                    </svg>
+
+                </a>
+
+                <a class="gmail-icon"
+                   href="mailto:REPLACE_WITH_SCHOOL_EMAIL"
+                   aria-label="Gmail">
+
+                    <svg viewBox="0 0 48 36"
+                         xmlns="http://www.w3.org/2000/svg">
+
+                        <path d="M4 31V7"
+                              stroke="#4285F4"
+                              stroke-width="6"
+                              stroke-linecap="round"/>
+
+                        <path d="M4 7L24 22L44 7"
+                              stroke="#EA4335"
+                              stroke-width="6"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              fill="none"/>
+
+                        <path d="M44 7V31"
+                              stroke="#34A853"
+                              stroke-width="6"
+                              stroke-linecap="round"/>
+
+                    </svg>
+
+                </a>
+
             </div>
 
             <a href="contact.html" class="footer-contact-btn">
                 Contact Our School →
             </a>
+
         </div>
 
     </div>
 
     <div class="site-footer-bottom">
+
         <p>
             © <span class="year"></span>
-            Government Girls Secondary School Block V. All Rights Reserved.
+            Government Girls Secondary School Block V.
+            All Rights Reserved.
         </p>
 
         <p>Designed with dedication for education.</p>
+
     </div>
 
 </footer>

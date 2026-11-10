@@ -1,229 +1,767 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. Footer year
+    /* =====================================
+       1. FOOTER YEAR
+    ===================================== */
+
     document.querySelectorAll(".year").forEach(function (element) {
         element.textContent = new Date().getFullYear();
     });
 
-    // 2. Mobile navigation
+
+    /* =====================================
+       2. MOBILE NAVIGATION
+    ===================================== */
+
     const menuToggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector("nav");
 
     if (menuToggle && nav) {
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
         menuToggle.addEventListener("click", function () {
-            nav.classList.toggle("active");
+
+            nav.classList.toggle("show");
+
+            const isOpen = nav.classList.contains("show");
+
+            menuToggle.setAttribute("aria-expanded", isOpen);
+
         });
+
+        // Close menu after selecting a link
+        nav.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                nav.classList.remove("show");
+
+                menuToggle.setAttribute("aria-expanded", "false");
+
+            });
+
+        });
+
     }
 
-    // 3. Hero image slider
+
+    /* =====================================
+       3. HERO IMAGE SLIDER
+    ===================================== */
+
     const heroSlides = document.querySelectorAll(".hero-slider .slide");
+
     let heroIndex = 0;
 
     if (heroSlides.length > 0) {
+
         function showHeroSlide(index) {
-            heroSlides.forEach((slide, i) => {
+
+            heroSlides.forEach(function (slide, i) {
+
                 slide.classList.toggle("active", i === index);
+
             });
+
         }
 
-        setInterval(() => {
+        setInterval(function () {
+
             heroIndex = (heroIndex + 1) % heroSlides.length;
+
             showHeroSlide(heroIndex);
+
         }, 4000);
+
     }
 
-    // 4. STEAM image slider
+
+    /* =====================================
+       4. STEAM IMAGE SLIDER
+    ===================================== */
+
     const steamSlides = document.querySelectorAll(".steam_image .slide");
+
     let steamIndex = 0;
 
     if (steamSlides.length > 0) {
+
         function showSteamSlide(index) {
-            steamSlides.forEach((slide, i) => {
+
+            steamSlides.forEach(function (slide, i) {
+
                 slide.classList.toggle("active", i === index);
+
             });
+
         }
 
-        setInterval(() => {
+        setInterval(function () {
+
             steamIndex = (steamIndex + 1) % steamSlides.length;
+
             showSteamSlide(steamIndex);
+
         }, 3500);
+
     }
 
-    // 5. Gallery sliders
+
+    /* =====================================
+       5. GALLERY SLIDERS
+    ===================================== */
+
     document.querySelectorAll(".gallery-box-slider").forEach(function (slider) {
-        const slides = slider.querySelectorAll(".slide");
+
+        const slides = Array.from(
+            slider.querySelectorAll(".gallery-slide, .slide, img")
+        ).filter(function (slide, index, array) {
+            return array.indexOf(slide) === index;
+        });
+
         let index = 0;
 
         if (slides.length > 1) {
-            slides.forEach((slide, i) => {
+
+            slides.forEach(function (slide, i) {
+
                 slide.classList.toggle("active", i === 0);
+
             });
 
-            setInterval(() => {
+            setInterval(function () {
+
                 slides[index].classList.remove("active");
+
                 index = (index + 1) % slides.length;
+
                 slides[index].classList.add("active");
+
             }, 3000);
+
         }
+
     });
 
-    // 6. Gallery lightbox
+
+    /* =====================================
+       6. GALLERY LIGHTBOX
+    ===================================== */
+
     const lightbox = document.querySelector(".lightbox");
+
     const lightboxImage = document.querySelector(".lightbox img");
-    const closeLightbox = document.querySelector(".lightbox .close");
+
+    const closeLightbox = document.querySelector(
+        ".lightbox-close, .lightbox .close, .lightbox .close-btn"
+    );
 
     if (lightbox && lightboxImage) {
-        document.querySelectorAll(".gallery img").forEach(function (img) {
+
+        document.querySelectorAll(
+            ".gallery img, .gallery-grid img, .gallery-box-slider img"
+        ).forEach(function (img) {
+
             img.addEventListener("click", function () {
+
                 lightboxImage.src = img.src;
-                lightbox.classList.add("active");
+
+                lightboxImage.alt = img.alt || "Gallery image";
+
+                lightbox.classList.add("show");
+
             });
+
         });
 
         if (closeLightbox) {
+
             closeLightbox.addEventListener("click", function () {
-                lightbox.classList.remove("active");
+
+                lightbox.classList.remove("show");
+
             });
+
         }
 
         lightbox.addEventListener("click", function (event) {
+
             if (event.target === lightbox) {
-                lightbox.classList.remove("active");
+
+                lightbox.classList.remove("show");
+
             }
+
         });
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
+
+                lightbox.classList.remove("show");
+
+            }
+
+        });
+
     }
 
-    // 7. Back to top button
+
+    /* =====================================
+       7. BACK TO TOP BUTTON
+    ===================================== */
+
     const backToTop = document.querySelector("#backToTop");
 
     if (backToTop) {
+
         window.addEventListener("scroll", function () {
+
             backToTop.style.display =
                 window.scrollY > 300 ? "block" : "none";
+
         });
 
         backToTop.addEventListener("click", function () {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
         });
+
     }
 
-    // 8. Contact form (demo only)
-    const contactForm = document.querySelector("#contactForm");
 
-    if (contactForm) {
-        contactForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-            alert("Thank you! Your message has been received.");
-            contactForm.reset();
-        });
-    }
+    /* =====================================
+       8. SHARED GEMINI AI CONNECTION
+    ===================================== */
 
-    // 9. GEMINI AI ADMISSION ASSISTANT
-    const chatMessages = document.getElementById("chatMessages");
-    const questionInput = document.getElementById("userQuestion");
-    const sendButton = document.getElementById("sendQuestion");
+    async function getGeminiReply(question) {
 
-    if (chatMessages && questionInput && sendButton) {
+        const response = await fetch(
+            "/.netlify/functions/ai",
+            {
+                method: "POST",
 
-        function addChatMessage(message, type) {
-            const div = document.createElement("div");
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-            div.className = "chat-message " + type;
-            div.textContent = message;
+                body: JSON.stringify({
+                    message: question
+                })
+            }
+        );
 
-            chatMessages.appendChild(div);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+        const raw = await response.text();
+
+        let data;
+
+        try {
+
+            data = JSON.parse(raw);
+
+        } catch {
+
+            throw new Error(
+                "The AI service returned an invalid response."
+            );
+
         }
 
-        async function sendQuestion() {
+        if (!response.ok) {
 
-            const question = questionInput.value.trim();
+            throw new Error(
+                data.error || "Assistant is temporarily unavailable."
+            );
 
-            if (!question || sendButton.disabled) return;
+        }
 
-            // Display visitor's question
-            addChatMessage(question, "user-message");
+        return data.reply || "Sorry, I could not prepare an answer.";
 
-            questionInput.value = "";
+    }
+
+
+    /* =====================================
+       9. GGSS FLOATING AI ROBOT
+    ===================================== */
+
+    if (!document.getElementById("ggssRobotLauncher")) {
+
+        const robot = document.createElement("button");
+
+        robot.id = "ggssRobotLauncher";
+
+        robot.type = "button";
+
+        robot.setAttribute(
+            "aria-label",
+            "Open GGSS AI Assistant"
+        );
+
+        robot.setAttribute("aria-expanded", "false");
+
+        robot.innerHTML = `
+
+            <span class="ggss-robot-figure">
+
+                <span class="ggss-robot-antenna"></span>
+
+                <span class="ggss-robot-ear left"></span>
+
+                <span class="ggss-robot-ear right"></span>
+
+                <span class="ggss-robot-head">
+
+                    <span class="ggss-robot-face">
+
+                        <span class="ggss-robot-eye"></span>
+
+                        <span class="ggss-robot-eye"></span>
+
+                        <span class="ggss-robot-smile"></span>
+
+                    </span>
+
+                </span>
+
+                <span class="ggss-robot-body">✦</span>
+
+                <span class="ggss-robot-shadow"></span>
+
+            </span>
+
+            <span class="ggss-robot-label">
+                Ask GGSS 🤖
+            </span>
+
+        `;
+
+
+        /* =====================================
+           10. AI CHAT WINDOW
+        ===================================== */
+
+        const panel = document.createElement("div");
+
+        panel.id = "ggssChatPanel";
+
+        panel.innerHTML = `
+
+            <div class="ggss-chat-header">
+
+                <div class="ggss-chat-avatar">🤖</div>
+
+                <div class="ggss-chat-heading">
+
+                    <strong>GGSS AI Assistant</strong>
+
+                    <small>● Online Assistant</small>
+
+                </div>
+
+                <button
+                    class="ggss-chat-fullscreen"
+                    type="button"
+                    aria-label="Open full screen"
+                    title="Full screen"
+                >
+                    ⛶
+                </button>
+
+                <button
+                    class="ggss-chat-close"
+                    type="button"
+                    aria-label="Close chat"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div
+                class="ggss-chat-messages"
+                id="ggssPopupMessages"
+                aria-live="polite"
+            >
+
+                <div class="ggss-popup-message ggss-popup-bot">
+
+                    Assalam-o-Alaikum! 👋
+
+                    Welcome to GGSS Block V.
+
+                    I can help you with admissions, classes,
+                    syllabus, school facilities and activities.
+
+                    How may I help you?
+
+                </div>
+
+            </div>
+
+
+            <div class="ggss-popup-quick">
+
+                <button
+                    type="button"
+                    data-question="Which classes are offered?"
+                >
+                    Classes offered?
+                </button>
+
+                <button
+                    type="button"
+                    data-question="What documents are required for admission?"
+                >
+                    Admission documents?
+                </button>
+
+                <button
+                    type="button"
+                    data-question="What facilities does the school provide?"
+                >
+                    School facilities?
+                </button>
+
+            </div>
+
+
+            <form class="ggss-popup-form" id="ggssPopupForm">
+
+                <input
+                    id="ggssPopupInput"
+                    type="text"
+                    placeholder="Type your question..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button
+                    id="ggssPopupSend"
+                    type="submit"
+                    aria-label="Send message"
+                >
+                    ➤
+                </button>
+
+            </form>
+
+
+            <div class="ggss-chat-footer">
+                Powered by GGSS AI Assistant
+            </div>
+
+        `;
+
+
+        document.body.appendChild(robot);
+
+        document.body.appendChild(panel);
+
+
+        /* =====================================
+           11. CHAT ELEMENTS
+        ===================================== */
+
+        const closeButton = panel.querySelector(".ggss-chat-close");
+
+        const fullscreenButton = panel.querySelector(
+            ".ggss-chat-fullscreen"
+        );
+
+        const messages = panel.querySelector("#ggssPopupMessages");
+
+        const input = panel.querySelector("#ggssPopupInput");
+
+        const form = panel.querySelector("#ggssPopupForm");
+
+        const sendButton = panel.querySelector("#ggssPopupSend");
+
+        let busy = false;
+
+        let isFullscreen = false;
+
+
+        /* =====================================
+           12. OPEN AND CLOSE CHAT
+        ===================================== */
+
+        function openChat() {
+
+            panel.classList.add("ggss-chat-open");
+
+            robot.setAttribute("aria-expanded", "true");
+
+            input.focus();
+
+        }
+
+        function closeChat() {
+
+            panel.classList.remove("ggss-chat-open");
+
+            robot.setAttribute("aria-expanded", "false");
+
+            if (isFullscreen) {
+
+                exitFullscreenMode();
+
+            }
+
+        }
+
+        robot.addEventListener("click", function () {
+
+            if (panel.classList.contains("ggss-chat-open")) {
+
+                closeChat();
+
+            } else {
+
+                openChat();
+
+            }
+
+        });
+
+        closeButton.addEventListener("click", closeChat);
+
+
+        /* =====================================
+           13. FULL SCREEN CHAT
+        ===================================== */
+
+        function enterFullscreenMode() {
+
+            isFullscreen = true;
+
+            panel.style.position = "fixed";
+
+            panel.style.top = "0";
+
+            panel.style.left = "0";
+
+            panel.style.right = "0";
+
+            panel.style.bottom = "0";
+
+            panel.style.width = "100vw";
+
+            panel.style.height = "100vh";
+
+            panel.style.height = "100dvh";
+
+            panel.style.maxWidth = "none";
+
+            panel.style.maxHeight = "none";
+
+            panel.style.borderRadius = "0";
+
+            panel.style.zIndex = "100000";
+
+            fullscreenButton.textContent = "⊡";
+
+            fullscreenButton.setAttribute(
+                "aria-label",
+                "Exit full screen"
+            );
+
+            fullscreenButton.title = "Exit full screen";
+
+        }
+
+        function exitFullscreenMode() {
+
+            isFullscreen = false;
+
+            panel.style.position = "";
+
+            panel.style.top = "";
+
+            panel.style.left = "";
+
+            panel.style.right = "";
+
+            panel.style.bottom = "";
+
+            panel.style.width = "";
+
+            panel.style.height = "";
+
+            panel.style.maxWidth = "";
+
+            panel.style.maxHeight = "";
+
+            panel.style.borderRadius = "";
+
+            panel.style.zIndex = "";
+
+            fullscreenButton.textContent = "⛶";
+
+            fullscreenButton.setAttribute(
+                "aria-label",
+                "Open full screen"
+            );
+
+            fullscreenButton.title = "Full screen";
+
+        }
+
+        fullscreenButton.addEventListener("click", function () {
+
+            if (isFullscreen) {
+
+                exitFullscreenMode();
+
+            } else {
+
+                enterFullscreenMode();
+
+            }
+
+        });
+
+
+        /* =====================================
+           14. ESCAPE KEY
+        ===================================== */
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
+
+                if (isFullscreen) {
+
+                    exitFullscreenMode();
+
+                } else {
+
+                    closeChat();
+
+                }
+
+            }
+
+        });
+
+
+        /* =====================================
+           15. ADD CHAT MESSAGE
+        ===================================== */
+
+        function addPopupMessage(message, type) {
+
+            const div = document.createElement("div");
+
+            div.className = "ggss-popup-message " + type;
+
+            div.textContent = message;
+
+            messages.appendChild(div);
+
+            messages.scrollTop = messages.scrollHeight;
+
+            return div;
+
+        }
+
+
+        /* =====================================
+           16. SEND QUESTION TO GEMINI
+        ===================================== */
+
+        async function sendPopupQuestion(question) {
+
+            if (!question || busy) return;
+
+            busy = true;
+
+            addPopupMessage(
+                question,
+                "ggss-popup-user"
+            );
+
+            const loading = addPopupMessage(
+                "Please wait, I am preparing your answer...",
+                "ggss-popup-bot"
+            );
+
+            input.value = "";
+
             sendButton.disabled = true;
-            sendButton.textContent = "Sending...";
-
-            // Loading message
-            const loading = document.createElement("div");
-            loading.className = "chat-message bot-message";
-            loading.textContent =
-                "Please wait, I am preparing your answer...";
-
-            chatMessages.appendChild(loading);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
 
             try {
 
-                const response = await fetch(
-                    "/.netlify/functions/ai",
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            message: question
-                        })
-                    }
-                );
-
-                const data = await response.json();
+                const reply = await getGeminiReply(question);
 
                 loading.remove();
 
-                if (!response.ok) {
-                    throw new Error(
-                        data.error || "Assistant is temporarily unavailable."
-                    );
-                }
-
-                addChatMessage(
-                    data.reply || "Sorry, I could not prepare an answer.",
-                    "bot-message"
+                addPopupMessage(
+                    reply,
+                    "ggss-popup-bot"
                 );
 
             } catch (error) {
 
                 loading.remove();
 
-                addChatMessage(
+                addPopupMessage(
                     "Sorry! The AI assistant is temporarily unavailable. Please try again or contact the school office.",
-                    "bot-message"
+                    "ggss-popup-bot"
                 );
 
-                console.error("AI Assistant Error:", error);
+                console.error("GGSS AI Error:", error);
 
             } finally {
 
+                busy = false;
+
                 sendButton.disabled = false;
-                sendButton.textContent = "Send ➤";
-                questionInput.focus();
+
+                input.focus();
 
             }
+
         }
 
-        // Send button
-        sendButton.addEventListener("click", sendQuestion);
 
-        // Enter key
-        questionInput.addEventListener("keydown", function (event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                sendQuestion();
-            }
+        /* =====================================
+           17. CHAT FORM SUBMISSION
+        ===================================== */
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            sendPopupQuestion(input.value.trim());
+
         });
 
-        // Quick question buttons
-        window.askQuick = function (question) {
-            questionInput.value = question;
-            sendQuestion();
-        };
+
+        /* =====================================
+           18. QUICK QUESTIONS
+        ===================================== */
+
+        panel.querySelectorAll("[data-question]").forEach(
+            function (button) {
+
+                button.addEventListener("click", function () {
+
+                    const question = button.dataset.question;
+
+                    sendPopupQuestion(question);
+
+                });
+
+            }
+        );
+
     }
 
 });

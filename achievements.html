@@ -9,7 +9,11 @@
 
 <link rel="stylesheet" href="idex.css">
 
-<!-- Same fonts used throughout the website -->
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Website Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -62,9 +66,7 @@ body.achievement-page {
     letter-spacing: 3px;
 }
 
-/* =====================================
-   HEADER
-===================================== */
+/* HEADER */
 
 .achievement-page .header {
     position: sticky;
@@ -80,15 +82,12 @@ body.achievement-page {
     color: var(--gold);
 }
 
-/* =====================================
-   ACHIEVEMENTS HERO BANNER
-===================================== */
+/* ACHIEVEMENTS HERO BANNER */
 
 .achievement-hero {
     width: 100%;
     height: clamp(400px, 31.25vw, 600px);
     min-height: 400px;
-
     padding: 45px 9%;
 
     display: flex;
@@ -112,16 +111,12 @@ body.achievement-page {
         url("ach-banner.jpeg") center/cover no-repeat;
 }
 
-/* Unique class prevents conflict with .hero-content in idex.css */
-
 .achievement-content {
     position: relative;
-
     top: auto;
     left: auto;
     right: auto;
     bottom: auto;
-
     transform: none;
 
     width: 100%;
@@ -183,9 +178,7 @@ body.achievement-page {
     transform: translateY(-3px);
 }
 
-/* =====================================
-   INTRO STRIP
-===================================== */
+/* INTRO STRIP */
 
 .intro-strip {
     background: var(--cream);
@@ -212,9 +205,7 @@ body.achievement-page {
     font-size: 18px;
 }
 
-/* =====================================
-   FEATURED ACHIEVEMENT
-===================================== */
+/* FEATURED ACHIEVEMENT */
 
 .feature-section {
     display: grid;
@@ -287,9 +278,7 @@ body.achievement-page {
     margin-right: 10px;
 }
 
-/* =====================================
-   HIGHLIGHT CARDS
-===================================== */
+/* HIGHLIGHT CARDS */
 
 .highlights {
     background: var(--cream);
@@ -384,9 +373,7 @@ body.achievement-page {
     color: var(--maroon);
 }
 
-/* =====================================
-   STEAM PROJECT SHOWCASE
-===================================== */
+/* STEAM PROJECT SHOWCASE */
 
 .steam-showcase {
     background: var(--maroon);
@@ -477,9 +464,7 @@ body.achievement-page {
     margin: 0;
 }
 
-/* =====================================
-   PHOTO GALLERY
-===================================== */
+/* PHOTO GALLERY */
 
 .gallery-section {
     background: white;
@@ -530,9 +515,7 @@ body.achievement-page {
     );
 }
 
-/* =====================================
-   CERTIFICATE RECOGNITION
-===================================== */
+/* CERTIFICATE RECOGNITION */
 
 .recognition {
     background: var(--cream);
@@ -578,9 +561,7 @@ body.achievement-page {
     margin-bottom: 10px;
 }
 
-/* =====================================
-   FINAL BANNER
-===================================== */
+/* FINAL BANNER */
 
 .final-banner {
     text-align: center;
@@ -614,9 +595,7 @@ body.achievement-page {
     line-height: 2;
 }
 
-/* =====================================
-   DETAILS POPUP
-===================================== */
+/* DETAILS POPUP */
 
 .achievement-modal {
     display: none;
@@ -685,9 +664,7 @@ body.achievement-page {
     cursor: pointer;
 }
 
-/* =====================================
-   PHOTO POPUP
-===================================== */
+/* PHOTO POPUP */
 
 .achievement-photo-box {
     max-width: 950px;
@@ -704,87 +681,96 @@ body.achievement-page {
 }
 
 /* =====================================
-   COMMON WEBSITE FOOTER
+   COMMON FOOTER - SAME AS HOME AND ABOUT
 ===================================== */
 
-.achievement-page .site-footer {
+.site-footer {
+    display: block;
     width: 100%;
-    background: var(--dark);
+    margin: 0;
+    box-sizing: border-box;
+    background: #380817;
     color: white;
     padding: 55px 8% 20px;
-    overflow: hidden;
 }
 
-.achievement-page .site-footer-grid {
+.site-footer,
+.site-footer * {
+    box-sizing: border-box;
+}
+
+.site-footer-grid {
     display: grid;
     grid-template-columns: 1.3fr 1fr 1fr 1fr;
     gap: 35px;
     padding-bottom: 35px;
 }
 
-.achievement-page .site-footer-grid > div {
+.site-footer-grid > div {
     min-width: 0;
 }
 
-.achievement-page .site-footer h3 {
-    color: var(--gold);
+.site-footer h3 {
+    color: #d5b16d;
     font-family: 'Playfair Display', serif;
     font-size: 21px;
     margin: 0 0 18px;
 }
 
-.achievement-page .site-footer p,
-.achievement-page .site-footer a {
+.site-footer p,
+.site-footer a {
     color: #e7dce0;
     font-size: 12px;
     line-height: 2;
 }
 
-.achievement-page .site-footer p {
+.site-footer p {
     margin: 0;
 }
 
-.achievement-page .site-footer a {
+.site-footer a {
     text-decoration: none;
     overflow-wrap: anywhere;
 }
 
-.achievement-page .site-footer a:hover {
-    color: var(--gold);
+.site-footer a:hover {
+    color: #d5b16d;
 }
 
-.achievement-page .footer-logo-row {
+/* SCHOOL LOGO AND NAME */
+
+.footer-logo-row {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
     margin-bottom: 18px;
 }
 
-.achievement-page .footer-logo {
-    display: block;
-    width: 55px !important;
-    height: 55px !important;
-    min-width: 55px !important;
-    object-fit: contain !important;
-    flex: 0 0 55px;
+.footer-logo-row img {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    object-fit: contain;
     background: white;
-    padding: 4px;
-    border: 2px solid var(--gold);
+    padding: 5px;
+    border: 2px solid #d5b16d;
     border-radius: 50%;
 }
 
-.achievement-page .footer-school-name {
+.footer-school-name {
     font-family: 'Playfair Display', serif;
-    color: var(--gold);
-    font-size: 22px;
+    color: #d5b16d;
+    font-size: 24px;
     line-height: 1.3;
     margin: 0;
 }
 
-.achievement-page .site-footer .footer-contact-btn {
+/* CONTACT BUTTON */
+
+.footer-contact-btn {
     display: inline-block;
-    background: var(--gold);
-    color: var(--dark);
+    background: #d5b16d;
+    color: #380817 !important;
     padding: 11px 20px;
     margin-top: 12px;
     border-radius: 3px;
@@ -792,56 +778,85 @@ body.achievement-page {
     transition: .3s;
 }
 
-.achievement-page .site-footer .footer-contact-btn:hover {
+.footer-contact-btn:hover {
     background: white;
-    color: var(--dark);
 }
 
-.achievement-page .footer-socials {
+/* SOCIAL MEDIA ICONS */
+
+.footer-socials {
     display: flex;
     gap: 12px;
-    margin-top: 12px;
+    margin-top: 15px;
 }
 
-.achievement-page .footer-socials a {
+.footer-socials a {
     width: 36px;
     height: 36px;
-    min-width: 36px;
-    border: 1px solid var(--gold);
+    border: none !important;
     border-radius: 50%;
-
-    display: grid;
-    place-items: center;
-
-    color: var(--gold);
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: .3s;
 }
 
-.achievement-page .footer-socials a:hover {
-    background: var(--gold);
-    color: var(--dark);
+.footer-socials .facebook-icon {
+    background: #1877F2;
+    color: white !important;
 }
 
-.achievement-page .site-footer-bottom {
+.footer-socials .instagram-icon {
+    background: linear-gradient(
+        45deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+    color: white !important;
+}
+
+.footer-socials .gmail-icon {
+    background: white;
+    color: #EA4335 !important;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-4px);
+}
+
+.footer-map-link {
+    color: #d5b16d !important;
+    font-weight: 600;
+}
+
+.site-footer i {
+    margin-right: 7px;
+}
+
+/* FOOTER COPYRIGHT */
+
+.site-footer-bottom {
     border-top: 1px solid #ffffff30;
     padding-top: 20px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 15px;
     flex-wrap: wrap;
-
     color: #d6c5cb;
     font-size: 10px;
     line-height: 2;
 }
 
-/* =====================================
-   BACK TO TOP
-===================================== */
+.site-footer-bottom p {
+    font-size: 10px;
+}
+
+/* BACK TO TOP */
 
 #backToTop {
     position: fixed;
@@ -864,9 +879,7 @@ body.achievement-page {
     z-index: 999;
 }
 
-/* =====================================
-   RESPONSIVE DESIGN
-===================================== */
+/* RESPONSIVE DESIGN */
 
 @media(max-width: 950px) {
 
@@ -878,7 +891,7 @@ body.achievement-page {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .achievement-page .site-footer-grid {
+    .site-footer-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1008,16 +1021,16 @@ body.achievement-page {
         font-size: 28px;
     }
 
-    .achievement-page .site-footer-grid {
+    .site-footer-grid {
         grid-template-columns: 1fr;
         gap: 28px;
     }
 
-    .achievement-page .site-footer {
+    .site-footer {
         padding: 45px 7% 20px;
     }
 
-    .achievement-page .site-footer-bottom {
+    .site-footer-bottom {
         flex-direction: column;
         text-align: center;
     }
@@ -1041,12 +1054,14 @@ body.achievement-page {
 <body class="achievement-page">
 
 <!-- TOP BAR -->
+
 <div class="topbar">
-    <div>Government of Sindh | School Education & Literacy Department</div>
+    <div>Government of Sindh | School Education &amp; Literacy Department</div>
     <div>📍 Shah Faisal Colony, Karachi</div>
 </div>
 
 <!-- HEADER -->
+
 <header class="header">
 
     <div class="brand">
@@ -1074,9 +1089,7 @@ body.achievement-page {
 
 </header>
 
-<!-- =====================================
-     HERO BANNER
-===================================== -->
+<!-- HERO BANNER -->
 
 <section class="achievement-hero">
 
@@ -1106,6 +1119,7 @@ body.achievement-page {
 </section>
 
 <!-- QUICK HIGHLIGHTS -->
+
 <div class="intro-strip">
 
     <div class="intro-point"><span>✦</span> Creativity</div>
@@ -1116,6 +1130,7 @@ body.achievement-page {
 </div>
 
 <!-- FEATURED ACHIEVEMENT -->
+
 <section class="section-padding">
 
     <div class="feature-section">
@@ -1155,6 +1170,7 @@ body.achievement-page {
 </section>
 
 <!-- HIGHLIGHTS -->
+
 <section class="highlights section-padding">
 
     <div class="section-heading">
@@ -1240,6 +1256,7 @@ body.achievement-page {
 </section>
 
 <!-- STEAM PROJECT SHOWCASE -->
+
 <section class="steam-showcase section-padding" id="steam-projects">
 
     <div class="section-heading">
@@ -1258,14 +1275,12 @@ body.achievement-page {
     <div class="project-grid">
 
         <!-- PROJECT 1 -->
+
         <div class="project-card">
 
             <div class="project-image" onclick="openPhoto('steam4.jpeg')">
-
                 <img src="steam4.jpeg" alt="Student project">
-
                 <span class="project-number">PROJECT 01</span>
-
             </div>
 
             <div class="project-info">
@@ -1290,14 +1305,12 @@ body.achievement-page {
         </div>
 
         <!-- PROJECT 2 -->
+
         <div class="project-card">
 
             <div class="project-image" onclick="openPhoto('steam5.jpeg')">
-
                 <img src="steam5.jpeg" alt="STEAM activity">
-
                 <span class="project-number">PROJECT 02</span>
-
             </div>
 
             <div class="project-info">
@@ -1322,14 +1335,12 @@ body.achievement-page {
         </div>
 
         <!-- PROJECT 3 -->
+
         <div class="project-card">
 
             <div class="project-image" onclick="openPhoto('steam6.jpeg')">
-
                 <img src="steam6.jpeg" alt="School learning project">
-
                 <span class="project-number">PROJECT 03</span>
-
             </div>
 
             <div class="project-info">
@@ -1354,14 +1365,12 @@ body.achievement-page {
         </div>
 
         <!-- PROJECT 4 -->
+
         <div class="project-card">
 
             <div class="project-image" onclick="openPhoto('steam7.jpeg')">
-
                 <img src="steam7.jpeg" alt="Student innovation">
-
                 <span class="project-number">PROJECT 04</span>
-
             </div>
 
             <div class="project-info">
@@ -1386,14 +1395,12 @@ body.achievement-page {
         </div>
 
         <!-- PROJECT 5 -->
+
         <div class="project-card">
 
             <div class="project-image" onclick="openPhoto('steam8.jpeg')">
-
                 <img src="steam8.jpeg" alt="Student activity">
-
                 <span class="project-number">PROJECT 05</span>
-
             </div>
 
             <div class="project-info">
@@ -1418,14 +1425,12 @@ body.achievement-page {
         </div>
 
         <!-- PROJECT 6 -->
+
         <div class="project-card">
 
             <div class="project-image" onclick="openPhoto('steam10.jpeg')">
-
                 <img src="steam10.jpeg" alt="Project presentation">
-
                 <span class="project-number">PROJECT 06</span>
-
             </div>
 
             <div class="project-info">
@@ -1454,6 +1459,7 @@ body.achievement-page {
 </section>
 
 <!-- PHOTO GALLERY -->
+
 <section class="gallery-section section-padding">
 
     <div class="section-heading">
@@ -1509,14 +1515,13 @@ body.achievement-page {
 </section>
 
 <!-- CERTIFICATE RECOGNITION -->
+
 <section class="recognition section-padding">
 
     <div class="recognition-box">
 
         <div class="recognition-image" onclick="openPhoto('cert1.jpeg')">
-
             <img src="cert1.jpeg" alt="School certificate and recognition">
-
         </div>
 
         <div class="recognition-content">
@@ -1553,6 +1558,7 @@ body.achievement-page {
 </section>
 
 <!-- FINAL BANNER -->
+
 <section class="final-banner">
 
     <span class="section-tag">OUR VISION</span>
@@ -1568,104 +1574,152 @@ body.achievement-page {
 </section>
 
 <!-- =====================================
-     COMMON WEBSITE FOOTER
+     COMMON FOOTER - SAME AS ALL PAGES
 ===================================== -->
 
 <footer class="site-footer">
 
     <div class="site-footer-grid">
 
-        <!-- SCHOOL INFORMATION -->
+        <!-- SCHOOL BRAND AND LOGO -->
+
         <div class="footer-brand">
 
             <div class="footer-logo-row">
 
-                <img src="logo.jpeg"
-                     class="footer-logo"
-                     alt="GGSS Block V Monogram">
+                <img src="logo.jpeg" alt="GGSS Block V Logo">
 
-                <h3 class="footer-school-name">
+                <h2 class="footer-school-name">
                     GGSS BLOCK V
-                </h3>
+                </h2>
 
             </div>
 
             <p>
-                Government Girls Secondary School,
-                Block V, Shah Faisal Colony,
-                District Korangi, Karachi.
+                Empowering Minds, Building Futures.
+                Committed to quality education, creativity
+                and the development of confident learners.
             </p>
 
-            <p style="margin-top:12px;">
-                Empowering Minds, Building Futures.
+        </div>
+
+        <!-- CONTACT INFORMATION -->
+
+        <div>
+
+            <h3>Contact Information</h3>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Government Girls Secondary School Block V
+            </p>
+
+            <p>Shah Faisal Colony, District Korangi, Karachi</p>
+
+            <p>SEMIS Code: 408090122</p>
+
+            <p>
+                <a href="contact.html#school-location" class="footer-map-link">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    View School Location on Map
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                Add official school phone number
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:YOUR_EMAIL@gmail.com">
+                    Add official school Gmail
+                </a>
             </p>
 
         </div>
 
         <!-- QUICK LINKS -->
+
         <div>
 
             <h3>Quick Links</h3>
 
-            <p><a href="index.html">Home</a></p>
-            <p><a href="about.html">About Us</a></p>
+            <p><a href="about.html">About Our School</a></p>
             <p><a href="academics.html">Academics</a></p>
             <p><a href="admission.html">Admissions</a></p>
             <p><a href="achievements.html">Achievements</a></p>
-
-        </div>
-
-        <!-- EXPLORE -->
-        <div>
-
-            <h3>Explore</h3>
-
             <p><a href="facilities.html">Facilities</a></p>
             <p><a href="gallery.html">Gallery</a></p>
-            <p><a href="administration.html">Administration</a></p>
-            <p><a href="contact.html">Contact</a></p>
 
         </div>
 
-        <!-- CONTACT -->
+        <!-- SOCIAL MEDIA -->
+
         <div>
 
-            <h3>Contact Us</h3>
+            <h3>Connect With Us</h3>
 
-            <p>📍 Shah Faisal Colony, Karachi</p>
-            <p>✉ Add official school Gmail here</p>
+            <p>Follow our school activities and updates.</p>
 
             <div class="footer-socials">
 
-                <a href="https://web.facebook.com/profile.php?id=100063835883192&rdid=H8bXUPS66MkSFr5E&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1FGbXVndL4%2F%3F_rdc%3D1%26_rdr#" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a href="https://www.instagram.com/ggss_block_5?psln=MmVzMzhja2w1dHlr" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://web.facebook.com/profile.php?id=100063835883192&rdid=H8bXUPS66MkSFr5E&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1FGbXVndL4%2F%3F_rdc%3D1%26_rdr#"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="facebook-icon"
+                   title="Facebook">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </a>
+
+                <a href="https://www.instagram.com/ggss_block_5?psln=MmVzMzhja2w1dHlr"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="instagram-icon"
+                   title="Instagram">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+                <a href="mailto:YOUR_EMAIL@gmail.com"
+                   class="gmail-icon"
+                   title="Gmail">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
 
             </div>
 
             <a href="contact.html" class="footer-contact-btn">
-                Contact Us
+                Contact Our School →
             </a>
 
         </div>
 
     </div>
 
+    <!-- FOOTER COPYRIGHT -->
+
     <div class="site-footer-bottom">
 
-        <span>
-            © <span id="year"></span>
+        <p>
+            © <span class="year"></span>
             Government Girls Secondary School Block V.
-        </span>
+            All Rights Reserved.
+        </p>
 
-        <span>
-            Designed with dedication for education.
-        </span>
+        <p>Designed with dedication for education.</p>
 
     </div>
 
 </footer>
 
 <!-- DETAILS POPUP -->
+
 <div class="achievement-modal" id="detailsModal"
      role="dialog" aria-modal="true"
      aria-labelledby="modalTitle">
@@ -1687,6 +1741,7 @@ body.achievement-page {
 </div>
 
 <!-- IMAGE POPUP -->
+
 <div class="achievement-modal" id="photoModal"
      onclick="closePhoto()">
 
@@ -1706,17 +1761,20 @@ body.achievement-page {
 </div>
 
 <!-- BACK TO TOP -->
+
 <button id="backToTop" aria-label="Back to top">↑</button>
 
-<!-- COMMON JAVASCRIPT -->
+<!-- SHARED JAVASCRIPT -->
+
 <script src="learn.js" defer></script>
 
 <script>
 
-/* FOOTER YEAR */
+/* COPYRIGHT YEAR */
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+document.querySelectorAll(".year").forEach(function(element) {
+    element.textContent = new Date().getFullYear();
+});
 
 
 /* DETAILS POPUPS */
@@ -1807,11 +1865,8 @@ window.addEventListener("scroll", function() {
 backToTop.addEventListener("click", function() {
 
     window.scrollTo({
-
         top: 0,
-
         behavior: "smooth"
-
     });
 
 });

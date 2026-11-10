@@ -7,10 +7,16 @@
 <title>Education Leadership | GGSS Block V</title>
 
 <link rel="stylesheet" href="idex.css">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 /* LEADERSHIP PAGE */
 
 .leadership-page {
@@ -230,7 +236,6 @@
         opacity: 0;
         transform: translateY(18px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -254,7 +259,6 @@
 }
 
 /* LEADER PHOTOS */
-/* Original leader-avatar1 to leader-avatar6 classes are preserved from idex.css. */
 
 .leader-photo {
     position: relative;
@@ -405,7 +409,9 @@
     line-height: 1.9;
 }
 
-/* COMMON FOOTER */
+/* =====================================
+   COMMON FOOTER - SAME AS HOME AND ABOUT
+===================================== */
 
 .site-footer {
     display: block;
@@ -435,7 +441,8 @@
 
 .site-footer h3 {
     color: #d5b16d;
-    font: 600 21px 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
     margin: 0 0 18px;
 }
 
@@ -459,6 +466,8 @@
     color: #d5b16d;
 }
 
+/* SCHOOL LOGO AND NAME */
+
 .footer-logo-row {
     display: flex;
     align-items: center;
@@ -471,17 +480,21 @@
     height: 70px;
     flex-shrink: 0;
     object-fit: contain;
-    background: #fff;
+    background: white;
     padding: 5px;
     border: 2px solid #d5b16d;
     border-radius: 50%;
 }
 
 .footer-school-name {
+    font-family: 'Playfair Display', serif;
     color: #d5b16d;
-    font: 700 24px/1.3 'Playfair Display', serif;
+    font-size: 24px;
+    line-height: 1.3;
     margin: 0;
 }
+
+/* FOOTER CONTACT BUTTON */
 
 .footer-contact-btn {
     display: inline-block;
@@ -495,32 +508,65 @@
 }
 
 .footer-contact-btn:hover {
-    background: #fff;
+    background: white;
 }
+
+/* SOCIAL MEDIA ICONS */
 
 .footer-socials {
     display: flex;
     gap: 12px;
-    margin-top: 12px;
+    margin-top: 15px;
 }
 
 .footer-socials a {
     width: 36px;
     height: 36px;
-    border: 1px solid #d5b16d;
+    border: none !important;
     border-radius: 50%;
-    display: grid;
-    place-items: center;
-    color: #d5b16d;
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.footer-socials .facebook-icon {
+    background: #1877F2;
+    color: white !important;
+}
+
+.footer-socials .instagram-icon {
+    background: linear-gradient(
+        45deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+    color: white !important;
+}
+
+.footer-socials .gmail-icon {
+    background: white;
+    color: #EA4335 !important;
 }
 
 .footer-socials a:hover {
-    background: #d5b16d;
-    color: #380817;
+    transform: translateY(-4px);
 }
+
+.footer-map-link {
+    color: #d5b16d !important;
+    font-weight: 600;
+}
+
+.site-footer i {
+    margin-right: 7px;
+}
+
+/* FOOTER COPYRIGHT */
 
 .site-footer-bottom {
     border-top: 1px solid #ffffff30;
@@ -533,6 +579,28 @@
     color: #d6c5cb;
     font-size: 10px;
     line-height: 2;
+}
+
+.site-footer-bottom p {
+    font-size: 10px;
+}
+
+/* BACK TO TOP */
+
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 43px;
+    height: 43px;
+    border: none;
+    border-radius: 50%;
+    background: #d5b16d;
+    color: #380817;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
 }
 
 /* RESPONSIVE */
@@ -614,6 +682,7 @@
         transition-duration: .01ms !important;
     }
 }
+
 </style>
 </head>
 
@@ -658,8 +727,12 @@
 <!-- HERO -->
 
 <section class="leadership-hero">
+
     <div class="leadership-hero-content">
-        <span class="eyebrow">SCHOOL EDUCATION &amp; LITERACY DEPARTMENT • SINDH</span>
+
+        <span class="eyebrow">
+            SCHOOL EDUCATION &amp; LITERACY DEPARTMENT • SINDH
+        </span>
 
         <h2>Leadership That <span>Shapes Education</span></h2>
 
@@ -669,7 +742,9 @@
             from provincial direction to district coordination and
             school leadership.
         </p>
+
     </div>
+
 </section>
 
 <!-- INTRODUCTION -->
@@ -808,6 +883,7 @@
         </article>
 
     </div>
+
 </section>
 
 <!-- KARACHI AND KORANGI LEADERSHIP -->
@@ -932,6 +1008,7 @@
         </article>
 
     </div>
+
 </section>
 
 <!-- SCHOOL LEVEL LEADERSHIP -->
@@ -1052,11 +1129,15 @@
 
 </section>
 
-<!-- COMMON FOOTER -->
+<!-- =====================================
+     COMMON FOOTER - SAME AS ALL PAGES
+===================================== -->
 
 <footer class="site-footer">
 
     <div class="site-footer-grid">
+
+        <!-- SCHOOL BRAND AND LOGO -->
 
         <div class="footer-brand">
 
@@ -1073,46 +1154,116 @@
 
         </div>
 
-        <div>
-            <h3>Contact Information</h3>
-            <p>📍 Government Girls Secondary School Block V</p>
-            <p>Shah Faisal Colony, District Korangi, Karachi</p>
-            <p>SEMIS Code: 408090122</p>
-            <p>📧 Add official school Gmail here</p>
-        </div>
+        <!-- CONTACT INFORMATION -->
 
         <div>
+
+            <h3>Contact Information</h3>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Government Girls Secondary School Block V
+            </p>
+
+            <p>Shah Faisal Colony, District Korangi, Karachi</p>
+
+            <p>SEMIS Code: 408090122</p>
+
+            <p>
+                <a href="contact.html#school-location" class="footer-map-link">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    View School Location on Map
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                Add official school phone number
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:YOUR_EMAIL@gmail.com">
+                    Add official school Gmail
+                </a>
+            </p>
+
+        </div>
+
+        <!-- QUICK LINKS -->
+
+        <div>
+
             <h3>Quick Links</h3>
+
             <p><a href="about.html">About Our School</a></p>
             <p><a href="academics.html">Academics</a></p>
             <p><a href="admission.html">Admissions</a></p>
             <p><a href="achievements.html">Achievements</a></p>
             <p><a href="facilities.html">Facilities</a></p>
             <p><a href="gallery.html">Gallery</a></p>
+
         </div>
 
+        <!-- SOCIAL MEDIA -->
+
         <div>
+
             <h3>Connect With Us</h3>
 
             <p>Follow our school activities and updates.</p>
 
             <div class="footer-socials">
-                <a href="https://web.facebook.com/profile.php?id=100063835883192&rdid=H8bXUPS66MkSFr5E&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1FGbXVndL4%2F%3F_rdc%3D1%26_rdr#" target="_blank" rel="noopener noreferrer">f</a>
-                <a href="https://www.instagram.com/ggss_block_5?psln=MmVzMzhja2w1dHlr" target="_blank" rel="noopener noreferrer">f</a>
+
+                <a href="https://web.facebook.com/profile.php?id=100063835883192&rdid=H8bXUPS66MkSFr5E&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1FGbXVndL4%2F%3F_rdc%3D1%26_rdr#"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="facebook-icon"
+                   title="Facebook"
+                   aria-label="Facebook">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </a>
+
+                <a href="https://www.instagram.com/ggss_block_5?psln=MmVzMzhja2w1dHlr"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="instagram-icon"
+                   title="Instagram"
+                   aria-label="Instagram">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+                <a href="mailto:YOUR_EMAIL@gmail.com"
+                   class="gmail-icon"
+                   title="Gmail"
+                   aria-label="Gmail">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
             </div>
 
             <a href="contact.html" class="footer-contact-btn">
                 Contact Our School →
             </a>
+
         </div>
 
     </div>
+
+    <!-- FOOTER COPYRIGHT -->
 
     <div class="site-footer-bottom">
 
         <p>
             © <span class="year"></span>
-            Government Girls Secondary School Block V. All Rights Reserved.
+            Government Girls Secondary School Block V.
+            All Rights Reserved.
         </p>
 
         <p>Designed with dedication for education.</p>
@@ -1121,14 +1272,38 @@
 
 </footer>
 
-<button id="backToTop">↑</button>
+<!-- BACK TO TOP -->
+
+<button id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- SHARED JAVASCRIPT -->
 
 <script src="learn.js" defer></script>
 
 <script>
+
+/* COPYRIGHT YEAR */
+
 document.querySelectorAll(".year").forEach(function(element) {
     element.textContent = new Date().getFullYear();
 });
+
+/* BACK TO TOP */
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function() {
+    backToTop.style.display =
+        window.scrollY > 350 ? "block" : "none";
+});
+
+backToTop.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
 </script>
 
 </body>

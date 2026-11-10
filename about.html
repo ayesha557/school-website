@@ -11,6 +11,9 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+        <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
         /* ABOUT PAGE ADDITIONAL DESIGN */
 
@@ -434,6 +437,53 @@
                 text-align: center;
             }
         }
+/* ATTRACTIVE FOOTER SOCIAL ICONS */
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.footer-socials a {
+    width: 36px;
+    height: 36px;
+    border: none !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.footer-socials .facebook-icon {
+    background: #1877F2;
+    color: white !important;
+}
+
+.footer-socials .instagram-icon {
+    background: linear-gradient(
+        45deg, #feda75, #fa7e1e,
+        #d62976, #962fbf, #4f5bd5
+    );
+    color: white !important;
+}
+
+.footer-socials .gmail-icon {
+    background: white;
+    color: #EA4335 !important;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-4px);
+}
+
+.footer-map-link {
+    color: #d5b16d !important;
+    font-weight: 600;
+}
+
     </style>
 </head>
 
@@ -556,8 +606,7 @@
                 <div class="icon">🌟</div>
                 <h3>Our Vision</h3>
                 <p>
-                    To nurture confident, creative and responsible young
-                    women who contribute positively to their families,
+                    To nurture confident, creative and responsible learners who contribute positively to their families,
                     communities and society.
                 </p>
             </div>
@@ -630,81 +679,121 @@
         <a href="academics.html">Explore Our Academics →</a>
     </section>
 
-    <!-- COMMON FOOTER - SAME AS HOME PAGE -->
+    <!-- COMMON FOOTER -->
 
-    <footer class="site-footer">
+<footer class="site-footer">
 
-        <div class="site-footer-grid">
+    <div class="site-footer-grid">
 
-            <!-- SCHOOL BRAND AND LOGO -->
+        <!-- SCHOOL BRAND AND LOGO -->
+        <div class="footer-brand">
 
-            <div class="footer-brand">
-
-                <div class="footer-logo-row">
-                    <img src="logo.jpeg" alt="GGSS Block V Logo">
-                    <h2 class="footer-school-name">GGSS BLOCK V</h2>
-                </div>
-
-                <p>
-                    Empowering Minds, Building Futures.
-                    Committed to quality education, creativity
-                    and the development of confident learners.
-                </p>
-
+            <div class="footer-logo-row">
+                <img src="logo.jpeg" alt="GGSS Block V Logo">
+                <h2 class="footer-school-name">GGSS BLOCK V</h2>
             </div>
 
-            <!-- CONTACT INFORMATION -->
-
-            <div>
-                <h3>Contact Information</h3>
-                <p>📍 Government Girls Secondary School Block V</p>
-                <p>Shah Faisal Colony, District Korangi, Karachi</p>
-                <p>SEMIS Code: 408090122</p>
-                <p>📧 Add official school Gmail here</p>
-            </div>
-
-            <!-- QUICK LINKS -->
-
-            <div>
-                <h3>Quick Links</h3>
-                <p><a href="about.html">About Our School</a></p>
-                <p><a href="academics.html">Academics</a></p>
-                <p><a href="admission.html">Admissions</a></p>
-                <p><a href="achievements.html">Achievements</a></p>
-                <p><a href="facilities.html">Facilities</a></p>
-                <p><a href="gallery.html">Gallery</a></p>
-            </div>
-
-            <!-- SOCIAL MEDIA -->
-
-            <div>
-                <h3>Connect With Us</h3>
-                <p>Follow our school activities and updates.</p>
-
-                <div class="footer-socials">
-                    <a href="https://web.facebook.com/profile.php?id=100063835883192&rdid=H8bXUPS66MkSFr5E&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1FGbXVndL4%2F%3F_rdc%3D1%26_rdr#" target="_blank"rel="noopener noreferrer">f</a>
-                    <a href="https://www.instagram.com/ggss_block_5?psln=MmVzMzhja2w1dHlr" target="_blank"rel="noopener noreferrer">f</a>
-                </div>
-
-                <a href="contact.html" class="footer-contact-btn">
-                    Contact Our School →
-                </a>
-            </div>
-
-        </div>
-
-        <!-- FOOTER COPYRIGHT -->
-
-        <div class="site-footer-bottom">
             <p>
-                © <span class="year"></span>
-                Government Girls Secondary School Block V. All Rights Reserved.
+                Empowering Minds, Building Futures.
+                Committed to quality education, creativity
+                and the development of confident learners.
             </p>
 
-            <p>Designed with dedication for education.</p>
         </div>
 
-    </footer>
+        <!-- CONTACT INFORMATION -->
+        <div>
+            <h3>Contact Information</h3>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Government Girls Secondary School Block V
+            </p>
+
+            <p>Shah Faisal Colony, District Korangi, Karachi</p>
+
+            <p>SEMIS Code: 408090122</p>
+
+            <p>
+                <a href="contact.html#school-location" class="footer-map-link">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    View School Location on Map
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                Add official school phone number
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:YOUR_EMAIL@gmail.com">
+                    Add official school Gmail
+                </a>
+            </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div>
+            <h3>Quick Links</h3>
+
+            <p><a href="about.html">About Our School</a></p>
+            <p><a href="academics.html">Academics</a></p>
+            <p><a href="admission.html">Admissions</a></p>
+            <p><a href="achievements.html">Achievements</a></p>
+            <p><a href="facilities.html">Facilities</a></p>
+            <p><a href="gallery.html">Gallery</a></p>
+        </div>
+
+        <!-- SOCIAL MEDIA -->
+        <div>
+            <h3>Connect With Us</h3>
+
+            <p>Follow our school activities and updates.</p>
+
+            <div class="footer-socials">
+
+                <a href="https://web.facebook.com/profile.php?id=100063835883192&rdid=H8bXUPS66MkSFr5E&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1FGbXVndL4%2F%3F_rdc%3D1%26_rdr#"
+                   target="_blank" rel="noopener noreferrer"
+                   class="facebook-icon" title="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/ggss_block_5?psln=MmVzMzhja2w1dHlr"
+                   target="_blank" rel="noopener noreferrer"
+                   class="instagram-icon" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="mailto:YOUR_EMAIL@gmail.com"
+                   class="gmail-icon" title="Gmail">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+            </div>
+
+            <a href="contact.html" class="footer-contact-btn">
+                Contact Our School →
+            </a>
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="site-footer-bottom">
+
+        <p>
+            © <span class="year"></span>
+            Government Girls Secondary School Block V.
+            All Rights Reserved.
+        </p>
+
+        <p>Designed with dedication for education.</p>
+
+    </div>
+
+</footer>
 
     <button id="backToTop">↑</button>
 
