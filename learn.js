@@ -99,7 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (backToTop) {
         window.addEventListener("scroll", function () {
-            backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+            backToTop.style.display =
+                window.scrollY > 300 ? "block" : "none";
         });
 
         backToTop.addEventListener("click", function () {
@@ -116,6 +117,113 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Thank you! Your message has been received.");
             contactForm.reset();
         });
+    }
+
+    // 9. GEMINI AI ADMISSION ASSISTANT
+    const chatMessages = document.getElementById("chatMessages");
+    const questionInput = document.getElementById("userQuestion");
+    const sendButton = document.getElementById("sendQuestion");
+
+    if (chatMessages && questionInput && sendButton) {
+
+        function addChatMessage(message, type) {
+            const div = document.createElement("div");
+
+            div.className = "chat-message " + type;
+            div.textContent = message;
+
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        async function sendQuestion() {
+
+            const question = questionInput.value.trim();
+
+            if (!question || sendButton.disabled) return;
+
+            // Display visitor's question
+            addChatMessage(question, "user-message");
+
+            questionInput.value = "";
+            sendButton.disabled = true;
+            sendButton.textContent = "Sending...";
+
+            // Loading message
+            const loading = document.createElement("div");
+            loading.className = "chat-message bot-message";
+            loading.textContent =
+                "Please wait, I am preparing your answer...";
+
+            chatMessages.appendChild(loading);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            try {
+
+                const response = await fetch(
+                    "/.netlify/functions/ai",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            message: question
+                        })
+                    }
+                );
+
+                const data = await response.json();
+
+                loading.remove();
+
+                if (!response.ok) {
+                    throw new Error(
+                        data.error || "Assistant is temporarily unavailable."
+                    );
+                }
+
+                addChatMessage(
+                    data.reply || "Sorry, I could not prepare an answer.",
+                    "bot-message"
+                );
+
+            } catch (error) {
+
+                loading.remove();
+
+                addChatMessage(
+                    "Sorry! The AI assistant is temporarily unavailable. Please try again or contact the school office.",
+                    "bot-message"
+                );
+
+                console.error("AI Assistant Error:", error);
+
+            } finally {
+
+                sendButton.disabled = false;
+                sendButton.textContent = "Send ➤";
+                questionInput.focus();
+
+            }
+        }
+
+        // Send button
+        sendButton.addEventListener("click", sendQuestion);
+
+        // Enter key
+        questionInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                sendQuestion();
+            }
+        });
+
+        // Quick question buttons
+        window.askQuick = function (question) {
+            questionInput.value = question;
+            sendQuestion();
+        };
     }
 
 });

@@ -1042,8 +1042,8 @@ How may I help you?</div>
 
         <div>
             <h3>Connect With Us</h3>
-            <a href="#" target="_blank">Facebook</a>
-            <a href="#" target="_blank">Instagram</a>
+           <a href="https://web.facebook.com/profile.php?id=100063835883192&rdid=H8bXUPS66MkSFr5E&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1FGbXVndL4%2F%3F_rdc%3D1%26_rdr#" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/ggss_block_5?psln=MmVzMzhja2w1dHlr" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a href="contact.html" class="footer-contact-btn">Contact Us →</a>
         </div>
 
@@ -1115,86 +1115,7 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
-/* AI ADMISSION ASSISTANT */
-const chatMessages = document.getElementById("chatMessages");
-const questionInput = document.getElementById("userQuestion");
-const sendButton = document.getElementById("sendQuestion");
 
-function addMessage(message, type) {
-    const div = document.createElement("div");
-    div.className = "chat-message " + type;
-    div.textContent = message;
-    chatMessages.appendChild(div);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-async function sendQuestion() {
-    const question = questionInput.value.trim();
-    if (!question || sendButton.disabled) return;
-
-    addMessage(question, "user-message");
-    questionInput.value = "";
-
-    sendButton.disabled = true;
-    sendButton.textContent = "...";
-
-    const loading = document.createElement("div");
-    loading.className = "chat-message bot-message";
-    loading.textContent = "Please wait, I am preparing your answer...";
-    chatMessages.appendChild(loading);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-
-    try {
-        const response = await fetch(
-            "/.netlify/functions/admission-assistant",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ question: question })
-            }
-        );
-
-        const data = await response.json();
-        loading.remove();
-
-        if (!response.ok) {
-            throw new Error(data.error || "Assistant is temporarily unavailable.");
-        }
-
-        addMessage(
-            data.answer || "Sorry, I could not prepare an answer.",
-            "bot-message"
-        );
-
-    } catch (error) {
-        loading.remove();
-        addMessage(
-            "The AI assistant is temporarily unavailable. Please contact the school office for admission information.",
-            "bot-message"
-        );
-        console.error(error);
-
-    } finally {
-        sendButton.disabled = false;
-        sendButton.textContent = "Send ➤";
-        questionInput.focus();
-    }
-}
-
-sendButton.addEventListener("click", sendQuestion);
-
-questionInput.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        sendQuestion();
-    }
-});
-
-function askQuick(question) {
-    questionInput.value = question;
-    sendQuestion();
-}
 </script>
 
 </body>
