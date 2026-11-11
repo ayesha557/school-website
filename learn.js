@@ -666,18 +666,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     "ggss-popup-bot"
                 );
 
-            } catch (error) {
+            
+} catch (error) {
 
-                loading.remove();
+    loading.remove();
 
-                addPopupMessage(
-                    "Sorry! The AI assistant is temporarily unavailable. Please try again or contact the school office.",
-                    "ggss-popup-bot"
-                );
+    console.error("GGSS AI Error:", error);
 
-                console.error("GGSS AI Error:", error);
-
-            } finally {
+    addPopupMessage(
+        error.message || "Sorry! The AI assistant is temporarily unavailable. Please try again.",
+        "ggss-popup-bot"
+    );
+}
+finally {
 
                 busy = false;
 
