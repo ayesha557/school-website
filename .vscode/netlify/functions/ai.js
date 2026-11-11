@@ -27,7 +27,7 @@ exports.handler = async function (event) {
             });
         }
 
-        if (!message || typeof message !== "string") {
+        if (!message || typeof message !== "string" || !message.trim()) {
             return sendResponse(400, {
                 error: "Please enter your question."
             });
@@ -977,7 +977,7 @@ Always be helpful, respectful and trustworthy.
         const url =
             "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent";
 
-        // Try Gemini up to two times if the service is busy.
+        // Retry temporary server errors, but never retry quota errors.
         for (let attempt = 1; attempt <= 2; attempt++) {
 
             let response;
@@ -997,8 +997,9 @@ Always be helpful, respectful and trustworthy.
                             }]
                         },
                         contents: [{
+                            role: "user",
                             parts: [{
-                                text: message
+                                text: message.trim()
                             }]
                         }]
                     })
@@ -1019,12 +1020,13 @@ Always be helpful, respectful and trustworthy.
                 }
 
                 return sendResponse(504, {
-                    error: "The AI service is taking too long. Please try again."
+                    error: "The AI service is taking too long. Please try again later."
                 });
             }
 
             const data = await response.json().catch(() => ({}));
 
+            // Successful response
             if (response.ok) {
 
                 const answer =
@@ -1052,11 +1054,17 @@ Always be helpful, respectful and trustworthy.
                 data
             );
 
-            const retryable = [429, 500, 502, 503, 504];
+            // Do not retry quota errors.
+            if (response.status === 429) {
+                return sendResponse(429, {
+                    error: "Our AI assistant has temporarily reached its usage limit. Please try again later or contact the school office for assistance."
+                });
+            }
 
+            // Retry temporary server errors only once.
             if (
                 attempt === 1 &&
-                retryable.includes(response.status)
+                [500, 502, 503, 504].includes(response.status)
             ) {
                 await new Promise(resolve =>
                     setTimeout(resolve, 1000)
@@ -1065,15 +1073,12 @@ Always be helpful, respectful and trustworthy.
             }
 
             return sendResponse(502, {
-                error:
-                    response.status === 503
-                        ? "Google AI is busy. Please try again shortly."
-                        : "The AI assistant could not complete your request."
+                error: "The AI assistant is temporarily unavailable. Please try again later."
             });
         }
 
         return sendResponse(503, {
-            error: "Google AI is temporarily unavailable. Please try again."
+            error: "The AI assistant is temporarily unavailable."
         });
 
     } catch (error) {
